@@ -240,7 +240,7 @@ export default function Index() {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="h-6 w-6 text-cyber-green flex-shrink-0" />
-                    <span className="text-foreground font-medium">{item}</span>
+                    <span className="text-white font-medium">{item}</span>
                   </div>
                 ))}
               </div>
@@ -331,7 +331,7 @@ export default function Index() {
           </div>
 
           <div className="mt-8 text-sm opacity-75">
-            🔒 Your data is protected with bank-level security | 🌍 Trusted globally | �� Get started in under 2 minutes
+            🔒 Your data is protected with bank-level security | 🌍 Trusted globally | ⚡ Get started in under 2 minutes
           </div>
         </div>
       </section>
