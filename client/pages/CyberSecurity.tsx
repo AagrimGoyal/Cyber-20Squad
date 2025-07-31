@@ -103,7 +103,24 @@ export default function CyberSecurity() {
 
   return (
     <Layout>
-      <div className="py-16 bg-gradient-to-br from-background via-background to-security-red/5">
+      <div className="relative py-16 bg-gradient-to-br from-red-900 via-purple-900 to-pink-900 overflow-hidden">
+        {/* Cyber security background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ef4444' fill-opacity='0.2'%3E%3Cpath d='M50 50L25 25l25-25 25 25-25 25zm0 0l25 25-25 25-25-25 25-25z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
+
+        {/* Security-themed glowing elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-44 h-44 bg-gradient-to-br from-red-400/20 to-pink-500/20 rounded-full filter blur-xl animate-pulse"></div>
+          <div className="absolute top-48 right-24 w-52 h-52 bg-gradient-to-br from-purple-400/20 to-red-500/20 rounded-full filter blur-xl animate-pulse animation-delay-2000"></div>
+          <div className="absolute bottom-24 left-1/3 w-40 h-40 bg-gradient-to-br from-pink-400/20 to-purple-500/20 rounded-full filter blur-xl animate-pulse animation-delay-4000"></div>
+
+          {/* Digital lock symbols */}
+          <div className="absolute top-40 left-1/4 text-red-300/20 text-6xl animate-float">🔒</div>
+          <div className="absolute bottom-40 right-1/4 text-purple-300/20 text-5xl animate-float animation-delay-3000">🛡️</div>
+        </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <div className="text-center mb-16">
