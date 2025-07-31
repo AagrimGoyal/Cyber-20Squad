@@ -149,7 +149,7 @@ export default function CyberSecurity() {
 
           {/* Common Threats */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
+            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
               Common Cyber Threats
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
