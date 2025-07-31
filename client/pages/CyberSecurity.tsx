@@ -121,16 +121,16 @@ export default function CyberSecurity() {
           <div className="absolute top-40 left-1/4 text-red-300/20 text-6xl animate-float">🔒</div>
           <div className="absolute bottom-40 right-1/4 text-purple-300/20 text-5xl animate-float animation-delay-3000">🛡️</div>
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Hero Section */}
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
-              <Lock className="h-12 w-12 text-security-red mr-4" />
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-                Cyber <span className="text-security-red">Security</span>
+              <Lock className="h-12 w-12 text-red-400 mr-4 drop-shadow-lg" />
+              <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+                Cyber <span className="text-red-400">Security</span>
               </h1>
             </div>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
               Protect yourself and your finances from cyber threats. Learn essential security 
               practices to safeguard your digital life in an increasingly connected world.
             </p>
