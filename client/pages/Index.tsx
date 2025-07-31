@@ -92,7 +92,7 @@ export default function Index() {
             <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
               The world's most secure financial literacy platform. Master your money while staying protected from cyber threats.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <Link to="/security">
                 <Badge className="bg-cyber-green text-white px-6 py-2 text-lg cursor-pointer hover:bg-cyber-green/90 transition-colors">
@@ -112,14 +112,18 @@ export default function Index() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-cyber-blue hover:bg-cyber-blue/90 text-white px-8 py-3">
-                <Shield className="h-5 w-5 mr-2" />
-                Start Learning Securely
-              </Button>
-              <Button size="lg" variant="outline" className="border-cyber-blue text-cyber-blue hover:bg-cyber-blue hover:text-white px-8 py-3">
-                Meet Our Team
-                <ArrowRight className="h-5 w-5 ml-2" />
-              </Button>
+              <Link to="/financial-literacy">
+                <Button size="lg" className="bg-cyber-blue hover:bg-cyber-blue/90 text-white px-8 py-3">
+                  <Shield className="h-5 w-5 mr-2" />
+                  Start Learning Securely
+                </Button>
+              </Link>
+              <Link to="/team">
+                <Button size="lg" variant="outline" className="border-cyber-blue text-cyber-blue hover:bg-cyber-blue hover:text-white px-8 py-3">
+                  Meet Our Team
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -167,6 +171,65 @@ export default function Index() {
                 </Card>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Young Innovators Achievement Section */}
+      <section className="py-20 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white overflow-hidden relative">
+        {/* Animated background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white/10 rounded-full animate-pulse animation-delay-2000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/10 rounded-full animate-pulse animation-delay-4000"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-6">
+              <span className="text-6xl mr-4">🏆</span>
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-2">Young Innovators</h2>
+                <p className="text-xl opacity-90">Redefining What's Possible</p>
+              </div>
+              <span className="text-6xl ml-4">🚀</span>
+            </div>
+
+            <p className="text-2xl md:text-3xl font-bold mb-6">
+              The Future of Finance is Here - Built by 14-Year-Olds!
+            </p>
+
+            <p className="text-lg md:text-xl mb-8 max-w-4xl mx-auto opacity-90">
+              When passion meets innovation, age becomes irrelevant. Our team of young developers has created
+              a platform that rivals industry giants, proving that the next generation is ready to lead.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-2">14</div>
+                <div className="text-lg opacity-80">Average Team Age</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-2">#1</div>
+                <div className="text-lg opacity-80">Security Standards</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-2">∞</div>
+                <div className="text-lg opacity-80">Potential</div>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              <Badge className="bg-white/20 text-white px-6 py-2 text-lg backdrop-blur-sm">
+                🎯 Innovation First
+              </Badge>
+              <Badge className="bg-white/20 text-white px-6 py-2 text-lg backdrop-blur-sm">
+                💡 Fresh Perspective
+              </Badge>
+              <Badge className="bg-white/20 text-white px-6 py-2 text-lg backdrop-blur-sm">
+                🌟 Future Leaders
+              </Badge>
+            </div>
           </div>
         </div>
       </section>
