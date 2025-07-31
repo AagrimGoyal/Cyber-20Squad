@@ -5,43 +5,16 @@ import { Shield, Mail, Linkedin, Github, Trophy, Star } from "lucide-react";
 
 export default function Team() {
   const leader = {
-    name: "Alex Thompson",
-    role: "Team Leader & Chief Security Officer",
-    expertise: ["Cybersecurity Strategy", "Financial Risk Assessment", "Team Leadership"],
-    bio: "With over 10 years in cybersecurity and financial technology, Alex leads our mission to bridge the gap between digital security and financial literacy.",
-    achievements: ["CISSP Certified", "Published Researcher", "Industry Speaker"],
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+    name: "Divyansh Verma",
+    role: "Team Leader",
   };
 
   const members = [
-    {
-      name: "Sarah Chen",
-      role: "Financial Security Analyst",
-      expertise: ["Digital Banking Security", "Fraud Prevention", "Financial Education"],
-      bio: "Sarah specializes in protecting digital financial assets and educating users about secure financial practices.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b647?w=300&h=300&fit=crop&crop=face",
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "Penetration Testing Specialist",
-      expertise: ["Ethical Hacking", "Vulnerability Assessment", "Security Auditing"],
-      bio: "Marcus ensures our systems are bulletproof by thinking like the bad guys to keep the good guys safe.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-    },
-    {
-      name: "Emily Davis",
-      role: "Digital Literacy Educator",
-      expertise: ["User Education", "Content Creation", "Security Awareness"],
-      bio: "Emily creates engaging educational content that makes complex security and financial concepts accessible to everyone.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-    },
-    {
-      name: "David Kumar",
-      role: "Blockchain Security Expert",
-      expertise: ["Cryptocurrency Security", "Smart Contract Auditing", "DeFi Protection"],
-      bio: "David navigates the complex world of blockchain technology to keep digital assets secure.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-    },
+    { name: "Aagrim Goyal" },
+    { name: "Yug Tyagi" },
+    { name: "Rakshit Jain" },
+    { name: "Parth Bansal" },
+    { name: "Shreyansh" },
   ];
 
   return (
