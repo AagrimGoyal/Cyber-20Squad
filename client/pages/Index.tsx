@@ -203,7 +203,21 @@ export default function Index() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-background">
+      <section className="relative py-20 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 overflow-hidden">
+        {/* Matrix-style background */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300ff41' fill-opacity='0.1'%3E%3Cpath d='M20 20v-8h8v8h-8zm0 0v8h-8v-8h8z'/%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
+
+        {/* Glowing particles */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
+          <div className="absolute top-40 right-32 w-1 h-1 bg-cyan-400 rounded-full animate-ping animation-delay-1000"></div>
+          <div className="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping animation-delay-2000"></div>
+          <div className="absolute bottom-20 right-20 w-1 h-1 bg-emerald-400 rounded-full animate-ping animation-delay-3000"></div>
+        </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
