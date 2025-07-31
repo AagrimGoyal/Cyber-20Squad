@@ -78,18 +78,18 @@ export default function Index() {
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-6">
               <div className="relative">
-                <Shield className="h-16 w-16 text-cyber-blue" />
-                <div className="absolute -top-2 -right-2 h-6 w-6 bg-cyber-green rounded-full border-4 border-background animate-pulse"></div>
+                <Shield className="h-16 w-16 text-cyan-400 drop-shadow-lg" />
+                <div className="absolute -top-2 -right-2 h-6 w-6 bg-emerald-400 rounded-full border-4 border-white animate-pulse shadow-lg"></div>
               </div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
-              Welcome to <span className="text-cyber-blue">CyberSquad</span>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+              Welcome to <span className="text-cyan-400">CyberSquad</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
               The world's most secure financial literacy platform. Master your money while staying protected from cyber threats.
             </p>
             
