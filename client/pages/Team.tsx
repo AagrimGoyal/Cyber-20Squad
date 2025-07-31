@@ -77,7 +77,7 @@ export default function Team() {
 
           {/* Team Leader */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
+            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
               Team Leader
             </h2>
             <Card className="max-w-4xl mx-auto overflow-hidden border-accent/20 shadow-lg">
