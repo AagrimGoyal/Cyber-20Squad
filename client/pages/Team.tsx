@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Mail, Linkedin, Github, Trophy, Star } from "lucide-react";
+import { Shield, Trophy } from "lucide-react";
 
 export default function Team() {
   const leader = {
