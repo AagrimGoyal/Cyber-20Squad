@@ -94,15 +94,21 @@ export default function Index() {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <Badge className="bg-cyber-green text-white px-6 py-2 text-lg">
-                🛡️ Bank-Level Security
-              </Badge>
-              <Badge className="bg-finance-gold text-white px-6 py-2 text-lg">
-                💰 Expert Financial Education
-              </Badge>
-              <Badge className="bg-cyber-blue text-white px-6 py-2 text-lg">
-                🌍 Trusted Worldwide
-              </Badge>
+              <Link to="/security">
+                <Badge className="bg-cyber-green text-white px-6 py-2 text-lg cursor-pointer hover:bg-cyber-green/90 transition-colors">
+                  🛡️ Bank-Level Security
+                </Badge>
+              </Link>
+              <Link to="/education">
+                <Badge className="bg-finance-gold text-white px-6 py-2 text-lg cursor-pointer hover:bg-finance-gold/90 transition-colors">
+                  💰 Expert Financial Education
+                </Badge>
+              </Link>
+              <Link to="/global-trust">
+                <Badge className="bg-cyber-blue text-white px-6 py-2 text-lg cursor-pointer hover:bg-cyber-blue/90 transition-colors">
+                  🌍 Trusted Worldwide
+                </Badge>
+              </Link>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
