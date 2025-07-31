@@ -53,63 +53,16 @@ export default function Team() {
             <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
               Team Leader
             </h2>
-            <Card className="max-w-4xl mx-auto overflow-hidden border-accent/20 shadow-lg">
-              <CardContent className="p-0">
-                <div className="flex flex-col lg:flex-row">
-                  <div className="lg:w-1/3 relative">
-                    <img
-                      src={leader.image}
-                      alt={leader.name}
-                      className="w-full h-64 lg:h-full object-cover"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-cyber-blue text-white">
-                        <Trophy className="h-3 w-3 mr-1" />
-                        Leader
-                      </Badge>
-                    </div>
-                  </div>
-                  <div className="lg:w-2/3 p-8">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">{leader.name}</h3>
-                    <p className="text-cyber-blue font-semibold mb-4">{leader.role}</p>
-                    <p className="text-muted-foreground mb-6">{leader.bio}</p>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-2">Expertise</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {leader.expertise.map((skill, index) => (
-                          <Badge key={index} variant="secondary">
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-2">Achievements</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {leader.achievements.map((achievement, index) => (
-                          <Badge key={index} className="bg-cyber-green text-white">
-                            <Star className="h-3 w-3 mr-1" />
-                            {achievement}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="flex space-x-4">
-                      <a href="#" className="text-muted-foreground hover:text-cyber-blue transition-colors">
-                        <Mail className="h-5 w-5" />
-                      </a>
-                      <a href="#" className="text-muted-foreground hover:text-cyber-blue transition-colors">
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                      <a href="#" className="text-muted-foreground hover:text-cyber-blue transition-colors">
-                        <Github className="h-5 w-5" />
-                      </a>
-                    </div>
-                  </div>
+            <Card className="max-w-md mx-auto border-accent/20 shadow-lg">
+              <CardContent className="p-8 text-center">
+                <div className="mb-4">
+                  <Badge className="bg-cyber-blue text-white">
+                    <Trophy className="h-3 w-3 mr-1" />
+                    Leader
+                  </Badge>
                 </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">{leader.name}</h3>
+                <p className="text-cyber-blue font-semibold">{leader.role}</p>
               </CardContent>
             </Card>
           </div>
