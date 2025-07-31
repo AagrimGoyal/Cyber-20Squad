@@ -42,19 +42,19 @@ export default function Index() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Priya Sharma",
       role: "Small Business Owner",
       content: "CyberSquad taught me how to protect my business finances online. Their security-first approach to financial education is exactly what I needed.",
       rating: 5,
     },
     {
-      name: "Michael Chen",
+      name: "Arjun Patel",
       role: "Freelance Developer",
       content: "The combination of cybersecurity and financial literacy is brilliant. I feel much more confident managing my money online now.",
       rating: 5,
     },
     {
-      name: "Emma Rodriguez",
+      name: "Ananya Singh",
       role: "College Student",
       content: "As someone just starting their financial journey, CyberSquad's resources have been invaluable. The security tips alone have saved me from potential scams.",
       rating: 5,
