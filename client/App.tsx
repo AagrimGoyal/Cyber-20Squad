@@ -12,6 +12,9 @@ import Team from "./pages/Team";
 import FinancialLiteracy from "./pages/FinancialLiteracy";
 import CyberSecurity from "./pages/CyberSecurity";
 import Resources from "./pages/Resources";
+import Security from "./pages/Security";
+import Education from "./pages/Education";
+import GlobalTrust from "./pages/GlobalTrust";
 
 const queryClient = new QueryClient();
 
