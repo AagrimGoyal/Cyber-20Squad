@@ -291,6 +291,30 @@ export default function CyberSecurity() {
             </div>
           </div>
 
+          {/* Security Resources */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
+              Free Security Resources
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {securityResources.map((resource, index) => (
+                <Card key={index} className="border-accent/20 hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <Badge className="mb-3 bg-security-red text-white">{resource.type}</Badge>
+                    <h3 className="font-semibold text-foreground mb-2">{resource.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{resource.description}</p>
+                    <p className="text-xs text-cyber-blue mb-4">Source: {resource.provider}</p>
+                    <a href={resource.link} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm" className="w-full hover:bg-security-red hover:text-white">
+                        Download PDF
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
           {/* Emergency Response */}
           <div>
             <Card className="border-security-red/20 bg-gradient-to-r from-security-red/5 to-background">
@@ -301,7 +325,7 @@ export default function CyberSecurity() {
                     Security Incident Response
                   </h3>
                   <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                    If you suspect a security breach or have been compromised, act quickly. 
+                    If you suspect a security breach or have been compromised, act quickly.
                     Follow our emergency response guide to minimize damage and secure your accounts.
                   </p>
                   <div className="flex flex-wrap justify-center gap-4">
