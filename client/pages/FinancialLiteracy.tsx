@@ -101,16 +101,16 @@ export default function FinancialLiteracy() {
           <div className="absolute top-64 right-20 w-48 h-48 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full filter blur-xl animate-float animation-delay-3000"></div>
           <div className="absolute bottom-32 left-1/4 w-36 h-36 bg-gradient-to-br from-teal-400/20 to-emerald-500/20 rounded-full filter blur-xl animate-float animation-delay-6000"></div>
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Hero Section */}
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
-              <DollarSign className="h-12 w-12 text-finance-gold mr-4" />
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-                Financial <span className="text-finance-gold">Literacy</span>
+              <DollarSign className="h-12 w-12 text-yellow-400 mr-4 drop-shadow-lg" />
+              <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+                Financial <span className="text-yellow-400">Literacy</span>
               </h1>
             </div>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
               Master your money with security-first financial education. Learn to build wealth 
               while protecting yourself from digital threats and financial fraud.
             </p>
