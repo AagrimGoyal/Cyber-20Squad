@@ -64,12 +64,12 @@ export default function Team() {
           {/* Header */}
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
-              <Shield className="h-12 w-12 text-cyber-blue mr-4" />
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-                Meet the <span className="text-cyber-blue">CyberSquad</span>
+              <Shield className="h-12 w-12 text-cyan-400 mr-4 drop-shadow-lg" />
+              <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+                Meet the <span className="text-cyan-400">CyberSquad</span>
               </h1>
             </div>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Our elite team of cybersecurity experts and financial literacy advocates, 
               dedicated to building the world's most secure and educational platform.
             </p>
