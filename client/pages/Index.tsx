@@ -328,7 +328,7 @@ export default function Index() {
           <div className="absolute bottom-20 left-1/4 w-12 h-12 border-2 border-white/20 rotate-12 animate-bounce"></div>
           <div className="absolute bottom-32 right-1/3 w-8 h-8 bg-white/20 rounded-full animate-ping"></div>
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Secure Your Financial Future?
           </h2>
