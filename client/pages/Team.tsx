@@ -72,50 +72,16 @@ export default function Team() {
             <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
               Team Members
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {members.map((member, index) => (
-                <Card key={index} className="overflow-hidden border-accent/20 shadow-lg hover:shadow-xl transition-shadow">
-                  <CardContent className="p-0">
-                    <div className="relative">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-48 object-cover"
-                      />
-                      <div className="absolute top-4 right-4">
-                        <Badge className="bg-background/90 text-foreground">
-                          Specialist
-                        </Badge>
-                      </div>
+                <Card key={index} className="border-accent/20 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-4">
+                      <Badge className="bg-cyber-green text-white">
+                        Member
+                      </Badge>
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-foreground mb-2">{member.name}</h3>
-                      <p className="text-cyber-blue font-semibold mb-3">{member.role}</p>
-                      <p className="text-muted-foreground text-sm mb-4">{member.bio}</p>
-                      
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-foreground mb-2 text-sm">Expertise</h4>
-                        <div className="flex flex-wrap gap-1">
-                          {member.expertise.map((skill, skillIndex) => (
-                            <Badge key={skillIndex} variant="outline" className="text-xs">
-                              {skill}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="flex space-x-3">
-                        <a href="#" className="text-muted-foreground hover:text-cyber-blue transition-colors">
-                          <Mail className="h-4 w-4" />
-                        </a>
-                        <a href="#" className="text-muted-foreground hover:text-cyber-blue transition-colors">
-                          <Linkedin className="h-4 w-4" />
-                        </a>
-                        <a href="#" className="text-muted-foreground hover:text-cyber-blue transition-colors">
-                          <Github className="h-4 w-4" />
-                        </a>
-                      </div>
-                    </div>
+                    <h3 className="text-lg font-bold text-foreground">{member.name}</h3>
                   </CardContent>
                 </Card>
               ))}
