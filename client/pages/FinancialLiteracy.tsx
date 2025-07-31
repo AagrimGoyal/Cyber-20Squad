@@ -87,7 +87,20 @@ export default function FinancialLiteracy() {
 
   return (
     <Layout>
-      <div className="py-16 bg-gradient-to-br from-background via-background to-cyber-blue/5">
+      <div className="relative py-16 bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900 overflow-hidden">
+        {/* Financial background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.2'%3E%3Cpath d='M40 40c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm20 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
+
+        {/* Money-themed floating elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-32 left-16 w-40 h-40 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-full filter blur-xl animate-float"></div>
+          <div className="absolute top-64 right-20 w-48 h-48 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full filter blur-xl animate-float animation-delay-3000"></div>
+          <div className="absolute bottom-32 left-1/4 w-36 h-36 bg-gradient-to-br from-teal-400/20 to-emerald-500/20 rounded-full filter blur-xl animate-float animation-delay-6000"></div>
+        </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <div className="text-center mb-16">
