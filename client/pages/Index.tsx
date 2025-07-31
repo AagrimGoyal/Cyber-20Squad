@@ -218,13 +218,13 @@ export default function Index() {
           <div className="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping animation-delay-2000"></div>
           <div className="absolute bottom-20 right-20 w-1 h-1 bg-emerald-400 rounded-full animate-ping animation-delay-3000"></div>
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-4xl font-bold text-white mb-6">
                 Why CyberSquad is the World's Most Secure Financial Platform
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-xl text-gray-300 mb-8">
                 We don't just teach financial literacy - we teach it with security as the foundation. 
                 Every strategy, every tip, every lesson is designed with cybersecurity best practices in mind.
               </p>
@@ -331,7 +331,7 @@ export default function Index() {
           </div>
 
           <div className="mt-8 text-sm opacity-75">
-            🔒 Your data is protected with bank-level security | 🌍 Trusted globally | ⚡ Get started in under 2 minutes
+            🔒 Your data is protected with bank-level security | 🌍 Trusted globally | �� Get started in under 2 minutes
           </div>
         </div>
       </section>
