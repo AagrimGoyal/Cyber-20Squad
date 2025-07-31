@@ -93,23 +93,11 @@ export default function Team() {
             <Card className="max-w-2xl mx-auto border-accent/20">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Want to Join CyberSquad?
+                  CyberSquad Team
                 </h3>
-                <p className="text-muted-foreground mb-6">
-                  We're always looking for passionate individuals who share our mission 
-                  of making the digital world safer and more financially literate.
+                <p className="text-muted-foreground">
+                  Dedicated to building the world's most secure financial literacy platform.
                 </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <Badge className="bg-cyber-blue text-white px-4 py-2">
-                    Security Experts Welcome
-                  </Badge>
-                  <Badge className="bg-cyber-green text-white px-4 py-2">
-                    Educators Needed
-                  </Badge>
-                  <Badge className="bg-finance-gold text-white px-4 py-2">
-                    Financial Analysts
-                  </Badge>
-                </div>
               </CardContent>
             </Card>
           </div>
