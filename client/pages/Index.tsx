@@ -151,12 +151,12 @@ export default function Index() {
                   </CardHeader>
                   <CardContent className="text-center">
                     <p className="text-muted-foreground mb-6">{feature.description}</p>
-                    <Link to={feature.link}>
-                      <Button className="bg-cyber-blue hover:bg-cyber-blue/90 text-white">
+                    <Button asChild className="bg-cyber-blue hover:bg-cyber-blue/90 text-white">
+                      <Link to={feature.link}>
                         Learn More
                         <ArrowRight className="h-4 w-4 ml-2" />
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
                   </CardContent>
                 </Card>
               );
