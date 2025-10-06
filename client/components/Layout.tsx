@@ -159,6 +159,9 @@ export default function Layout({ children }: LayoutProps) {
               <p className="text-sm text-muted-foreground">
                 © 2024 CyberSquad. All rights reserved. Secure by design.
               </p>
+              <p className="text-sm text-muted-foreground">
+                Created by Aagrim Goyal
+              </p>
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <div className="h-2 w-2 bg-cyber-green rounded-full animate-pulse"></div>
