@@ -56,8 +56,18 @@ export default function Feedback() {
     toast({ title: "Feedback submitted", description: "Thank you!" });
   }
 
-  // Admin-only deletion will be enabled after connecting authentication + database
-  const isAdmin = false; // placeholder for future auth integration
+  const ADMIN_EMAILS = new Set<string>(["s.15.340@slps.one", "s.22.226@slps.one"]);
+  const [email, setEmail] = useState<string>(() => {
+    try {
+      return localStorage.getItem("cs_email") ?? "";
+    } catch {
+      return "";
+    }
+  });
+  useEffect(() => {
+    localStorage.setItem("cs_email", email);
+  }, [email]);
+  const isAdmin = ADMIN_EMAILS.has(email.trim().toLowerCase());
 
   const handleDelete = (id: string) => {
     if (!isAdmin) {
@@ -94,6 +104,26 @@ export default function Feedback() {
                     <Button type="submit" className="bg-cyber-blue hover:bg-cyber-blue/90 text-white">Submit</Button>
                   </div>
                 </form>
+              </CardContent>
+            </Card>
+
+            <Card className="mb-8">
+              <CardHeader>
+                <CardTitle className="text-lg">Manage Feedback (Admins)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-3 sm:grid-cols-[1fr_auto] items-end">
+                  <div>
+                    <label className="block text-sm font-medium mb-1">Your email</label>
+                    <Input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter admin email" />
+                    <div className="text-xs text-muted-foreground mt-1">
+                      Status: {isAdmin ? "Admin" : "Viewer"}
+                    </div>
+                  </div>
+                  <Button type="button" className="bg-cyber-blue text-white" onClick={() => { /* email is auto-saved */ }}>
+                    Save
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
