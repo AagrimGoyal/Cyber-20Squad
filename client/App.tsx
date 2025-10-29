@@ -16,6 +16,7 @@ import Security from "./pages/Security";
 import Education from "./pages/Education";
 import GlobalTrust from "./pages/GlobalTrust";
 import Feedback from "./pages/Feedback";
+import Game from "./pages/Game";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/education" element={<Education />} />
           <Route path="/global-trust" element={<GlobalTrust />} />
           <Route path="/feedback" element={<Feedback />} />
+          <Route path="/game" element={<Game />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

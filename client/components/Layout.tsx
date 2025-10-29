@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Shield, BookOpen, Users, Menu, X, DollarSign, Lock, MessageSquare } from "lucide-react";
+import { Shield, BookOpen, Users, Menu, X, DollarSign, Lock, MessageSquare, Gamepad2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface LayoutProps {
@@ -18,6 +18,7 @@ export default function Layout({ children }: LayoutProps) {
     { name: "Our Team", href: "/team", icon: Users },
     { name: "Resources", href: "/resources", icon: BookOpen },
     { name: "Feedback", href: "/feedback", icon: MessageSquare },
+    { name: "Game", href: "/game", icon: Gamepad2 },
   ];
 
   const isActive = (path: string) => location.pathname === path;
