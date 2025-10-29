@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Dice6, Coins, Shield, AlertCircle, RotateCcw } from "lucide-react";
+import { Trash2, RotateCcw, Plus, Minus } from "lucide-react";
 
 interface Player {
   id: string;
@@ -13,207 +13,229 @@ interface Player {
   money: number;
   savings: number;
   shields: number;
+  color: string;
 }
 
 interface GameEvent {
-  type: "salary" | "spend" | "save" | "cyber_event" | "shield_bonus";
+  type: "salary" | "spend" | "save" | "cyber_event" | "shield_bonus" | "none";
   description: string;
 }
 
+const PLAYER_COLORS = ["#FF6B6B", "#4ECDC4", "#FFE66D", "#95E1D3", "#F38181", "#AA96DA"];
+const BOARD_LENGTH = 20;
+const INITIAL_MONEY = 2000;
+
+const BOARD_SPACES = [
+  { name: "START", icon: "🚀", action: "none" },
+  { name: "SALARY", icon: "💼", action: "salary" },
+  { name: "SPEND", icon: "💸", action: "spend" },
+  { name: "SAVE", icon: "💰", action: "save" },
+  { name: "CYBER EVENT", icon: "⚠️", action: "cyber_event" },
+  { name: "SALARY", icon: "💼", action: "salary" },
+  { name: "SPEND", icon: "💸", action: "spend" },
+  { name: "SHIELD", icon: "🛡️", action: "shield_bonus" },
+  { name: "SAVE", icon: "💰", action: "save" },
+  { name: "CYBER EVENT", icon: "⚠️", action: "cyber_event" },
+  { name: "SALARY", icon: "💼", action: "salary" },
+  { name: "SPEND", icon: "💸", action: "spend" },
+  { name: "SAVE", icon: "💰", action: "save" },
+  { name: "CYBER EVENT", icon: "⚠️", action: "cyber_event" },
+  { name: "SALARY", icon: "💼", action: "salary" },
+  { name: "SPEND", icon: "💸", action: "spend" },
+  { name: "SHIELD", icon: "🛡️", action: "shield_bonus" },
+  { name: "SAVE", icon: "💰", action: "save" },
+  { name: "CYBER EVENT", icon: "⚠️", action: "cyber_event" },
+  { name: "FINISH", icon: "🏁", action: "none" },
+];
+
+const CYBER_RISKS = [
+  { description: "Phishing scam: Lose ₹1000", loss: 1000 },
+  { description: "OTP shared online: Lose ₹500", loss: 500 },
+  { description: "Malware download: Lose ₹800", loss: 800 },
+  { description: "Weak password hacked: Lose ₹600", loss: 600 },
+  { description: "Fake email link: Lose ₹1200", loss: 1200 },
+];
+
 export default function Game() {
   const { toast } = useToast();
-  const [gameStarted, setGameStarted] = useState(false);
-  const [playerNames, setPlayerNames] = useState(["", "", "", ""]);
+  const [setup, setSetup] = useState(true);
+  const [numPlayers, setNumPlayers] = useState(2);
+  const [playerNames, setPlayerNames] = useState(["", ""]);
   const [players, setPlayers] = useState<Player[]>([]);
   const [currentPlayerIdx, setCurrentPlayerIdx] = useState(0);
   const [diceResult, setDiceResult] = useState<number | null>(null);
-  const [lastEvent, setLastEvent] = useState<GameEvent | null>(null);
-  const [gameRounds, setGameRounds] = useState(0);
+  const [lastEvent, setLastEvent] = useState<GameEvent>({ type: "none", description: "" });
+  const [round, setRound] = useState(1);
   const [gameOver, setGameOver] = useState(false);
+  const [isRolling, setIsRolling] = useState(false);
 
-  const BOARD_LENGTH = 16;
-  const INITIAL_MONEY = 2000;
-  const START_ROUND = 0;
+  function updatePlayerCount(delta: number) {
+    const newNum = Math.max(1, Math.min(6, numPlayers + delta));
+    setNumPlayers(newNum);
+    const newNames = [...playerNames];
+    if (newNum > newNames.length) {
+      newNames.push("");
+    } else {
+      newNames.pop();
+    }
+    setPlayerNames(newNames);
+  }
 
-  const cyberRiskCards = [
-    { description: "Phishing scam: Lose ₹1000 if you clicked the link", loss: 1000 },
-    { description: "Shared OTP online: Lose ₹500 and skip next turn", loss: 500 },
-    { description: "Downloaded unsafe app: Pay ₹500 fine", loss: 500 },
-    { description: "Weak password hacked: Lose ₹800", loss: 800 },
-    { description: "Clicked malware link: Lose ₹1200", loss: 1200 },
-  ];
+  function startGame() {
+    const validNames = playerNames
+      .slice(0, numPlayers)
+      .filter((n) => n.trim());
 
-  const shieldCards = [
-    "Strong passwords protect against scams",
-    "Password Manager secures all accounts",
-    "2FA Shield prevents unauthorized access",
-    "App review check prevents app fraud",
-    "Email verification beats phishing",
-  ];
-
-  const boardSpaces = [
-    "START",
-    "SALARY",
-    "SPEND",
-    "SAVE",
-    "CYBER EVENT",
-    "SALARY",
-    "SPEND",
-    "SHIELD BONUS",
-    "SAVE",
-    "CYBER EVENT",
-    "SALARY",
-    "SPEND",
-    "SAVE",
-    "CYBER EVENT",
-    "SALARY",
-    "FINISH",
-  ];
-
-  function initializeGame() {
-    const numPlayers = playerNames.filter((n) => n.trim()).length;
-    if (numPlayers < 2) {
-      toast({ title: "Add at least 2 players" });
+    if (validNames.length < numPlayers) {
+      toast({ title: "Please enter all player names" });
       return;
     }
 
-    const newPlayers = playerNames
-      .filter((n) => n.trim())
-      .map((name, idx) => ({
-        id: `p${idx}`,
-        name,
-        position: 0,
-        money: INITIAL_MONEY,
-        savings: 0,
-        shields: 0,
-      }));
+    const newPlayers: Player[] = validNames.map((name, idx) => ({
+      id: `p${idx}`,
+      name,
+      position: 0,
+      money: INITIAL_MONEY,
+      savings: 0,
+      shields: 0,
+      color: PLAYER_COLORS[idx % PLAYER_COLORS.length],
+    }));
 
     setPlayers(newPlayers);
     setCurrentPlayerIdx(0);
-    setGameStarted(true);
-    setGameRounds(0);
+    setSetup(false);
     setGameOver(false);
-    toast({ title: "Game started!", description: `${newPlayers[0].name} goes first.` });
+    setRound(1);
+    setDiceResult(null);
+    setLastEvent({ type: "none", description: "" });
   }
 
   function rollDice() {
-    const result = Math.floor(Math.random() * 6) + 1;
-    setDiceResult(result);
+    setIsRolling(true);
+    setTimeout(() => {
+      const result = Math.floor(Math.random() * 6) + 1;
+      setDiceResult(result);
+      processMove(result);
+      setIsRolling(false);
+    }, 600);
+  }
 
-    const currentPlayer = players[currentPlayerIdx];
-    let newPosition = currentPlayer.position + result;
-    let eventType: GameEvent["type"] = "salary";
-    let description = "";
-
-    if (newPosition >= BOARD_LENGTH) {
-      newPosition = BOARD_LENGTH - 1;
-      setGameRounds((r) => r + 1);
-      if (gameRounds >= 1) {
-        setGameOver(true);
-        toast({ title: "Game Over! Calculating scores..." });
-        return;
-      }
-    }
-
-    const space = boardSpaces[newPosition];
-
+  function processMove(diceNum: number) {
     const updatedPlayers = [...players];
-    const updatedPlayer = { ...updatedPlayers[currentPlayerIdx] };
+    const player = { ...updatedPlayers[currentPlayerIdx] };
+    let newPosition = Math.min(player.position + diceNum, BOARD_LENGTH - 1);
 
-    updatedPlayer.position = newPosition;
+    player.position = newPosition;
+    const space = BOARD_SPACES[newPosition];
+    let event: GameEvent = { type: "none", description: "" };
 
-    switch (space) {
-      case "SALARY":
-        updatedPlayer.money += 1000;
-        eventType = "salary";
-        description = "💼 You earned ₹1000 salary!";
+    switch (space.action) {
+      case "salary":
+        player.money += 1000;
+        event = { type: "salary", description: "💼 Earned ₹1000 salary!" };
         break;
-
-      case "SPEND":
-        updatedPlayer.money = Math.max(0, updatedPlayer.money - 500);
-        eventType = "spend";
-        description = "💸 You spent ₹500 on necessities.";
+      case "spend":
+        player.money = Math.max(0, player.money - 500);
+        event = { type: "spend", description: "💸 Spent ₹500" };
         break;
-
-      case "SAVE":
-        const saveAmount = Math.min(500, updatedPlayer.money);
-        updatedPlayer.money -= saveAmount;
-        updatedPlayer.savings += saveAmount;
-        eventType = "save";
-        description = `💰 You saved ₹${saveAmount}.`;
+      case "save":
+        const saveAmount = Math.min(500, player.money);
+        player.money -= saveAmount;
+        player.savings += saveAmount;
+        event = { type: "save", description: `💰 Saved ₹${saveAmount}` };
         break;
-
-      case "CYBER EVENT": {
-        const card = cyberRiskCards[Math.floor(Math.random() * cyberRiskCards.length)];
-        if (updatedPlayer.shields > 0) {
-          updatedPlayer.shields -= 1;
-          eventType = "cyber_event";
-          description = `🛡️ Cyber Event blocked! ${card.description.split(":")[0]} (Shield used)`;
+      case "cyber_event": {
+        const risk = CYBER_RISKS[Math.floor(Math.random() * CYBER_RISKS.length)];
+        if (player.shields > 0) {
+          player.shields -= 1;
+          event = { type: "cyber_event", description: `🛡️ ${risk.description} (Shield blocked!)` };
         } else {
-          updatedPlayer.money = Math.max(0, updatedPlayer.money - card.loss);
-          eventType = "cyber_event";
-          description = `⚠️ ${card.description}`;
+          player.money = Math.max(0, player.money - risk.loss);
+          event = { type: "cyber_event", description: `⚠️ ${risk.description}` };
         }
         break;
       }
-
-      case "SHIELD BONUS":
-        updatedPlayer.shields += 1;
-        eventType = "shield_bonus";
-        description = "🛡️ You earned a Cyber Shield!";
+      case "shield_bonus":
+        player.shields += 1;
+        event = { type: "shield_bonus", description: "🛡️ Earned a Cyber Shield!" };
         break;
     }
 
-    updatedPlayers[currentPlayerIdx] = updatedPlayer;
+    updatedPlayers[currentPlayerIdx] = player;
     setPlayers(updatedPlayers);
-    setLastEvent({ type: eventType, description });
+    setLastEvent(event);
+
+    if (newPosition === BOARD_LENGTH - 1) {
+      if (round < 2) {
+        setTimeout(() => {
+          if (confirm("You reached FINISH! Start Round 2?")) {
+            updatedPlayers[currentPlayerIdx].position = 0;
+            setPlayers(updatedPlayers);
+            setRound(2);
+          }
+        }, 1000);
+      } else {
+        setGameOver(true);
+      }
+    }
   }
 
   function nextTurn() {
     setDiceResult(null);
-    setLastEvent(null);
+    setLastEvent({ type: "none", description: "" });
     setCurrentPlayerIdx((prev) => (prev + 1) % players.length);
   }
 
-  function calculateScore(player: Player): number {
-    return player.money + player.savings + player.shields * 200;
+  function calculateScore(p: Player): number {
+    return p.money + p.savings + p.shields * 250;
   }
 
-  function restartGame() {
-    setGameStarted(false);
-    setPlayerNames(["", "", "", ""]);
-    setPlayers([]);
-    setCurrentPlayerIdx(0);
-    setDiceResult(null);
-    setLastEvent(null);
-    setGameRounds(0);
-    setGameOver(false);
+  function endGame() {
+    setGameOver(true);
   }
 
-  if (!gameStarted) {
+  // SETUP SCREEN
+  if (setup) {
     return (
       <Layout>
-        <section className="py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-900 dark:to-indigo-900 min-h-[70vh]">
+        <section className="py-12 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen flex items-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto">
-              <Card>
+            <div className="max-w-md mx-auto">
+              <Card className="bg-card/95 backdrop-blur">
                 <CardHeader>
-                  <CardTitle className="text-3xl flex items-center gap-2">
-                    🎲 Cyber Budgeting Board Game
-                  </CardTitle>
+                  <CardTitle className="text-3xl text-center">🎲 Cyber Budgeting Game</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="bg-cyber-blue/10 p-4 rounded-lg">
-                    <h3 className="font-semibold mb-2">Game Objective</h3>
+                  <div className="bg-cyber-blue/10 p-4 rounded-lg border border-cyber-blue/30">
                     <p className="text-sm text-muted-foreground">
-                      Become the smartest digital citizen by saving money, avoiding scams, and collecting Cyber Shields!
+                      Combine budgeting with cybersecurity. Earn money, save wisely, and avoid cyber threats. The player with the highest score wins!
                     </p>
                   </div>
 
-                  <div>
-                    <h3 className="font-semibold mb-4">Enter Player Names (2-6 players)</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-semibold mb-3">Number of Players: {numPlayers}</label>
+                      <div className="flex gap-2">
+                        <Button
+                          onClick={() => updatePlayerCount(-1)}
+                          variant="outline"
+                          disabled={numPlayers <= 1}
+                        >
+                          <Minus className="h-4 w-4" />
+                        </Button>
+                        <div className="flex-1 flex items-center justify-center font-bold text-lg">{numPlayers}</div>
+                        <Button
+                          onClick={() => updatePlayerCount(1)}
+                          variant="outline"
+                          disabled={numPlayers >= 6}
+                        >
+                          <Plus className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      {playerNames.map((_, idx) => (
+                      {playerNames.slice(0, numPlayers).map((_, idx) => (
                         <Input
                           key={idx}
                           value={playerNames[idx]}
@@ -222,25 +244,19 @@ export default function Game() {
                             newNames[idx] = e.target.value;
                             setPlayerNames(newNames);
                           }}
-                          placeholder={`Player ${idx + 1}`}
+                          placeholder={`Player ${idx + 1} Name`}
+                          className="text-center"
                         />
                       ))}
                     </div>
                   </div>
 
-                  <div className="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-lg text-sm">
-                    <p className="font-semibold mb-2">How to Play:</p>
-                    <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                      <li>Start with ₹2000 and play for 2 rounds</li>
-                      <li>Roll dice and move around the board</li>
-                      <li>Land on spaces: SALARY (+₹1000), SPEND (-₹500), SAVE, CYBER EVENT, or SHIELD BONUS</li>
-                      <li>Use Cyber Shields to block Cyber Events</li>
-                      <li>Win by having the highest total score (money + savings + shields)</li>
-                    </ul>
-                  </div>
-
-                  <Button onClick={initializeGame} size="lg" className="w-full bg-cyber-green text-white hover:bg-cyber-green/90">
-                    Start Game
+                  <Button
+                    onClick={startGame}
+                    size="lg"
+                    className="w-full bg-cyber-green text-white hover:bg-cyber-green/90 font-bold text-lg"
+                  >
+                    Start Game 🚀
                   </Button>
                 </CardContent>
               </Card>
@@ -251,45 +267,59 @@ export default function Game() {
     );
   }
 
+  // GAME OVER SCREEN
   if (gameOver) {
-    const scores = players.map((p) => ({
-      ...p,
-      score: calculateScore(p),
-    }));
+    const scores = players.map((p) => ({ ...p, score: calculateScore(p) }));
     const winner = scores.reduce((max, p) => (p.score > max.score ? p : max));
 
     return (
       <Layout>
-        <section className="py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-900 dark:to-indigo-900 min-h-[70vh]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-12 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen flex items-center">
+          <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
-              <Card>
+              <Card className="bg-card/95 backdrop-blur">
                 <CardHeader>
-                  <CardTitle className="text-3xl text-center">🏆 Game Over!</CardTitle>
+                  <CardTitle className="text-4xl text-center">🏆 Game Over!</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="bg-cyber-green/10 p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-cyber-green">🎉 {winner.name}</div>
-                    <div className="text-lg text-muted-foreground">Wins with ₹{winner.score} total score!</div>
+                  <div className="bg-gradient-to-r from-yellow-500 to-amber-500 p-6 rounded-lg text-white text-center">
+                    <div className="text-5xl mb-2">🎉</div>
+                    <div className="text-2xl font-bold">{winner.name}</div>
+                    <div className="text-lg mt-1">Total Score: ₹{winner.score}</div>
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="font-semibold">Final Scores</h3>
-                    {scores.sort((a, b) => b.score - a.score).map((p, idx) => (
-                      <div key={p.id} className="flex justify-between p-3 bg-muted rounded-lg">
-                        <div className="font-medium">
-                          {idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : "  "} {p.name}
+                    {scores
+                      .sort((a, b) => b.score - a.score)
+                      .map((p, idx) => (
+                        <div
+                          key={p.id}
+                          className="flex items-center justify-between p-4 bg-muted rounded-lg border-2"
+                          style={{ borderColor: p.color + "50" }}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="text-2xl">
+                              {idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : "  "}
+                            </div>
+                            <div>
+                              <div className="font-bold">{p.name}</div>
+                              <div className="text-xs text-muted-foreground">
+                                💰 ₹{p.money} | 🏦 ₹{p.savings} | 🛡️ {p.shields}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text-xl font-bold" style={{ color: p.color }}>
+                            ₹{p.score}
+                          </div>
                         </div>
-                        <div className="text-right">
-                          <div className="text-sm">💰 ₹{p.money} | 🏦 ₹{p.savings} | 🛡️ {p.shields}</div>
-                          <div className="font-semibold text-cyber-blue">Total: ₹{p.score}</div>
-                        </div>
-                      </div>
-                    ))}
+                      ))}
                   </div>
 
-                  <Button onClick={restartGame} size="lg" className="w-full bg-cyber-blue text-white hover:bg-cyber-blue/90">
-                    <RotateCcw className="h-4 w-4 mr-2" />
+                  <Button
+                    onClick={() => window.location.reload()}
+                    size="lg"
+                    className="w-full bg-cyber-blue text-white hover:bg-cyber-blue/90 font-bold"
+                  >
                     Play Again
                   </Button>
                 </CardContent>
@@ -301,119 +331,215 @@ export default function Game() {
     );
   }
 
+  // MAIN GAME SCREEN
   const currentPlayer = players[currentPlayerIdx];
 
   return (
     <Layout>
-      <section className="py-8 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-900 dark:to-indigo-900 min-h-[90vh]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">🎲 Game Board</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="mb-6 p-4 bg-muted rounded-lg">
-                    <div className="text-sm text-muted-foreground mb-1">Current Player</div>
-                    <div className="text-2xl font-bold">{currentPlayer.name}</div>
+      <section className="py-8 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen">
+        <div className="container mx-auto px-4">
+          <div className="mb-4 flex justify-between items-center">
+            <div className="text-white">
+              <h1 className="text-3xl font-bold">🎲 Round {round} / 2</h1>
+            </div>
+            <Button onClick={endGame} variant="outline" size="sm">
+              End Game
+            </Button>
+          </div>
+
+          <div className="grid lg:grid-cols-4 gap-4">
+            {/* BOARD */}
+            <div className="lg:col-span-3">
+              <Card className="bg-card/95 backdrop-blur overflow-hidden">
+                <CardContent className="p-6">
+                  {/* 2D BOARD */}
+                  <div className="relative bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-lg aspect-square flex items-center justify-center">
+                    <svg viewBox="0 0 400 400" className="w-full h-full max-w-[400px]">
+                      {/* Board path */}
+                      <defs>
+                        <linearGradient id="boardGrad" x1="0%" y1="0%">
+                          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.1" />
+                          <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.1" />
+                        </linearGradient>
+                      </defs>
+
+                      {/* Draw spaces in a spiral/circuit */}
+                      {BOARD_SPACES.map((space, idx) => {
+                        const angle = (idx / BOARD_LENGTH) * Math.PI * 2;
+                        const radius = 160 - (idx / BOARD_LENGTH) * 30;
+                        const x = 200 + radius * Math.cos(angle);
+                        const y = 200 + radius * Math.sin(angle);
+
+                        return (
+                          <g key={idx}>
+                            <circle cx={x} cy={y} r="16" fill="white" stroke="#3b82f6" strokeWidth="2" />
+                            <text
+                              x={x}
+                              y={y}
+                              textAnchor="middle"
+                              dominantBaseline="middle"
+                              className="text-sm font-bold"
+                              fontSize="11"
+                            >
+                              {space.icon}
+                            </text>
+                          </g>
+                        );
+                      })}
+
+                      {/* Draw players */}
+                      {players.map((p, pidx) => {
+                        const space = BOARD_SPACES[p.position];
+                        const angle = (p.position / BOARD_LENGTH) * Math.PI * 2;
+                        const radius = 160 - (p.position / BOARD_LENGTH) * 30;
+                        const bx = 200 + radius * Math.cos(angle);
+                        const by = 200 + radius * Math.sin(angle);
+                        const offset = 25 * pidx;
+
+                        return (
+                          <g key={p.id}>
+                            <circle
+                              cx={bx + offset}
+                              cy={by + offset}
+                              r="12"
+                              fill={p.color}
+                              stroke="white"
+                              strokeWidth="2"
+                              opacity={pidx === currentPlayerIdx ? 1 : 0.7}
+                            />
+                            <text
+                              x={bx + offset}
+                              y={by + offset}
+                              textAnchor="middle"
+                              dominantBaseline="middle"
+                              fontSize="8"
+                              fontWeight="bold"
+                              fill="white"
+                            >
+                              {p.name[0]}
+                            </text>
+                          </g>
+                        );
+                      })}
+                    </svg>
                   </div>
 
-                  <div className="grid grid-cols-4 gap-2 mb-6">
-                    {boardSpaces.map((space, idx) => (
-                      <div
-                        key={idx}
-                        className={`p-3 rounded-lg text-xs font-semibold text-center ${
-                          currentPlayer.position === idx ? "bg-cyber-green text-white ring-2 ring-cyber-green" : "bg-card border border-border"
-                        }`}
-                      >
-                        <div className="mb-1">
-                          {space === "START" && "🚀"}
-                          {space === "SALARY" && "💼"}
-                          {space === "SPEND" && "💸"}
-                          {space === "SAVE" && "💰"}
-                          {space === "CYBER EVENT" && "⚠️"}
-                          {space === "SHIELD BONUS" && "🛡️"}
-                          {space === "FINISH" && "🏁"}
-                        </div>
-                        {space}
-                      </div>
-                    ))}
-                  </div>
-
-                  {lastEvent && (
-                    <div className={`p-4 rounded-lg mb-4 ${
-                      lastEvent.type === "cyber_event"
-                        ? "bg-red-50 dark:bg-red-900/20 border border-red-200"
-                        : lastEvent.type === "salary"
-                          ? "bg-green-50 dark:bg-green-900/20 border border-green-200"
-                          : "bg-blue-50 dark:bg-blue-900/20 border border-blue-200"
-                    }`}>
-                      <div className="font-semibold">{lastEvent.description}</div>
+                  {/* EVENT */}
+                  {lastEvent.type !== "none" && (
+                    <div
+                      className={`mt-4 p-4 rounded-lg text-center font-semibold ${
+                        lastEvent.type === "cyber_event"
+                          ? "bg-red-100 dark:bg-red-900/30 text-red-900 dark:text-red-200"
+                          : lastEvent.type === "salary"
+                            ? "bg-green-100 dark:bg-green-900/30 text-green-900 dark:text-green-200"
+                            : "bg-blue-100 dark:bg-blue-900/30 text-blue-900 dark:text-blue-200"
+                      }`}
+                    >
+                      {lastEvent.description}
                     </div>
                   )}
 
-                  <div className="flex gap-2">
-                    {diceResult === null ? (
-                      <Button onClick={rollDice} size="lg" className="flex-1 bg-cyber-blue text-white">
-                        <Dice6 className="h-5 w-5 mr-2" />
-                        Roll Dice
-                      </Button>
-                    ) : (
-                      <>
-                        <div className="flex-1 p-3 bg-muted rounded-lg text-center">
-                          <div className="text-sm text-muted-foreground">Dice Result</div>
-                          <div className="text-3xl font-bold">{diceResult}</div>
-                        </div>
-                        <Button onClick={nextTurn} size="lg" className="flex-1 bg-cyber-green text-white">
-                          Next Turn →
+                  {/* DICE */}
+                  <div className="mt-6 flex flex-col items-center gap-4">
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-2">
+                        <strong>{currentPlayer.name}</strong>'s Turn
+                      </p>
+                      {diceResult === null ? (
+                        <Button
+                          onClick={rollDice}
+                          disabled={isRolling}
+                          size="lg"
+                          className="bg-cyber-green text-white hover:bg-cyber-green/90 font-bold text-lg px-8"
+                        >
+                          🎲 Roll Dice
                         </Button>
-                      </>
-                    )}
+                      ) : (
+                        <div className="flex gap-4 justify-center items-center">
+                          <div className="relative w-20 h-20 flex items-center justify-center rounded-lg border-4 border-cyber-blue bg-white dark:bg-slate-800">
+                            <div className="grid grid-cols-3 gap-1 w-full h-full p-2">
+                              {Array.from({ length: 9 }).map((_, i) => {
+                                const dots = diceResult === 1 ? [4] : diceResult === 2 ? [0, 8] : diceResult === 3 ? [0, 4, 8] : diceResult === 4 ? [0, 2, 6, 8] : diceResult === 5 ? [0, 2, 4, 6, 8] : [0, 1, 2, 6, 7, 8];
+                                return (
+                                  <div
+                                    key={i}
+                                    className={`rounded-full ${
+                                      dots.includes(i)
+                                        ? "bg-cyber-blue"
+                                        : "bg-gray-200 dark:bg-gray-700"
+                                    }`}
+                                  />
+                                );
+                              })}
+                            </div>
+                          </div>
+                          <Button
+                            onClick={nextTurn}
+                            size="lg"
+                            className="bg-cyber-blue text-white hover:bg-cyber-blue/90 font-bold"
+                          >
+                            Next →
+                          </Button>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
 
+            {/* SIDEBAR - PLAYERS */}
             <div className="space-y-4">
-              <Card>
+              <Card className="bg-card/95 backdrop-blur">
                 <CardHeader>
-                  <CardTitle className="text-lg">Players Status</CardTitle>
+                  <CardTitle className="text-lg">Players</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
+                <CardContent className="space-y-2">
                   {players.map((p, idx) => (
-                    <div key={p.id} className={`p-3 rounded-lg border ${idx === currentPlayerIdx ? "bg-cyber-green/10 border-cyber-green" : "bg-muted border-border"}`}>
-                      <div className="font-semibold text-sm mb-2">{p.name}</div>
+                    <div
+                      key={p.id}
+                      className={`p-3 rounded-lg border-2 transition ${
+                        idx === currentPlayerIdx
+                          ? "bg-slate-100 dark:bg-slate-700 border-cyber-green"
+                          : "bg-muted border-border"
+                      }`}
+                      style={{
+                        borderColor:
+                          idx === currentPlayerIdx ? "#22c55e" : p.color + "40",
+                      }}
+                    >
+                      <div className="flex gap-2 mb-2">
+                        <div
+                          className="w-4 h-4 rounded-full"
+                          style={{ backgroundColor: p.color }}
+                        />
+                        <div className="font-bold text-sm">{p.name}</div>
+                      </div>
                       <div className="text-xs space-y-1 text-muted-foreground">
-                        <div>💵 Money: ₹{p.money}</div>
-                        <div>🏦 Savings: ₹{p.savings}</div>
-                        <div>🛡️ Shields: {p.shields}</div>
-                        <div className="font-semibold text-cyber-blue pt-1">Total: ₹{calculateScore(p)}</div>
+                        <div>💵 ₹{p.money}</div>
+                        <div>🏦 ₹{p.savings}</div>
+                        <div>🛡️ {p.shields}</div>
+                        <div className="font-bold text-cyber-blue pt-1">
+                          Total: ₹{calculateScore(p)}
+                        </div>
                       </div>
                     </div>
                   ))}
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="bg-card/95 backdrop-blur">
                 <CardHeader>
-                  <CardTitle className="text-lg">Game Info</CardTitle>
+                  <CardTitle className="text-lg">Legend</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-2 text-sm">
-                  <div>
-                    <span className="text-muted-foreground">Rounds Completed:</span>
-                    <div className="font-semibold">{gameRounds} / 2</div>
-                  </div>
-                  <div>
-                    <span className="text-muted-foreground">Current Turn:</span>
-                    <div className="font-semibold">Player {currentPlayerIdx + 1}</div>
-                  </div>
+                <CardContent className="text-xs space-y-1">
+                  <div>💼 Salary: +₹1000</div>
+                  <div>💸 Spend: -₹500</div>
+                  <div>💰 Save: +₹500 savings</div>
+                  <div>⚠️ Cyber: Risk card</div>
+                  <div>🛡️ Shield: +1 protection</div>
                 </CardContent>
               </Card>
-
-              <Button onClick={restartGame} variant="outline" className="w-full">
-                Exit Game
-              </Button>
             </div>
           </div>
         </div>
