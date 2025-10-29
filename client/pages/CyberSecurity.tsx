@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Lock, Shield, Eye, Wifi, Smartphone, Globe, AlertTriangle, CheckCircle } from "lucide-react";
+import { Lock, Shield, Eye, Wifi, Smartphone, Globe, AlertTriangle, CheckCircle, Play } from "lucide-react";
 
 export default function CyberSecurity() {
   const threats = [
@@ -98,6 +98,37 @@ export default function CyberSecurity() {
       description: "End-to-end encrypted communication apps",
       category: "Communication",
       recommendation: "Recommended",
+    },
+  ];
+
+  const videos = [
+    {
+      title: "Cybersecurity Basics",
+      description: "Introduction to fundamental cybersecurity concepts and threats",
+      youtubeId: "0QFi2pz2Zao",
+      duration: "14:22",
+      channel: "Security in a Minute",
+    },
+    {
+      title: "How to Create Strong Passwords",
+      description: "Learn the essential elements of a strong password and best practices",
+      youtubeId: "OpWeeGGqseY",
+      duration: "6:30",
+      channel: "The Cyber Guy",
+    },
+    {
+      title: "Phishing Attacks: How to Stay Safe",
+      description: "Recognize and avoid phishing scams that target your personal information",
+      youtubeId: "F_rVvj6mUvU",
+      duration: "9:15",
+      channel: "Digital Espresso",
+    },
+    {
+      title: "Two-Factor Authentication Explained",
+      description: "Understand 2FA and why it's crucial for account security",
+      youtubeId: "0diJw5jvS4M",
+      duration: "7:45",
+      channel: "Tech Insider",
     },
   ];
 
@@ -285,6 +316,53 @@ export default function CyberSecurity() {
                     </div>
                     <p className="text-muted-foreground mb-3">{tool.description}</p>
                     <Badge variant="outline">{tool.category}</Badge>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Video Learning */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
+              📺 Video Learning
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {videos.map((video, index) => (
+                <Card key={index} className="border-accent/20 overflow-hidden hover:shadow-lg transition-all">
+                  <div className="relative bg-black aspect-video flex items-center justify-center group">
+                    <img
+                      src={`https://img.youtube.com/vi/${video.youtubeId}/sddefault.jpg`}
+                      alt={video.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <a
+                      href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/60 transition"
+                    >
+                      <Play className="h-16 w-16 text-white fill-white" />
+                    </a>
+                    <span className="absolute bottom-2 right-2 bg-black/70 px-2 py-1 rounded text-white text-xs font-semibold">
+                      {video.duration}
+                    </span>
+                  </div>
+                  <CardContent className="p-4">
+                    <h3 className="font-semibold text-foreground mb-2">{video.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{video.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-cyber-blue font-medium">{video.channel}</span>
+                      <a
+                        href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button size="sm" className="bg-red-600 hover:bg-red-700 text-white">
+                          Watch on YouTube
+                        </Button>
+                      </a>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
