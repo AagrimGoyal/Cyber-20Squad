@@ -311,11 +311,11 @@ export default function Index() {
                     View Security Details
                   </Button>
                 </Link>
-                <a href="https://www.dhs.gov/sites/default/files/publications/internet-safety-checklist.pdf" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <Link to="/security-audit-report" className="inline-block">
                   <Button variant="outline" className="border-cyber-green text-cyber-green hover:bg-cyber-green hover:text-white">
                     Security Audit Report
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
 
