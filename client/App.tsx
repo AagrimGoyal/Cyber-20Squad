@@ -18,6 +18,7 @@ import GlobalTrust from "./pages/GlobalTrust";
 import Feedback from "./pages/Feedback";
 import Game from "./pages/Game";
 import Scams from "./pages/Scams";
+import SecurityAuditReport from "./pages/SecurityAuditReport";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/game" element={<Game />} />
           <Route path="/scams" element={<Scams />} />
+          <Route path="/security-audit-report" element={<SecurityAuditReport />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
