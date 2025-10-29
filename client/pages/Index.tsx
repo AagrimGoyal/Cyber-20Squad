@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { Shield, DollarSign, Lock, Users, TrendingUp, CheckCircle, ArrowRight, Globe, BookOpen, Star } from "lucide-react";
 
 export default function Index() {
@@ -102,18 +103,18 @@ export default function Index() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-cyber-blue hover:bg-cyber-blue/90 text-white px-8 py-3">
-                <Link to="/financial-literacy">
+              <Link to="/financial-literacy" className="inline-block">
+                <Button size="lg" className="bg-cyber-blue hover:bg-cyber-blue/90 text-white px-8 py-3 w-full">
                   <Shield className="h-5 w-5 mr-2" />
                   Start Learning Securely
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-cyber-blue text-cyber-blue hover:bg-cyber-blue hover:text-white px-8 py-3">
-                <Link to="/team">
+                </Button>
+              </Link>
+              <Link to="/team" className="inline-block">
+                <Button size="lg" variant="outline" className="border-cyber-blue text-cyber-blue hover:bg-cyber-blue hover:text-white px-8 py-3 w-full">
                   Meet Our Team
                   <ArrowRight className="h-5 w-5 ml-2" />
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -151,12 +152,12 @@ export default function Index() {
                   </CardHeader>
                   <CardContent className="text-center">
                     <p className="text-muted-foreground mb-6">{feature.description}</p>
-                    <Button asChild className="bg-cyber-blue hover:bg-cyber-blue/90 text-white">
-                      <Link to={feature.link}>
+                    <Link to={feature.link}>
+                      <Button className="bg-cyber-blue hover:bg-cyber-blue/90 text-white w-full">
                         Learn More
                         <ArrowRight className="h-4 w-4 ml-2" />
-                      </Link>
-                    </Button>
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               );
@@ -305,16 +306,16 @@ export default function Index() {
               </div>
 
               <div className="mt-8 flex flex-wrap gap-4">
-                <Button asChild className="bg-cyber-green hover:bg-cyber-green/90 text-white">
-                  <Link to="/security">
+                <Link to="/security" className="inline-block">
+                  <Button className="bg-cyber-green hover:bg-cyber-green/90 text-white">
                     View Security Details
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" className="border-cyber-green text-cyber-green hover:bg-cyber-green hover:text-white">
-                  <a href="https://www.dhs.gov/sites/default/files/publications/internet-safety-checklist.pdf" target="_blank" rel="noopener noreferrer">
+                  </Button>
+                </Link>
+                <a href="https://www.dhs.gov/sites/default/files/publications/internet-safety-checklist.pdf" target="_blank" rel="noopener noreferrer" className="inline-block">
+                  <Button variant="outline" className="border-cyber-green text-cyber-green hover:bg-cyber-green hover:text-white">
                     Security Audit Report
-                  </a>
-                </Button>
+                  </Button>
+                </a>
               </div>
             </div>
 
