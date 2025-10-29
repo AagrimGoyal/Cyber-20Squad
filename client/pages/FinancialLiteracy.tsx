@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { DollarSign, TrendingUp, Shield, PiggyBank, CreditCard, Building, AlertTriangle, CheckCircle } from "lucide-react";
+import { DollarSign, TrendingUp, Shield, PiggyBank, CreditCard, Building, AlertTriangle, CheckCircle, Play } from "lucide-react";
 
 export default function FinancialLiteracy() {
   const topics = [
@@ -64,6 +64,37 @@ export default function FinancialLiteracy() {
       title: "Budget Before You Spend",
       description: "Create a secure digital budget and track expenses using encrypted financial apps.",
       type: "Planning",
+    },
+  ];
+
+  const videos = [
+    {
+      title: "Personal Finance Basics",
+      description: "Learn the fundamentals of budgeting, saving, and smart spending",
+      youtubeId: "NayNfzHl1S8",
+      duration: "12:34",
+      channel: "The Financial Diet",
+    },
+    {
+      title: "Building an Emergency Fund",
+      description: "Why you need an emergency fund and how to build one",
+      youtubeId: "qPR_2pWrFz4",
+      duration: "8:45",
+      channel: "Two Cents",
+    },
+    {
+      title: "Understanding Credit Scores",
+      description: "What credit scores are and how to improve yours",
+      youtubeId: "KEDy-Zf9Jl4",
+      duration: "10:22",
+      channel: "CrunchyTales",
+    },
+    {
+      title: "Investment Basics for Beginners",
+      description: "Start your investment journey with these fundamentals",
+      youtubeId: "4qZwBsJePxY",
+      duration: "15:18",
+      channel: "Two Cents",
     },
   ];
 
@@ -252,6 +283,53 @@ export default function FinancialLiteracy() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Video Learning */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
+              📺 Video Learning
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {videos.map((video, index) => (
+                <Card key={index} className="border-accent/20 overflow-hidden hover:shadow-lg transition-all">
+                  <div className="relative bg-black aspect-video flex items-center justify-center group">
+                    <img
+                      src={`https://img.youtube.com/vi/${video.youtubeId}/sddefault.jpg`}
+                      alt={video.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <a
+                      href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/60 transition"
+                    >
+                      <Play className="h-16 w-16 text-white fill-white" />
+                    </a>
+                    <span className="absolute bottom-2 right-2 bg-black/70 px-2 py-1 rounded text-white text-xs font-semibold">
+                      {video.duration}
+                    </span>
+                  </div>
+                  <CardContent className="p-4">
+                    <h3 className="font-semibold text-foreground mb-2">{video.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{video.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-cyber-blue font-medium">{video.channel}</span>
+                      <a
+                        href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button size="sm" className="bg-red-600 hover:bg-red-700 text-white">
+                          Watch on YouTube
+                        </Button>
+                      </a>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
 
           {/* Resources */}
