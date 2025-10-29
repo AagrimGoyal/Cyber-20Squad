@@ -102,18 +102,18 @@ export default function Index() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/financial-literacy">
-                <Button size="lg" className="bg-cyber-blue hover:bg-cyber-blue/90 text-white px-8 py-3">
+              <Button asChild size="lg" className="bg-cyber-blue hover:bg-cyber-blue/90 text-white px-8 py-3">
+                <Link to="/financial-literacy">
                   <Shield className="h-5 w-5 mr-2" />
                   Start Learning Securely
-                </Button>
-              </Link>
-              <Link to="/team">
-                <Button size="lg" variant="outline" className="border-cyber-blue text-cyber-blue hover:bg-cyber-blue hover:text-white px-8 py-3">
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-cyber-blue text-cyber-blue hover:bg-cyber-blue hover:text-white px-8 py-3">
+                <Link to="/team">
                   Meet Our Team
                   <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
