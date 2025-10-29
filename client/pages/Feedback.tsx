@@ -56,7 +56,7 @@ export default function Feedback() {
     toast({ title: "Feedback submitted", description: "Thank you!" });
   }
 
-  const ADMIN_EMAILS = new Set<string>(["s.15.340@slps.one", "s.22.226@slps.one"]);
+  const ADMIN_EMAILS = new Set<string>(["aagrimgoyal16@gmail.com"]);
   const [email, setEmail] = useState<string>(() => {
     try {
       return localStorage.getItem("cs_email") ?? "";
