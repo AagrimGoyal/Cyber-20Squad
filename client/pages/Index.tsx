@@ -304,17 +304,17 @@ export default function Index() {
                 ))}
               </div>
 
-              <div className="mt-8">
-                <Link to="/security">
-                  <Button asChild className="bg-cyber-green hover:bg-cyber-green/90 text-white mr-4">
-                    <span>View Security Details</span>
-                  </Button>
-                </Link>
-                <a href="https://www.dhs.gov/sites/default/files/publications/internet-safety-checklist.pdf" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="border-cyber-green text-cyber-green hover:bg-cyber-green hover:text-white">
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Button asChild className="bg-cyber-green hover:bg-cyber-green/90 text-white">
+                  <Link to="/security">
+                    View Security Details
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="border-cyber-green text-cyber-green hover:bg-cyber-green hover:text-white">
+                  <a href="https://www.dhs.gov/sites/default/files/publications/internet-safety-checklist.pdf" target="_blank" rel="noopener noreferrer">
                     Security Audit Report
-                  </Button>
-                </a>
+                  </a>
+                </Button>
               </div>
             </div>
 
