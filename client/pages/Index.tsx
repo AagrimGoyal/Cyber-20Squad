@@ -305,12 +305,16 @@ export default function Index() {
               </div>
 
               <div className="mt-8">
-                <Button className="bg-cyber-green hover:bg-cyber-green/90 text-white mr-4">
-                  View Security Details
-                </Button>
-                <Button variant="outline" className="border-cyber-green text-cyber-green">
-                  Security Audit Report
-                </Button>
+                <Link to="/security">
+                  <Button asChild className="bg-cyber-green hover:bg-cyber-green/90 text-white mr-4">
+                    <span>View Security Details</span>
+                  </Button>
+                </Link>
+                <a href="https://www.dhs.gov/sites/default/files/publications/internet-safety-checklist.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="border-cyber-green text-cyber-green hover:bg-cyber-green hover:text-white">
+                    Security Audit Report
+                  </Button>
+                </a>
               </div>
             </div>
 
