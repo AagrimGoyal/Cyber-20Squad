@@ -261,47 +261,50 @@ export default function FinancialLiteracy() {
           </div>
 
           {/* Featured Content */}
-          <div className="mb-16">
-            <Card className="border-accent/20 bg-gradient-to-r from-cyber-blue/10 to-finance-gold/10">
-              <CardContent className="p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4">
-                      Secure Your Financial Future
-                    </h3>
-                    <p className="text-muted-foreground mb-6">
-                      Join our comprehensive course that combines financial literacy with 
-                      cybersecurity best practices. Learn to build wealth while staying 
-                      protected from digital threats.
-                    </p>
-                    <div className="space-y-2 mb-6">
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="h-5 w-5 text-cyber-green" />
-                        <span className="text-sm">12 modules covering all aspects of secure finance</span>
+          <div className="mb-20">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 via-cyan-600 to-blue-600 rounded-3xl opacity-0 group-hover:opacity-50 blur-lg transition-all duration-300"></div>
+              <Card className="relative border-2 border-gray-700 bg-gradient-to-br from-gray-900 to-gray-950 overflow-hidden">
+                <CardContent className="p-12">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                      <span className="inline-block px-4 py-2 bg-emerald-900/30 text-emerald-300 rounded-full text-sm font-semibold mb-6 border border-emerald-500/30">✨ FEATURED COURSE</span>
+                      <h3 className="text-4xl font-black text-white mb-6">
+                        Secure Your Financial Future
+                      </h3>
+                      <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                        Join our comprehensive course that combines financial literacy with cybersecurity best practices. Learn to build wealth while staying protected from digital threats.
+                      </p>
+                      <div className="space-y-4 mb-8">
+                        <div className="flex items-center space-x-4">
+                          <CheckCircle className="h-6 w-6 text-emerald-400 flex-shrink-0" />
+                          <span className="text-white font-medium">12 modules covering all aspects of secure finance</span>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                          <CheckCircle className="h-6 w-6 text-emerald-400 flex-shrink-0" />
+                          <span className="text-white font-medium">Real-world case studies and examples</span>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                          <CheckCircle className="h-6 w-6 text-emerald-400 flex-shrink-0" />
+                          <span className="text-white font-medium">Interactive tools and calculators</span>
+                        </div>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="h-5 w-5 text-cyber-green" />
-                        <span className="text-sm">Real-world case studies and examples</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="h-5 w-5 text-cyber-green" />
-                        <span className="text-sm">Interactive tools and calculators</span>
-                      </div>
+                      <Button className="bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-600 hover:to-cyan-700 text-white font-bold py-3 px-8 shadow-lg shadow-emerald-500/30 text-lg">
+                        Enroll Now
+                      </Button>
                     </div>
-                    <Button className="bg-finance-gold hover:bg-finance-gold/90 text-white">
-                      Enroll Now
-                    </Button>
+                    <div className="relative">
+                      <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-2xl opacity-50 blur-lg group-hover:opacity-75 transition-all"></div>
+                      <img
+                        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=300&fit=crop"
+                        alt="Financial Security"
+                        className="relative rounded-2xl shadow-2xl border-2 border-white/10"
+                      />
+                    </div>
                   </div>
-                  <div className="relative">
-                    <img
-                      src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=300&fit=crop"
-                      alt="Financial Security"
-                      className="rounded-lg shadow-lg"
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
           {/* Video Learning */}
