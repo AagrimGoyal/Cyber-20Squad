@@ -353,100 +353,121 @@ export default function CyberSecurity() {
           </div>
 
           {/* Video Learning */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
-              📺 Video Learning
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-2 bg-purple-900/30 text-purple-300 rounded-full text-sm font-semibold mb-4 border border-purple-500/30">📺 VIDEO LEARNING</span>
+              <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
+                Learn from Expert Videos
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {videos.map((video, index) => (
-                <Card key={index} className="border-accent/20 overflow-hidden hover:shadow-lg transition-all">
-                  <div className="relative bg-black aspect-video flex items-center justify-center group">
-                    <img
-                      src={`https://img.youtube.com/vi/${video.youtubeId}/sddefault.jpg`}
-                      alt={video.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <a
-                      href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/60 transition"
-                    >
-                      <Play className="h-16 w-16 text-white fill-white" />
-                    </a>
-                    <span className="absolute bottom-2 right-2 bg-black/70 px-2 py-1 rounded text-white text-xs font-semibold">
-                      {video.duration}
-                    </span>
-                  </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-semibold text-foreground mb-2">{video.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-3">{video.description}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-cyber-blue font-medium">{video.channel}</span>
+                <div key={index} className="group relative">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-lg"></div>
+                  <Card className="relative border-2 border-gray-700 bg-gray-900 overflow-hidden hover:shadow-2xl transition-all h-full">
+                    <div className="relative bg-black aspect-video flex items-center justify-center overflow-hidden">
+                      <img
+                        src={`https://img.youtube.com/vi/${video.youtubeId}/sddefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
                       <a
                         href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition"
                       >
-                        <Button size="sm" className="bg-red-600 hover:bg-red-700 text-white">
-                          Watch on YouTube
-                        </Button>
+                        <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-full p-6 group-hover:scale-125 transition-transform">
+                          <Play className="h-12 w-12 text-white fill-white" />
+                        </div>
                       </a>
+                      <span className="absolute bottom-3 right-3 bg-black/80 backdrop-blur px-3 py-1.5 rounded-lg text-white text-xs font-bold">
+                        ⏱️ {video.duration}
+                      </span>
                     </div>
-                  </CardContent>
-                </Card>
+                    <CardContent className="p-6">
+                      <h3 className="font-bold text-white mb-3 text-lg">{video.title}</h3>
+                      <p className="text-sm text-gray-400 mb-4 leading-relaxed">{video.description}</p>
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-700">
+                        <span className="text-xs text-purple-400 font-semibold">{video.channel}</span>
+                        <a
+                          href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button size="sm" className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold">
+                            Watch on YouTube
+                          </Button>
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               ))}
             </div>
           </div>
 
           {/* Security Resources */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
-              Free Security Resources
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-2 bg-pink-900/30 text-pink-300 rounded-full text-sm font-semibold mb-4 border border-pink-500/30">📄 FREE RESOURCES</span>
+              <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
+                Download Essential Resources
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {securityResources.map((resource, index) => (
-                <Card key={index} className="border-accent/20 hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <Badge className="mb-3 bg-security-red text-white">{resource.type}</Badge>
-                    <h3 className="font-semibold text-foreground mb-2">{resource.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-3">{resource.description}</p>
-                    <p className="text-xs text-cyber-blue mb-4">Source: {resource.provider}</p>
-                    <a href={resource.link} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" size="sm" className="w-full hover:bg-security-red hover:text-white">
-                        Download PDF
-                      </Button>
-                    </a>
-                  </CardContent>
-                </Card>
+                <div key={index} className="group relative">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-red-500 rounded-2xl opacity-0 group-hover:opacity-75 transition-all duration-300 blur-lg"></div>
+                  <Card className="relative border-2 border-gray-700 bg-gray-900 hover:shadow-2xl transition-all h-full">
+                    <CardContent className="p-6">
+                      <Badge className="mb-4 bg-gradient-to-r from-pink-500 to-red-600 text-white border-none">{resource.type}</Badge>
+                      <h3 className="font-bold text-white mb-3 text-lg">{resource.title}</h3>
+                      <p className="text-sm text-gray-400 mb-4 leading-relaxed">{resource.description}</p>
+                      <p className="text-xs text-pink-400 mb-6 font-medium">📌 Source: {resource.provider}</p>
+                      <a href={resource.link} target="_blank" rel="noopener noreferrer" className="block">
+                        <Button variant="outline" size="sm" className="w-full border-2 border-pink-500/50 text-pink-300 hover:bg-pink-500 hover:text-white hover:border-pink-500 font-bold transition-all">
+                          📥 Download PDF
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+                </div>
               ))}
             </div>
           </div>
 
           {/* Emergency Response */}
           <div>
-            <Card className="border-security-red/20 bg-gradient-to-r from-security-red/5 to-background">
-              <CardContent className="p-8">
-                <div className="text-center">
-                  <AlertTriangle className="h-16 w-16 text-security-red mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-foreground mb-4">
-                    Security Incident Response
-                  </h3>
-                  <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                    If you suspect a security breach or have been compromised, act quickly.
-                    Follow our emergency response guide to minimize damage and secure your accounts.
-                  </p>
-                  <div className="flex flex-wrap justify-center gap-4">
-                    <Button className="bg-security-red hover:bg-security-red/90 text-white">
-                      Emergency Guide
-                    </Button>
-                    <Button variant="outline" className="border-security-red text-security-red">
-                      Report Incident
-                    </Button>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-50 blur-lg transition-all duration-300"></div>
+              <Card className="relative border-2 border-red-700/50 bg-gradient-to-br from-gray-900 to-red-900/20 overflow-hidden">
+                <CardContent className="p-12">
+                  <div className="text-center">
+                    <div className="flex justify-center mb-6">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-full blur-lg opacity-50"></div>
+                        <AlertTriangle className="h-20 w-20 text-red-400 relative z-10" />
+                      </div>
+                    </div>
+                    <h3 className="text-4xl font-black text-white mb-6">
+                      Security Incident Response
+                    </h3>
+                    <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
+                      If you suspect a security breach or have been compromised, act quickly. Follow our emergency response guide to minimize damage and secure your accounts.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-4">
+                      <Button className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white font-bold py-3 px-8 shadow-lg shadow-red-500/30">
+                        Emergency Guide
+                      </Button>
+                      <Button variant="outline" className="border-2 border-red-600/50 text-red-300 hover:bg-red-600 hover:text-white font-bold py-3 px-8 transition-all">
+                        Report Incident
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
