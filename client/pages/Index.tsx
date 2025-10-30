@@ -64,56 +64,75 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-cyber-blue rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-96 h-96 bg-cyber-green rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-40 w-80 h-80 bg-finance-gold rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
+      <section className="relative py-32 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 overflow-hidden">
+        {/* Animated Background Elements - Enhanced */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl animate-blob"></div>
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-emerald-500 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-4000"></div>
         </div>
 
         {/* Cybersecurity Grid Pattern */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.5'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
         </div>
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
+          <div className="text-center max-w-5xl mx-auto">
+            <div className="flex items-center justify-center mb-8">
               <div className="relative">
-                <Shield className="h-16 w-16 text-cyan-400 drop-shadow-lg" />
-                <div className="absolute -top-2 -right-2 h-6 w-6 bg-emerald-400 rounded-full border-4 border-white animate-pulse shadow-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-xl opacity-75 animate-pulse"></div>
+                <Shield className="h-20 w-20 text-white drop-shadow-lg relative z-10" />
               </div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-              Welcome to <span className="text-cyan-400">CyberSquad</span>
+            <h1 className="text-6xl md:text-8xl font-black text-white mb-6 drop-shadow-lg leading-tight">
+              Welcome to <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">CyberSquad</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto font-light">
               The world's most secure financial literacy platform. Master your money while staying protected from cyber threats.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
               <Link to="/security">
-                <Badge className="bg-cyber-green text-white px-6 py-2 text-lg cursor-pointer hover:bg-cyber-green/90 transition-colors">
+                <Badge className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-emerald-500/50 transition-all transform hover:scale-105">
                   🛡️ Bank-Level Security
                 </Badge>
               </Link>
+              <Badge className="bg-white/10 backdrop-blur text-white px-6 py-3 text-base border border-white/20">
+                ✨ AI-Powered Learning
+              </Badge>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/financial-literacy" className="inline-block">
-                <Button size="lg" className="bg-cyber-blue hover:bg-cyber-blue/90 text-white px-8 py-3 w-full">
+                <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-3 font-bold text-lg shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all transform hover:scale-105">
                   <Shield className="h-5 w-5 mr-2" />
                   Start Learning Securely
                 </Button>
               </Link>
-              <Link to="/team" className="inline-block">
-                <Button size="lg" variant="outline" className="border-cyber-blue text-cyber-blue hover:bg-cyber-blue hover:text-white px-8 py-3 w-full">
-                  Meet Our Team
-                  <ArrowRight className="h-5 w-5 ml-2" />
+              <Link to="/game" className="inline-block">
+                <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-600 hover:to-cyan-700 text-white px-8 py-3 font-bold text-lg shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all transform hover:scale-105">
+                  <Gamepad2 className="h-5 w-5 mr-2" />
+                  Play the Game
                 </Button>
               </Link>
+            </div>
+
+            <div className="mt-12 flex items-center justify-center gap-8 text-sm text-gray-400">
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                <span>10K+ Users</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                <span>99.9% Uptime</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 bg-blue-400 rounded-full animate-pulse"></div>
+                <span>24/7 Support</span>
+              </div>
             </div>
           </div>
         </div>
