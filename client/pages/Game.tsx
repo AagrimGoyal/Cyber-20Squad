@@ -49,11 +49,16 @@ const BOARD_SPACES = [
 ];
 
 const CYBER_RISKS = [
-  { description: "Phishing scam: Lose ₹1000", loss: 1000 },
-  { description: "OTP shared online: Lose ₹500", loss: 500 },
-  { description: "Malware download: Lose ₹800", loss: 800 },
-  { description: "Weak password hacked: Lose ₹600", loss: 600 },
-  { description: "Fake email link: Lose ₹1200", loss: 1200 },
+  { description: "💌 Phishing Attack: Lost ₹1000 to fake bank email", loss: 1000 },
+  { description: "🔓 OTP Shared Online: Unauthorized access, lose ₹500", loss: 500 },
+  { description: "🦠 Malware Download: System compromised, lose ₹800", loss: 800 },
+  { description: "🔑 Weak Password Hacked: Account stolen, lose ₹600", loss: 600 },
+  { description: "🔗 Clicked Fake Link: Card details exposed, lose ₹1200", loss: 1200 },
+  { description: "👨‍💻 Tech Support Scam: Paid for fake antivirus, lose ₹700", loss: 700 },
+  { description: "💕 Romance Scam: Sent money to fake profile, lose ₹1500", loss: 1500 },
+  { description: "💼 Job Scam: Paid for training materials, lose ₹900", loss: 900 },
+  { description: "📈 Fake Investment Scheme: Lost on crypto, lose ₹2000", loss: 2000 },
+  { description: "🎁 Lottery Scam: Paid to claim prize, lose ₹1100", loss: 1100 },
 ];
 
 export default function Game() {
