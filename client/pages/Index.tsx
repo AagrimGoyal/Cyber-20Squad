@@ -298,33 +298,34 @@ export default function Index() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 overflow-hidden">
+      <section className="relative py-40 bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 overflow-hidden">
         {/* Matrix-style background */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300ff41' fill-opacity='0.1'%3E%3Cpath d='M20 20v-8h8v8h-8zm0 0v8h-8v-8h8z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300ff41' fill-opacity='0.5'%3E%3Cpath d='M20 20v-8h8v8h-8zm0 0v8h-8v-8h8z'/%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
         </div>
 
         {/* Glowing particles */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
-          <div className="absolute top-40 right-32 w-1 h-1 bg-cyan-400 rounded-full animate-ping animation-delay-1000"></div>
-          <div className="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping animation-delay-2000"></div>
-          <div className="absolute bottom-20 right-20 w-1 h-1 bg-emerald-400 rounded-full animate-ping animation-delay-3000"></div>
+          <div className="absolute top-32 left-1/4 w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+          <div className="absolute top-48 right-1/3 w-2 h-2 bg-cyan-400 rounded-full animate-pulse animation-delay-1000"></div>
+          <div className="absolute bottom-32 left-1/3 w-2 h-2 bg-blue-400 rounded-full animate-pulse animation-delay-2000"></div>
+          <div className="absolute bottom-40 right-1/4 w-2 h-2 bg-emerald-400 rounded-full animate-pulse animation-delay-3000"></div>
         </div>
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Why CyberSquad is the World's Most Secure Financial Platform
+              <span className="inline-block px-4 py-2 bg-emerald-900/30 text-emerald-300 rounded-full text-sm font-semibold mb-6 border border-emerald-500/30">🔒 SECURITY FIRST</span>
+              <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight">
+                Why CyberSquad is Different
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                We don't just teach financial literacy - we teach it with security as the foundation. 
-                Every strategy, every tip, every lesson is designed with cybersecurity best practices in mind.
+              <p className="text-lg text-gray-300 mb-10 leading-relaxed font-light">
+                We don't just teach financial literacy - we teach it with security as the foundation. Every strategy, every tip, every lesson is designed with cybersecurity best practices in mind.
               </p>
-              
-              <div className="space-y-4">
+
+              <div className="space-y-4 mb-10">
                 {[
                   "Military-grade encryption for all user data",
                   "Real-time threat monitoring and alerts",
@@ -333,35 +334,41 @@ export default function Index() {
                   "Continuous security audits and updates",
                   "24/7 incident response team"
                 ].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="h-6 w-6 text-cyber-green flex-shrink-0" />
-                    <span className="text-white font-medium">{item}</span>
+                  <div key={index} className="flex items-center space-x-4 group">
+                    <div className="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-400">
+                      <CheckCircle className="h-5 w-5 text-white" />
+                    </div>
+                    <span className="text-white font-medium group-hover:translate-x-2 transition-transform">{item}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4">
                 <Link to="/security" className="inline-block">
-                  <Button className="bg-cyber-green hover:bg-cyber-green/90 text-white">
+                  <Button className="bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-600 hover:to-cyan-700 text-white font-bold py-2 px-6 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all">
                     View Security Details
                   </Button>
                 </Link>
                 <Link to="/security-audit-report" className="inline-block">
-                  <Button variant="outline" className="border-cyber-green text-cyber-green hover:bg-cyber-green hover:text-white">
+                  <Button variant="outline" className="border-2 border-emerald-500/50 text-emerald-300 hover:bg-emerald-500 hover:text-white font-bold py-2 px-6 transition-all">
                     Security Audit Report
                   </Button>
                 </Link>
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-600 via-blue-600 to-emerald-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-300"></div>
               <img
                 src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop"
                 alt="Cybersecurity and Finance"
-                className="rounded-lg shadow-2xl"
+                className="relative rounded-3xl shadow-2xl border-2 border-white/10 hover:border-white/20 transition-all"
               />
-              <div className="absolute -top-4 -right-4 bg-cyber-green text-white p-4 rounded-lg shadow-lg">
+              <div className="absolute -top-6 -right-6 bg-gradient-to-br from-emerald-500 to-cyan-600 text-white p-6 rounded-2xl shadow-2xl shadow-emerald-500/50 transform group-hover:scale-110 transition-transform">
                 <Lock className="h-8 w-8" />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-gradient-to-br from-blue-500 to-purple-600 text-white p-5 rounded-2xl shadow-2xl shadow-blue-500/50 transform group-hover:scale-110 transition-transform">
+                <Shield className="h-8 w-8" />
               </div>
             </div>
           </div>
