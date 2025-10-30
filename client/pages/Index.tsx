@@ -194,57 +194,57 @@ export default function Index() {
       </section>
 
       {/* Young Innovators Achievement Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white overflow-hidden relative">
+      <section className="py-40 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white overflow-hidden relative">
         {/* Animated background elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white/10 rounded-full animate-pulse animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/10 rounded-full animate-pulse animation-delay-4000"></div>
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-white/10 rounded-full animate-blob filter blur-3xl"></div>
+          <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-white/20 rounded-full animate-blob animation-delay-2000 filter blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full animate-blob animation-delay-4000 filter blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-6">
-              <span className="text-6xl mr-4">🏆</span>
+          <div className="text-center max-w-5xl mx-auto">
+            <div className="flex items-center justify-center gap-6 mb-8">
+              <span className="text-7xl">🏆</span>
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-2">Young Innovators</h2>
-                <p className="text-xl opacity-90">Redefining What's Possible</p>
+                <h2 className="text-5xl md:text-6xl font-black mb-2">Young Innovators</h2>
+                <p className="text-2xl opacity-90 font-light">Redefining What's Possible</p>
               </div>
-              <span className="text-6xl ml-4">🚀</span>
+              <span className="text-7xl">🚀</span>
             </div>
 
-            <p className="text-2xl md:text-3xl font-bold mb-6">
+            <p className="text-3xl md:text-4xl font-black mb-8 leading-tight">
               The Future of Finance is Here - Built by 14-Year-Olds!
             </p>
 
-            <p className="text-lg md:text-xl mb-8 max-w-4xl mx-auto opacity-90">
+            <p className="text-lg md:text-xl mb-12 max-w-4xl mx-auto opacity-95 font-light leading-relaxed">
               When passion meets innovation, age becomes irrelevant. Our team of young developers has created
               a platform that rivals industry giants, proving that the next generation is ready to lead.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">14</div>
-                <div className="text-lg opacity-80">Average Team Age</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all transform hover:scale-105">
+                <div className="text-6xl font-black mb-3">14</div>
+                <div className="text-lg font-semibold opacity-90">Average Team Age</div>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">#1</div>
-                <div className="text-lg opacity-80">Security Standards</div>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all transform hover:scale-105">
+                <div className="text-6xl font-black mb-3">#1</div>
+                <div className="text-lg font-semibold opacity-90">Security Standards</div>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">∞</div>
-                <div className="text-lg opacity-80">Potential</div>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all transform hover:scale-105">
+                <div className="text-6xl font-black mb-3">∞</div>
+                <div className="text-lg font-semibold opacity-90">Potential</div>
               </div>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4">
-              <Badge className="bg-white/20 text-white px-6 py-2 text-lg backdrop-blur-sm">
+            <div className="flex flex-wrap justify-center gap-3">
+              <Badge className="bg-white/25 text-white px-6 py-3 text-base backdrop-blur-md border border-white/30 hover:bg-white/35 transition-all cursor-pointer">
                 🎯 Innovation First
               </Badge>
-              <Badge className="bg-white/20 text-white px-6 py-2 text-lg backdrop-blur-sm">
+              <Badge className="bg-white/25 text-white px-6 py-3 text-base backdrop-blur-md border border-white/30 hover:bg-white/35 transition-all cursor-pointer">
                 💡 Fresh Perspective
               </Badge>
-              <Badge className="bg-white/20 text-white px-6 py-2 text-lg backdrop-blur-sm">
+              <Badge className="bg-white/25 text-white px-6 py-3 text-base backdrop-blur-md border border-white/30 hover:bg-white/35 transition-all cursor-pointer">
                 🌟 Future Leaders
               </Badge>
             </div>
