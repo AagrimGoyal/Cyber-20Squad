@@ -145,42 +145,45 @@ export default function FinancialLiteracy() {
 
   return (
     <Layout>
-      <div className="relative py-16 bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900 overflow-hidden">
+      <div className="relative py-32 bg-gradient-to-br from-emerald-950 via-teal-950 to-cyan-950 overflow-hidden">
         {/* Financial background pattern */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.2'%3E%3Cpath d='M40 40c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm20 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.5'%3E%3Cpath d='M40 40c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm20 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
         </div>
 
         {/* Money-themed floating elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-32 left-16 w-40 h-40 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-full filter blur-xl animate-float"></div>
-          <div className="absolute top-64 right-20 w-48 h-48 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full filter blur-xl animate-float animation-delay-3000"></div>
-          <div className="absolute bottom-32 left-1/4 w-36 h-36 bg-gradient-to-br from-teal-400/20 to-emerald-500/20 rounded-full filter blur-xl animate-float animation-delay-6000"></div>
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-40 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Hero Section */}
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-4">
-              <DollarSign className="h-12 w-12 text-yellow-400 mr-4 drop-shadow-lg" />
-              <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-                Financial <span className="text-yellow-400">Literacy</span>
-              </h1>
+          <div className="text-center mb-20">
+            <div className="flex items-center justify-center mb-8">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-xl opacity-75 animate-pulse"></div>
+                <DollarSign className="h-20 w-20 text-white drop-shadow-lg relative z-10" />
+              </div>
             </div>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
-              Master your money with security-first financial education. Learn to build wealth 
-              while protecting yourself from digital threats and financial fraud.
+            <h1 className="text-6xl md:text-7xl font-black text-white mb-6 drop-shadow-lg leading-tight">
+              Financial <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Literacy</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+              Master your money with security-first financial education. Learn to build wealth while protecting yourself from digital threats and financial fraud.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Badge className="bg-cyber-green text-white px-4 py-2">
-                Security-First Approach
+            <div className="flex flex-wrap justify-center gap-3">
+              <Badge className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-emerald-500/50 transition-all">
+                🔒 Security-First Approach
               </Badge>
-              <Badge className="bg-cyber-blue text-white px-4 py-2">
-                Practical Strategies
+              <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-cyan-500/50 transition-all">
+                💡 Practical Strategies
               </Badge>
-              <Badge className="bg-finance-gold text-white px-4 py-2">
-                Real-World Examples
+              <Badge className="bg-gradient-to-r from-yellow-500 to-amber-600 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-yellow-500/50 transition-all">
+                📊 Real-World Examples
               </Badge>
             </div>
           </div>
