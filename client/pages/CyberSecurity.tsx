@@ -179,46 +179,49 @@ export default function CyberSecurity() {
 
   return (
     <Layout>
-      <div className="relative py-16 bg-gradient-to-br from-red-900 via-purple-900 to-pink-900 overflow-hidden">
+      <div className="relative py-32 bg-gradient-to-br from-red-950 via-purple-950 to-pink-950 overflow-hidden">
         {/* Cyber security background pattern */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ef4444' fill-opacity='0.2'%3E%3Cpath d='M50 50L25 25l25-25 25 25-25 25zm0 0l25 25-25 25-25-25 25-25z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ef4444' fill-opacity='0.5'%3E%3Cpath d='M50 50L25 25l25-25 25 25-25 25zm0 0l25 25-25 25-25-25 25-25z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
         </div>
 
         {/* Security-themed glowing elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-44 h-44 bg-gradient-to-br from-red-400/20 to-pink-500/20 rounded-full filter blur-xl animate-pulse"></div>
-          <div className="absolute top-48 right-24 w-52 h-52 bg-gradient-to-br from-purple-400/20 to-red-500/20 rounded-full filter blur-xl animate-pulse animation-delay-2000"></div>
-          <div className="absolute bottom-24 left-1/3 w-40 h-40 bg-gradient-to-br from-pink-400/20 to-purple-500/20 rounded-full filter blur-xl animate-pulse animation-delay-4000"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-red-500 to-pink-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-40 right-1/4 w-80 h-80 bg-gradient-to-br from-purple-500 to-red-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
           {/* Digital lock symbols */}
-          <div className="absolute top-40 left-1/4 text-red-300/20 text-6xl animate-float">🔒</div>
-          <div className="absolute bottom-40 right-1/4 text-purple-300/20 text-5xl animate-float animation-delay-3000">🛡️</div>
+          <div className="absolute top-40 left-1/4 text-red-300/10 text-8xl animate-float">🔒</div>
+          <div className="absolute bottom-40 right-1/4 text-purple-300/10 text-8xl animate-float animation-delay-3000">🛡️</div>
         </div>
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Hero Section */}
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-4">
-              <Lock className="h-12 w-12 text-red-400 mr-4 drop-shadow-lg" />
-              <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-                Cyber <span className="text-red-400">Security</span>
-              </h1>
+          <div className="text-center mb-20">
+            <div className="flex items-center justify-center mb-8">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-pink-500 rounded-full blur-xl opacity-75 animate-pulse"></div>
+                <Lock className="h-20 w-20 text-white drop-shadow-lg relative z-10" />
+              </div>
             </div>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
-              Protect yourself and your finances from cyber threats. Learn essential security 
-              practices to safeguard your digital life in an increasingly connected world.
+            <h1 className="text-6xl md:text-7xl font-black text-white mb-6 drop-shadow-lg leading-tight">
+              Cyber <span className="bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">Security</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+              Protect yourself and your finances from cyber threats. Learn essential security practices to safeguard your digital life in an increasingly connected world.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Badge className="bg-security-red text-white px-4 py-2">
-                Threat Prevention
+            <div className="flex flex-wrap justify-center gap-3">
+              <Badge className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-red-500/50 transition-all">
+                🚨 Threat Prevention
               </Badge>
-              <Badge className="bg-cyber-blue text-white px-4 py-2">
-                Secure Practices
+              <Badge className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                🔐 Secure Practices
               </Badge>
-              <Badge className="bg-cyber-green text-white px-4 py-2">
-                Data Protection
+              <Badge className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-blue-500/50 transition-all">
+                🛡️ Data Protection
               </Badge>
             </div>
           </div>
