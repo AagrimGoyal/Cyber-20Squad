@@ -253,34 +253,42 @@ export default function Index() {
       </section>
 
       {/* Stats Section */}
-      <section className="relative py-20 bg-gradient-to-r from-cyan-500/20 via-blue-600/20 to-emerald-500/20 overflow-hidden">
+      <section className="relative py-32 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-slate-900 dark:to-gray-900 overflow-hidden">
         {/* Floating Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float animation-delay-3000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float animation-delay-6000"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-cyan-200 to-blue-300 dark:from-cyan-900/30 dark:to-blue-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-emerald-200 to-cyan-300 dark:from-emerald-900/30 dark:to-cyan-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-3000"></div>
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <span className="inline-block px-4 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-full text-sm font-semibold mb-4">📊 BY THE NUMBERS</span>
+            <h2 className="text-5xl md:text-6xl font-black text-foreground mb-6">
               Trusted by Thousands Worldwide
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-muted-foreground font-light">
               Join a community that prioritizes both financial growth and digital security.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
-                <div key={index} className="text-center">
-                  <Icon className="h-12 w-12 text-cyber-blue mx-auto mb-4" />
-                  <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-muted-foreground font-medium">
-                    {stat.label}
+                <div key={index} className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-lg"></div>
+                  <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-8 text-center border border-gray-200 dark:border-gray-700 hover:border-transparent transition-all group-hover:shadow-2xl">
+                    <div className="flex justify-center mb-4">
+                      <div className="bg-gradient-to-br from-cyan-100 dark:from-cyan-900/30 to-blue-100 dark:to-blue-900/30 rounded-full p-4">
+                        <Icon className="h-8 w-8 text-cyan-600 dark:text-cyan-400" />
+                      </div>
+                    </div>
+                    <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent mb-3">
+                      {stat.number}
+                    </div>
+                    <div className="text-muted-foreground font-semibold">
+                      {stat.label}
+                    </div>
                   </div>
                 </div>
               );
