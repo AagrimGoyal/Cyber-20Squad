@@ -229,22 +229,32 @@ export default function FinancialLiteracy() {
           </div>
 
           {/* Quick Tips */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
-              Essential Security Tips
-            </h2>
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-2 bg-cyan-900/30 text-cyan-300 rounded-full text-sm font-semibold mb-4 border border-cyan-500/30">💡 SECURITY TIPS</span>
+              <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
+                Essential Security Tips
+              </h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {tips.map((tip, index) => {
                 const Icon = tip.icon;
                 return (
-                  <Card key={index} className="border-accent/20 text-center">
-                    <CardContent className="p-6">
-                      <Icon className="h-8 w-8 text-cyber-blue mx-auto mb-4" />
-                      <Badge variant="outline" className="mb-3">{tip.type}</Badge>
-                      <h3 className="font-semibold text-foreground mb-2">{tip.title}</h3>
-                      <p className="text-sm text-muted-foreground">{tip.description}</p>
-                    </CardContent>
-                  </Card>
+                  <div key={index} className="group relative">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-75 transition-all duration-300 blur-lg"></div>
+                    <Card className="relative border-2 border-gray-700 bg-gray-900 hover:shadow-2xl transition-all h-full">
+                      <CardContent className="p-6 text-center">
+                        <div className="mb-6">
+                          <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full p-4 w-fit mx-auto">
+                            <Icon className="h-8 w-8 text-cyan-400 group-hover:scale-110 transition-transform" />
+                          </div>
+                        </div>
+                        <Badge className="mb-4 bg-cyan-600/30 text-cyan-300 border border-cyan-500/50">{tip.type}</Badge>
+                        <h3 className="font-bold text-white mb-3 text-lg">{tip.title}</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">{tip.description}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
                 );
               })}
             </div>
