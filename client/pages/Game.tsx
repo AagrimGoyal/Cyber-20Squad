@@ -156,7 +156,7 @@ export default function Game() {
           event = { type: "cyber_event", description: `🛡️ ${risk.description} (Shield blocked!)` };
         } else {
           player.money = Math.max(0, player.money - risk.loss);
-          event = { type: "cyber_event", description: `⚠️ ${risk.description}` };
+          event = { type: "cyber_event", description: `��️ ${risk.description}` };
         }
         break;
       }
@@ -358,70 +358,89 @@ export default function Game() {
               <Card className="bg-card/95 backdrop-blur overflow-hidden">
                 <CardContent className="p-6">
                   {/* 2D BOARD */}
-                  <div className="relative bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-lg aspect-square flex items-center justify-center">
-                    <svg viewBox="0 0 400 400" className="w-full h-full max-w-[400px]">
-                      {/* Board path */}
+                  <div className="relative bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-lg flex items-center justify-center" style={{ aspectRatio: "16/9" }}>
+                    <svg viewBox="0 0 520 320" className="w-full h-full">
+                      {/* Board background */}
                       <defs>
-                        <linearGradient id="boardGrad" x1="0%" y1="0%">
-                          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.1" />
-                          <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.1" />
+                        <linearGradient id="boardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.08" />
+                          <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.08" />
                         </linearGradient>
                       </defs>
 
-                      {/* Draw spaces in a spiral/circuit */}
+                      <rect x="20" y="20" width="480" height="280" fill="url(#boardGrad)" stroke="#3b82f6" strokeWidth="3" rx="10" />
+
+                      {/* Draw spaces in rectangular path */}
                       {BOARD_SPACES.map((space, idx) => {
-                        const angle = (idx / BOARD_LENGTH) * Math.PI * 2;
-                        const radius = 160 - (idx / BOARD_LENGTH) * 30;
-                        const x = 200 + radius * Math.cos(angle);
-                        const y = 200 + radius * Math.sin(angle);
+                        let x, y;
+                        const spaceSize = 32;
+                        const spacing = 36;
+
+                        if (idx === 0) {
+                          x = 40;
+                          y = 280;
+                        } else if (idx < 6) {
+                          x = 40 + idx * spacing;
+                          y = 280;
+                        } else if (idx < 11) {
+                          x = 220;
+                          y = 280 - (idx - 5) * spacing;
+                        } else if (idx < 16) {
+                          x = 220 - (idx - 10) * spacing;
+                          y = 40;
+                        } else {
+                          x = 40;
+                          y = 40 + (idx - 15) * spacing;
+                        }
+
+                        const bgColor = space.action === "cyber_event" ? "#fca5a5" : space.action === "salary" ? "#86efac" : space.action === "save" ? "#bfdbfe" : space.action === "shield_bonus" ? "#fcd34d" : "#f3f4f6";
+                        const borderColor = space.action === "cyber_event" ? "#dc2626" : space.action === "salary" ? "#16a34a" : space.action === "save" ? "#2563eb" : space.action === "shield_bonus" ? "#ca8a04" : "#9ca3af";
 
                         return (
                           <g key={idx}>
-                            <circle cx={x} cy={y} r="16" fill="white" stroke="#3b82f6" strokeWidth="2" />
-                            <text
-                              x={x}
-                              y={y}
-                              textAnchor="middle"
-                              dominantBaseline="middle"
-                              className="text-sm font-bold"
-                              fontSize="11"
-                            >
+                            <rect x={x - spaceSize / 2} y={y - spaceSize / 2} width={spaceSize} height={spaceSize} rx="4" fill={bgColor} stroke={borderColor} strokeWidth="2" />
+                            <text x={x} y={y} textAnchor="middle" dominantBaseline="middle" fontSize="18" fontWeight="bold">
                               {space.icon}
                             </text>
+                            {idx === 0 || idx === BOARD_LENGTH - 1 ? (
+                              <text x={x} y={y + 20} textAnchor="middle" fontSize="9" fontWeight="bold" fill="#666">
+                                {space.name}
+                              </text>
+                            ) : null}
                           </g>
                         );
                       })}
 
                       {/* Draw players */}
                       {players.map((p, pidx) => {
-                        const space = BOARD_SPACES[p.position];
-                        const angle = (p.position / BOARD_LENGTH) * Math.PI * 2;
-                        const radius = 160 - (p.position / BOARD_LENGTH) * 30;
-                        const bx = 200 + radius * Math.cos(angle);
-                        const by = 200 + radius * Math.sin(angle);
-                        const offset = 25 * pidx;
+                        let x, y;
+                        const spaceSize = 32;
+                        const spacing = 36;
+
+                        if (p.position === 0) {
+                          x = 40;
+                          y = 280;
+                        } else if (p.position < 6) {
+                          x = 40 + p.position * spacing;
+                          y = 280;
+                        } else if (p.position < 11) {
+                          x = 220;
+                          y = 280 - (p.position - 5) * spacing;
+                        } else if (p.position < 16) {
+                          x = 220 - (p.position - 10) * spacing;
+                          y = 40;
+                        } else {
+                          x = 40;
+                          y = 40 + (p.position - 15) * spacing;
+                        }
+
+                        const offset = 14 * pidx;
 
                         return (
                           <g key={p.id}>
-                            <circle
-                              cx={bx + offset}
-                              cy={by + offset}
-                              r="12"
-                              fill={p.color}
-                              stroke="white"
-                              strokeWidth="2"
-                              opacity={pidx === currentPlayerIdx ? 1 : 0.7}
-                            />
-                            <text
-                              x={bx + offset}
-                              y={by + offset}
-                              textAnchor="middle"
-                              dominantBaseline="middle"
-                              fontSize="8"
-                              fontWeight="bold"
-                              fill="white"
-                            >
-                              {p.name[0]}
+                            <circle cx={x + offset - 14 * (players.length - 1) / 2} cy={y + offset - 14 * (players.length - 1) / 2} r="10" fill={p.color} stroke="white" strokeWidth="2" opacity={pidx === currentPlayerIdx ? 1 : 0.7} />
+                            <text x={x + offset - 14 * (players.length - 1) / 2} y={y + offset - 14 * (players.length - 1) / 2} textAnchor="middle" dominantBaseline="middle" fontSize="9" fontWeight="bold" fill="white">
+                              {p.name.charAt(0).toUpperCase()}
                             </text>
                           </g>
                         );
