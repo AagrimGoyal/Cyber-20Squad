@@ -320,28 +320,34 @@ export default function CyberSecurity() {
           </div>
 
           {/* Security Tools */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
-              Recommended Security Tools
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-2 bg-cyan-900/30 text-cyan-300 rounded-full text-sm font-semibold mb-4 border border-cyan-500/30">🔧 TOOLS</span>
+              <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
+                Recommended Security Tools
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {tools.map((tool, index) => (
-                <Card key={index} className="border-accent/20">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="font-semibold text-foreground">{tool.name}</h3>
-                      <Badge className={
-                        tool.recommendation === "Essential" ? "bg-security-red text-white" :
-                        tool.recommendation === "Highly Recommended" ? "bg-cyber-blue text-white" :
-                        "bg-cyber-green text-white"
-                      }>
-                        {tool.recommendation}
-                      </Badge>
-                    </div>
-                    <p className="text-muted-foreground mb-3">{tool.description}</p>
-                    <Badge variant="outline">{tool.category}</Badge>
-                  </CardContent>
-                </Card>
+                <div key={index} className="group relative">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-lg"></div>
+                  <Card className="relative border-2 border-gray-700 bg-gray-900 hover:shadow-2xl transition-all h-full">
+                    <CardContent className="p-6">
+                      <div className="flex items-start justify-between gap-4 mb-6">
+                        <h3 className="font-bold text-white text-lg">{tool.name}</h3>
+                        <Badge className={
+                          tool.recommendation === "Essential" ? "bg-gradient-to-r from-red-600 to-pink-600 text-white border-none" :
+                          tool.recommendation === "Highly Recommended" ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white border-none" :
+                          "bg-gradient-to-r from-emerald-600 to-cyan-600 text-white border-none"
+                        }>
+                          {tool.recommendation}
+                        </Badge>
+                      </div>
+                      <p className="text-gray-300 mb-4 leading-relaxed">{tool.description}</p>
+                      <Badge className="bg-gray-700/50 text-gray-300 border-0">{tool.category}</Badge>
+                    </CardContent>
+                  </Card>
+                </div>
               ))}
             </div>
           </div>
