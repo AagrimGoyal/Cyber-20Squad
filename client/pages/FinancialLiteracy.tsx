@@ -308,48 +308,56 @@ export default function FinancialLiteracy() {
           </div>
 
           {/* Video Learning */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
-              📺 Video Learning
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">📺 VIDEO LEARNING</span>
+              <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
+                Learn from Expert Videos
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {videos.map((video, index) => (
-                <Card key={index} className="border-accent/20 overflow-hidden hover:shadow-lg transition-all">
-                  <div className="relative bg-black aspect-video flex items-center justify-center group">
-                    <img
-                      src={`https://img.youtube.com/vi/${video.youtubeId}/sddefault.jpg`}
-                      alt={video.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <a
-                      href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/60 transition"
-                    >
-                      <Play className="h-16 w-16 text-white fill-white" />
-                    </a>
-                    <span className="absolute bottom-2 right-2 bg-black/70 px-2 py-1 rounded text-white text-xs font-semibold">
-                      {video.duration}
-                    </span>
-                  </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-semibold text-foreground mb-2">{video.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-3">{video.description}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-cyber-blue font-medium">{video.channel}</span>
+                <div key={index} className="group relative">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-lg"></div>
+                  <Card className="relative border-2 border-gray-700 bg-gray-900 overflow-hidden hover:shadow-2xl transition-all h-full">
+                    <div className="relative bg-black aspect-video flex items-center justify-center overflow-hidden">
+                      <img
+                        src={`https://img.youtube.com/vi/${video.youtubeId}/sddefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
                       <a
                         href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition"
                       >
-                        <Button size="sm" className="bg-red-600 hover:bg-red-700 text-white">
-                          Watch on YouTube
-                        </Button>
+                        <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-full p-6 group-hover:scale-125 transition-transform">
+                          <Play className="h-12 w-12 text-white fill-white" />
+                        </div>
                       </a>
+                      <span className="absolute bottom-3 right-3 bg-black/80 backdrop-blur px-3 py-1.5 rounded-lg text-white text-xs font-bold">
+                        ⏱️ {video.duration}
+                      </span>
                     </div>
-                  </CardContent>
-                </Card>
+                    <CardContent className="p-6">
+                      <h3 className="font-bold text-white mb-3 text-lg">{video.title}</h3>
+                      <p className="text-sm text-gray-400 mb-4 leading-relaxed">{video.description}</p>
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-700">
+                        <span className="text-xs text-cyan-400 font-semibold">{video.channel}</span>
+                        <a
+                          href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button size="sm" className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold">
+                            Watch on YouTube
+                          </Button>
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               ))}
             </div>
           </div>
