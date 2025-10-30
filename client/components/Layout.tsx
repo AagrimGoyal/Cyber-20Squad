@@ -108,67 +108,85 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900 border-t-2 border-cyan-500/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Brand */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <Shield className="h-6 w-6 text-cyber-blue" />
-                <span className="text-lg font-bold text-foreground">
-                  Cyber<span className="text-cyber-blue">Squad</span>
+            <div className="space-y-6">
+              <div className="flex items-center space-x-3">
+                <div className="relative">
+                  <Shield className="h-7 w-7 text-cyan-500" />
+                  <div className="absolute -top-1 -right-1 h-2.5 w-2.5 bg-emerald-400 rounded-full border border-gray-900"></div>
+                </div>
+                <span className="text-lg font-black text-white">
+                  Cyber<span className="text-cyan-500">Squad</span>
                 </span>
               </div>
-              <p className="text-sm text-muted-foreground">
-                Empowering digital security and financial literacy for a safer tomorrow.
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Empowering digital security and financial literacy for a safer tomorrow. Built by innovators, trusted by thousands.
               </p>
+              <div className="flex items-center space-x-3 text-sm text-gray-400">
+                <div className="h-2 w-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                <span>Always Secure</span>
+              </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><Link to="/financial-literacy" className="text-sm text-muted-foreground hover:text-foreground">Financial Literacy</Link></li>
-                <li><Link to="/cyber-security" className="text-sm text-muted-foreground hover:text-foreground">Cyber Security</Link></li>
-                <li><Link to="/team" className="text-sm text-muted-foreground hover:text-foreground">Our Team</Link></li>
-                <li><Link to="/resources" className="text-sm text-muted-foreground hover:text-foreground">Resources</Link></li>
+              <h3 className="text-sm font-bold text-white mb-6 flex items-center gap-2">
+                <div className="w-1 h-4 bg-gradient-to-b from-cyan-400 to-blue-600 rounded"></div>
+                Quick Links
+              </h3>
+              <ul className="space-y-3">
+                <li><Link to="/financial-literacy" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Financial Literacy</Link></li>
+                <li><Link to="/cyber-security" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Cyber Security</Link></li>
+                <li><Link to="/team" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Our Team</Link></li>
+                <li><Link to="/resources" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Resources</Link></li>
               </ul>
             </div>
 
             {/* Security */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground mb-4">Security</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Privacy Policy</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Security Guidelines</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Terms of Service</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Data Protection</a></li>
+              <h3 className="text-sm font-bold text-white mb-6 flex items-center gap-2">
+                <div className="w-1 h-4 bg-gradient-to-b from-emerald-400 to-cyan-600 rounded"></div>
+                Security
+              </h3>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Security Guidelines</a></li>
+                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Data Protection</a></li>
               </ul>
             </div>
 
             {/* Contact */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground mb-4">Connect</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Contact Us</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Support</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Community</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Newsletter</a></li>
+              <h3 className="text-sm font-bold text-white mb-6 flex items-center gap-2">
+                <div className="w-1 h-4 bg-gradient-to-b from-blue-400 to-purple-600 rounded"></div>
+                Connect
+              </h3>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Contact Us</a></li>
+                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Support</a></li>
+                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Community</a></li>
+                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Newsletter</a></li>
               </ul>
             </div>
           </div>
 
-          <div className="mt-8 pt-8 border-t border-border">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <p className="text-sm text-muted-foreground">
+          <div className="mt-12 pt-12 border-t border-gray-800">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+              <p className="text-sm text-gray-500">
                 © 2024 CyberSquad. All rights reserved. Secure by design.
               </p>
-              <p className="text-sm text-muted-foreground">
-                Created by Aagrim Goyal
-              </p>
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                  <div className="h-2 w-2 bg-cyber-green rounded-full animate-pulse"></div>
+              <div className="flex items-center space-x-2">
+                <span className="inline-block px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-xs font-semibold text-cyan-400">
+                  Built by Aagrim Goyal
+                </span>
+              </div>
+              <div className="flex items-center space-x-3 text-sm text-gray-400">
+                <div className="flex items-center space-x-2">
+                  <div className="h-2 w-2 bg-emerald-400 rounded-full animate-pulse"></div>
                   <span>Secure Connection</span>
                 </div>
               </div>
