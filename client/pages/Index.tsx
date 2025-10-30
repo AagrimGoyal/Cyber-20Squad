@@ -139,21 +139,27 @@ export default function Index() {
       </section>
 
       {/* Features Section */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-900 dark:to-indigo-900">
+      <section className="relative py-32 bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-900">
         {/* Geometric Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-30">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 0l100 100M100 0L0 100' stroke='%23000' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 0l100 100M100 0L0 100' stroke='%23000' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E")`,
           }}></div>
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+
+        <div className="absolute inset-0 opacity-50">
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-100 dark:bg-cyan-900/20 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-100 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <span className="inline-block px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm font-semibold mb-4">✨ OUR CORE FEATURES</span>
+            <h2 className="text-5xl md:text-6xl font-black text-foreground mb-6 leading-tight">
               Security-First Financial Education
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We believe financial literacy and cybersecurity go hand in hand. 
-              Learn to build wealth while protecting yourself from digital threats.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light">
+              We believe financial literacy and cybersecurity go hand in hand. Learn to build wealth while protecting yourself from digital threats.
             </p>
           </div>
 
@@ -161,23 +167,26 @@ export default function Index() {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="border-accent/20 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-                  <CardHeader className="text-center">
-                    <div className={`p-4 rounded-full ${feature.bgColor} w-fit mx-auto mb-4`}>
-                      <Icon className={`h-8 w-8 ${feature.color}`} />
-                    </div>
-                    <CardTitle className="text-2xl text-foreground">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-muted-foreground mb-6">{feature.description}</p>
-                    <Link to={feature.link}>
-                      <Button className="bg-cyber-blue hover:bg-cyber-blue/90 text-white w-full">
-                        Learn More
-                        <ArrowRight className="h-4 w-4 ml-2" />
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
+                <div key={index} className="group relative">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-lg"></div>
+                  <Card className="relative border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-lg hover:shadow-2xl transition-all transform group-hover:scale-105 h-full">
+                    <CardHeader className="text-center">
+                      <div className={`p-5 rounded-2xl ${feature.bgColor} w-fit mx-auto mb-6 group-hover:scale-110 transition-transform`}>
+                        <Icon className={`h-8 w-8 ${feature.color}`} />
+                      </div>
+                      <CardTitle className="text-2xl font-bold text-foreground">{feature.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-center space-y-6">
+                      <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                      <Link to={feature.link} className="block">
+                        <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white w-full font-bold py-2 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all">
+                          Learn More
+                          <ArrowRight className="h-4 w-4 ml-2" />
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
+                </div>
               );
             })}
           </div>
