@@ -189,34 +189,40 @@ export default function FinancialLiteracy() {
           </div>
 
           {/* Learning Topics */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
-              Core Learning Topics
-            </h2>
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-2 bg-emerald-900/30 text-emerald-300 rounded-full text-sm font-semibold mb-4 border border-emerald-500/30">📚 LEARNING TOPICS</span>
+              <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
+                Core Learning Topics
+              </h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {topics.map((topic, index) => {
                 const Icon = topic.icon;
                 return (
-                  <Card key={index} className="border-accent/20 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-                    <CardHeader>
-                      <div className="flex items-center justify-between mb-4">
-                        <div className={`p-3 rounded-lg ${topic.color} text-white`}>
-                          <Icon className="h-6 w-6" />
+                  <div key={index} className="group relative">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-400 via-cyan-500 to-blue-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-lg"></div>
+                    <Card className="relative border-2 border-gray-700 bg-gray-900 shadow-lg hover:shadow-2xl transition-all h-full">
+                      <CardHeader>
+                        <div className="flex items-center justify-between mb-6">
+                          <div className={`p-4 rounded-xl ${topic.color} text-white group-hover:scale-110 transition-transform`}>
+                            <Icon className="h-6 w-6" />
+                          </div>
+                          <Badge className="bg-gradient-to-r from-emerald-500 to-cyan-600 text-white border-none">{topic.level}</Badge>
                         </div>
-                        <Badge variant="outline">{topic.level}</Badge>
-                      </div>
-                      <CardTitle className="text-xl text-foreground">{topic.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground mb-4">{topic.description}</p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-muted-foreground">{topic.duration}</span>
-                        <Button size="sm" className="bg-cyber-blue hover:bg-cyber-blue/90">
-                          Start Learning
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
+                        <CardTitle className="text-2xl font-bold text-white">{topic.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-gray-300 mb-6 leading-relaxed">{topic.description}</p>
+                        <div className="flex items-center justify-between pt-4 border-t border-gray-700">
+                          <span className="text-sm text-gray-400 font-medium">⏱️ {topic.duration}</span>
+                          <Button size="sm" className="bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-600 hover:to-cyan-700 text-white font-bold shadow-lg shadow-emerald-500/30">
+                            Start Learning
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
                 );
               })}
             </div>
