@@ -296,22 +296,27 @@ export default function CyberSecurity() {
           </div>
 
           {/* Best Practices */}
-          <div className="mb-16">
-            <Card className="border-accent/20 bg-gradient-to-r from-cyber-green/10 to-cyber-blue/10">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-center text-foreground mb-8">
-                  Cybersecurity Best Practices
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {bestPractices.map((practice, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-cyber-green flex-shrink-0" />
-                      <span className="text-foreground">{practice}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <div className="mb-20">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-50 blur-lg transition-all duration-300"></div>
+              <Card className="relative border-2 border-gray-700 bg-gradient-to-br from-gray-900 to-gray-950 overflow-hidden">
+                <CardContent className="p-12">
+                  <h3 className="text-4xl font-black text-center text-white mb-12">
+                    Cybersecurity Best Practices
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {bestPractices.map((practice, index) => (
+                      <div key={index} className="flex items-start space-x-4 group/item">
+                        <div className="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 mt-1">
+                          <CheckCircle className="h-5 w-5 text-white" />
+                        </div>
+                        <span className="text-white font-medium group-hover/item:translate-x-2 transition-transform">{practice}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
           {/* Security Tools */}
