@@ -156,7 +156,7 @@ export default function Game() {
           event = { type: "cyber_event", description: `🛡️ ${risk.description} (Shield blocked!)` };
         } else {
           player.money = Math.max(0, player.money - risk.loss);
-          event = { type: "cyber_event", description: `��️ ${risk.description}` };
+          event = { type: "cyber_event", description: `⚠️ ${risk.description}` };
         }
         break;
       }
@@ -451,12 +451,14 @@ export default function Game() {
                   {/* EVENT */}
                   {lastEvent.type !== "none" && (
                     <div
-                      className={`mt-4 p-4 rounded-lg text-center font-semibold ${
+                      className={`mt-6 p-4 rounded-lg text-center font-bold text-lg border-2 ${
                         lastEvent.type === "cyber_event"
-                          ? "bg-red-100 dark:bg-red-900/30 text-red-900 dark:text-red-200"
+                          ? "bg-red-100 dark:bg-red-900/50 text-red-900 dark:text-red-100 border-red-500 shadow-lg shadow-red-500/30"
                           : lastEvent.type === "salary"
-                            ? "bg-green-100 dark:bg-green-900/30 text-green-900 dark:text-green-200"
-                            : "bg-blue-100 dark:bg-blue-900/30 text-blue-900 dark:text-blue-200"
+                            ? "bg-green-100 dark:bg-green-900/50 text-green-900 dark:text-green-100 border-green-500 shadow-lg shadow-green-500/30"
+                            : lastEvent.type === "save"
+                              ? "bg-blue-100 dark:bg-blue-900/50 text-blue-900 dark:text-blue-100 border-blue-500 shadow-lg shadow-blue-500/30"
+                              : "bg-yellow-100 dark:bg-yellow-900/50 text-yellow-900 dark:text-yellow-100 border-yellow-500 shadow-lg shadow-yellow-500/30"
                       }`}
                     >
                       {lastEvent.description}
