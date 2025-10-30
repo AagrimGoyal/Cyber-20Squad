@@ -27,17 +27,18 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b-2 border-cyan-500/20 shadow-lg shadow-cyan-500/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
-                <Shield className="h-8 w-8 text-cyber-blue" />
-                <div className="absolute -top-1 -right-1 h-3 w-3 bg-cyber-green rounded-full border-2 border-background"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-200"></div>
+                <Shield className="h-8 w-8 text-cyan-500 relative group-hover:scale-110 transition-transform" />
+                <div className="absolute -top-1 -right-1 h-3 w-3 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full border-2 border-background animate-pulse"></div>
               </div>
-              <span className="text-xl font-bold text-foreground">
-                Cyber<span className="text-cyber-blue">Squad</span>
+              <span className="text-lg font-black text-foreground group-hover:text-cyan-500 transition-colors">
+                Cyber<span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">Squad</span>
               </span>
             </Link>
 
@@ -49,10 +50,10 @@ export default function Layout({ children }: LayoutProps) {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    className={`flex items-center space-x-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
                       isActive(item.href)
-                        ? "bg-accent text-accent-foreground"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted hover:border hover:border-cyan-500/20"
                     }`}
                   >
                     <Icon className="h-4 w-4" />
@@ -66,27 +67,27 @@ export default function Layout({ children }: LayoutProps) {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden"
+              className="md:hidden hover:bg-cyan-500/20"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMenuOpen ? <X className="h-5 w-5 text-cyan-500" /> : <Menu className="h-5 w-5 text-cyan-500" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-border">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden border-t-2 border-cyan-500/20 bg-background/50 backdrop-blur">
+            <div className="px-2 pt-2 pb-4 space-y-1">
               {navigation.map((item) => {
                 const Icon = item.icon;
                 return (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                    className={`flex items-center space-x-2 px-4 py-3 rounded-lg text-base font-medium transition-all ${
                       isActive(item.href)
-                        ? "bg-accent text-accent-foreground"
+                        ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30"
                         : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
