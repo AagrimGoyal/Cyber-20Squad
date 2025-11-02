@@ -346,62 +346,53 @@ export default function Scams() {
 
           {/* Action Items */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-pink-600 rounded-lg opacity-75 group-hover:opacity-100 transition blur-lg"></div>
-              <Card className="relative bg-gradient-to-br from-red-950 to-pink-950 border-2 border-red-500/50 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-red-200 flex items-center gap-2 text-lg">
-                    <AlertTriangle className="h-6 w-6 text-red-400" />
-                    If You're Scammed
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2 text-sm text-red-100">
-                  <p>✓ Stop all communication immediately</p>
-                  <p>✓ Report to your bank/platform</p>
-                  <p>✓ File a complaint with authorities (Cybercrime cell)</p>
-                  <p>✓ Document all evidence</p>
-                  <p>✓ Monitor your accounts closely</p>
-                </CardContent>
-              </Card>
-            </div>
+            <Card className="bg-gradient-to-br from-red-100 to-pink-100 border-2 border-red-300 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-red-800 flex items-center gap-2 text-lg">
+                  <AlertTriangle className="h-6 w-6 text-red-600" />
+                  If You're Scammed
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm text-red-700">
+                <p>✓ Stop all communication immediately</p>
+                <p>✓ Report to your bank/platform</p>
+                <p>✓ File a complaint with authorities (Cybercrime cell)</p>
+                <p>✓ Document all evidence</p>
+                <p>✓ Monitor your accounts closely</p>
+              </CardContent>
+            </Card>
 
-            <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-600 to-green-600 rounded-lg opacity-75 group-hover:opacity-100 transition blur-lg"></div>
-              <Card className="relative bg-gradient-to-br from-emerald-950 to-green-950 border-2 border-emerald-500/50 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-emerald-200 flex items-center gap-2 text-lg">
-                    <Lock className="h-6 w-6 text-emerald-400" />
-                    Quick Security Checklist
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2 text-sm text-emerald-100">
-                  <p>✓ Change passwords for compromised accounts</p>
-                  <p>✓ Enable 2FA everywhere possible</p>
-                  <p>✓ Run antivirus scan</p>
-                  <p>✓ Check credit report for unauthorized accounts</p>
-                  <p>✓ Place fraud alert with credit bureaus</p>
-                </CardContent>
-              </Card>
-            </div>
+            <Card className="bg-gradient-to-br from-emerald-100 to-green-100 border-2 border-emerald-300 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-emerald-800 flex items-center gap-2 text-lg">
+                  <Lock className="h-6 w-6 text-emerald-600" />
+                  Quick Security Checklist
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm text-emerald-700">
+                <p>✓ Change passwords for compromised accounts</p>
+                <p>✓ Enable 2FA everywhere possible</p>
+                <p>✓ Run antivirus scan</p>
+                <p>✓ Check credit report for unauthorized accounts</p>
+                <p>✓ Place fraud alert with credit bureaus</p>
+              </CardContent>
+            </Card>
 
-            <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-lg opacity-75 group-hover:opacity-100 transition blur-lg"></div>
-              <Card className="relative bg-gradient-to-br from-cyan-950 to-blue-950 border-2 border-cyan-500/50 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-cyan-200 flex items-center gap-2 text-lg">
-                    <Eye className="h-6 w-6 text-cyan-400" />
-                    Report Scams To
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2 text-sm text-cyan-100">
-                  <p>📞 Cybercrime Cell India: 1930</p>
-                  <p>💻 IC3.gov (US)</p>
-                  <p>🏦 Your Bank Security Team</p>
-                  <p>🚨 Local Police (FIR)</p>
-                  <p>📱 Platform Support (if online)</p>
-                </CardContent>
-              </Card>
-            </div>
+            <Card className="bg-gradient-to-br from-cyan-100 to-blue-100 border-2 border-cyan-300 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-cyan-800 flex items-center gap-2 text-lg">
+                  <Eye className="h-6 w-6 text-cyan-600" />
+                  Report Scams To
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm text-cyan-700">
+                <p>📞 Cybercrime Cell India: 1930</p>
+                <p>💻 IC3.gov (US)</p>
+                <p>🏦 Your Bank Security Team</p>
+                <p>🚨 Local Police (FIR)</p>
+                <p>📱 Platform Support (if online)</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
