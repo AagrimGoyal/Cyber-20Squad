@@ -18,10 +18,10 @@ export default function Layout({ children }: LayoutProps) {
     { name: "Cyber Security", href: "/cyber-security", icon: Lock },
     { name: "Game", href: "/game", icon: Gamepad2 },
     { name: "Scams", href: "/scams", icon: AlertTriangle },
-    { name: "Feedback", href: "/feedback", icon: MessageSquarePlus },
     { name: "Our Team", href: "/team", icon: Users },
     { name: "FAQ", href: "/faq", icon: HelpCircle },
     { name: "Contact", href: "/contact", icon: Mail },
+    { name: "Feedback", href: "/feedback", icon: MessageSquarePlus },
   ];
 
   const isActive = (path: string) => location.pathname === path;
