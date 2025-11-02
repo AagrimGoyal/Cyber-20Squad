@@ -59,23 +59,27 @@ export default function Team() {
             </p>
           </div>
 
-          {/* Team Leader */}
+          {/* Team Leaders */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
-              Team Leader
+              Team Leaders
             </h2>
-            <Card className="max-w-md mx-auto border-accent/20 shadow-lg">
-              <CardContent className="p-8 text-center">
-                <div className="mb-4">
-                  <Badge className="bg-cyber-blue text-white">
-                    <Trophy className="h-3 w-3 mr-1" />
-                    Leader
-                  </Badge>
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">{leader.name}</h3>
-                <p className="text-cyber-blue font-semibold">{leader.role}</p>
-              </CardContent>
-            </Card>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {leaders.map((leader, index) => (
+                <Card key={index} className="border-accent/20 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-4">
+                      <Badge className="bg-cyber-blue text-white">
+                        <Trophy className="h-3 w-3 mr-1" />
+                        {leader.badge}
+                      </Badge>
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">{leader.name}</h3>
+                    <p className="text-cyber-blue font-semibold text-sm">{leader.role}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
 
           {/* Team Members */}
