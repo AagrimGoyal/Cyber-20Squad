@@ -33,15 +33,30 @@ export default function Layout({ children }: LayoutProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-200"></div>
-                <Shield className="h-8 w-8 text-cyan-500 relative group-hover:scale-110 transition-transform" />
-                <div className="absolute -top-1 -right-1 h-3 w-3 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full border-2 border-background animate-pulse"></div>
+            <Link to="/" className="flex items-center space-x-2.5 group">
+              <div className="relative w-10 h-10">
+                {/* Outer rotating ring */}
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm animate-spin-slow"></div>
+
+                {/* Main logo background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-cyan-500/50 transition-all duration-300 group-hover:scale-110">
+                  {/* Inner shield design */}
+                  <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 1C6.48 1 2 5.48 2 11v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-8c0-5.52-4.48-10-10-10zm0 18h-8v-8c0-4.42 3.58-8 8-8s8 3.58 8 8v8h-8z" />
+                    <circle cx="12" cy="11" r="2.5" fill="currentColor" />
+                  </svg>
+                </div>
+
+                {/* Pulsing dot indicator */}
+                <div className="absolute -top-1 -right-1 h-3.5 w-3.5 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full border-2 border-background animate-pulse shadow-lg shadow-emerald-400/50"></div>
               </div>
-              <span className="text-lg font-black text-foreground group-hover:text-cyan-500 transition-colors">
-                Cyber<span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">Squad</span>
-              </span>
+
+              <div className="flex flex-col leading-tight">
+                <span className="text-lg font-black text-foreground group-hover:text-cyan-500 transition-colors">
+                  Cyber<span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-400 bg-clip-text text-transparent">Squad</span>
+                </span>
+                <span className="text-xs font-semibold text-cyan-600 dark:text-cyan-400 tracking-wider">SECURE</span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
