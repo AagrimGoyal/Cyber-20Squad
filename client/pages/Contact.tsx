@@ -31,7 +31,7 @@ export default function Contact() {
       icon: Mail,
       title: "Email",
       description: "Send us a message anytime",
-      contact: "support@cybersquad.io",
+      contact: "s.22.226@slps.one",
     },
     {
       icon: Phone,
