@@ -139,10 +139,10 @@ export default function Layout({ children }: LayoutProps) {
                 Quick Links
               </h3>
               <ul className="space-y-3">
+                <li><Link to="/about" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">About Us</Link></li>
                 <li><Link to="/financial-literacy" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Financial Literacy</Link></li>
                 <li><Link to="/cyber-security" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Cyber Security</Link></li>
                 <li><Link to="/team" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Our Team</Link></li>
-                <li><Link to="/resources" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Resources</Link></li>
               </ul>
             </div>
 
