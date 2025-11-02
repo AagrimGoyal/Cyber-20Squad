@@ -85,20 +85,6 @@ export default function Team() {
           <div className="absolute bottom-20 left-1/3 w-36 h-36 bg-gradient-to-br from-emerald-400/20 to-cyan-500/20 rounded-full filter blur-xl animate-pulse animation-delay-4000"></div>
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-4">
-              <Shield className="h-12 w-12 text-cyan-400 mr-4 drop-shadow-lg" />
-              <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-                Meet the <span className="text-cyan-400">CyberSquad</span>
-              </h1>
-            </div>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-              Our elite team of cybersecurity experts and financial literacy advocates, 
-              dedicated to building the world's most secure and educational platform.
-            </p>
-          </div>
-
           {/* Team Members Carousel */}
           <div>
             <h2 className="text-4xl font-bold text-center mb-4 text-white drop-shadow-lg">
