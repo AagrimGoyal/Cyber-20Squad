@@ -99,39 +99,104 @@ export default function Team() {
             </p>
           </div>
 
-          {/* Team Members - Horizontal Layout */}
+          {/* Team Members Carousel */}
           <div>
-            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
-              Meet the CyberSquad Team
+            <h2 className="text-4xl font-bold text-center mb-4 text-white drop-shadow-lg">
+              Meet the <span className="text-cyan-400">CyberSquad</span> Team
             </h2>
-            <div className="overflow-x-auto pb-4">
-              <div className="flex gap-6 min-w-max px-4">
-                {leaders.map((leader, index) => (
-                  <Card key={`leader-${index}`} className="border-accent/20 shadow-lg hover:shadow-xl transition-shadow w-64 flex-shrink-0">
-                    <CardContent className="p-6 text-center">
-                      <div className="mb-4">
-                        <Badge className="bg-cyber-blue text-white">
-                          <Trophy className="h-3 w-3 mr-1" />
-                          {leader.badge}
-                        </Badge>
-                      </div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">{leader.name}</h3>
-                      <p className="text-cyber-blue font-semibold text-sm">{leader.role}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-                {members.map((member, index) => (
-                  <Card key={`member-${index}`} className="border-accent/20 shadow-lg hover:shadow-xl transition-shadow w-64 flex-shrink-0">
-                    <CardContent className="p-6 text-center">
-                      <div className="mb-4">
-                        <Badge className="bg-cyber-green text-white">
-                          Member
-                        </Badge>
-                      </div>
-                      <h3 className="text-lg font-bold text-foreground">{member.name}</h3>
-                    </CardContent>
-                  </Card>
-                ))}
+            <p className="text-center text-gray-300 mb-12 text-lg">
+              A team of talented individuals dedicated to building the most secure platform
+            </p>
+
+            <div className="relative max-w-7xl mx-auto">
+              {/* Carousel Container */}
+              <div className="relative">
+                {/* Team Cards Scroll Container */}
+                <div
+                  ref={scrollContainerRef}
+                  className="overflow-x-auto scrollbar-hide"
+                  style={{ scrollBehavior: "smooth" }}
+                >
+                  <div className="flex gap-8 pb-4 px-4">
+                    {allTeamMembers.map((member, index) => {
+                      const Icon = member.icon;
+                      return (
+                        <div
+                          key={index}
+                          className="flex-shrink-0 w-80 group opacity-0 animate-fade-in"
+                          style={{ animationDelay: `${index * 100}ms` }}
+                        >
+                          <Card className="border-accent/20 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 h-full bg-gradient-to-br from-gray-900 to-gray-950">
+                            <CardContent className="p-8 text-center flex flex-col h-full">
+                              {/* Avatar Section */}
+                              <div className={`mb-6 flex justify-center`}>
+                                <div className={`bg-gradient-to-br ${member.color} p-6 rounded-full shadow-lg`}>
+                                  <Icon className="h-10 w-10 text-white" />
+                                </div>
+                              </div>
+
+                              {/* Badge */}
+                              {member.badge && (
+                                <div className="mb-4">
+                                  <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white">
+                                    {member.badge}
+                                  </Badge>
+                                </div>
+                              )}
+
+                              {/* Name */}
+                              <h3 className="text-2xl font-bold text-white mb-2">
+                                {member.name}
+                              </h3>
+
+                              {/* Role */}
+                              <p className="text-cyan-400 font-semibold mb-3 text-sm">
+                                {member.role}
+                              </p>
+
+                              {/* Description */}
+                              <p className="text-gray-400 text-sm leading-relaxed flex-grow">
+                                {member.description}
+                              </p>
+                            </CardContent>
+                          </Card>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Navigation Buttons */}
+                <button
+                  onClick={() => handleScroll("left")}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-10 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                <button
+                  onClick={() => handleScroll("right")}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-10 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              </div>
+
+              {/* Team Stats */}
+              <div className="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+                <div className="text-center p-6 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-lg border border-cyan-500/30">
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">6</div>
+                  <div className="text-gray-300 font-semibold">Team Members</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 rounded-lg border border-emerald-500/30">
+                  <div className="text-3xl font-bold text-emerald-400 mb-2">3</div>
+                  <div className="text-gray-300 font-semibold">Leaders</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg border border-purple-500/30">
+                  <div className="text-3xl font-bold text-purple-400 mb-2">1</div>
+                  <div className="text-gray-300 font-semibold">Mission</div>
+                </div>
               </div>
             </div>
           </div>
