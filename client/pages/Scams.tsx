@@ -316,38 +316,29 @@ export default function Scams() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {generalProtection.map((tip, idx) => {
                 const colors = [
-                  { bg: "from-blue-950 to-cyan-950", border: "border-blue-500/50", title: "text-blue-200", text: "text-blue-100", icon: "text-blue-400" },
-                  { bg: "from-purple-950 to-violet-950", border: "border-purple-500/50", title: "text-purple-200", text: "text-purple-100", icon: "text-purple-400" },
-                  { bg: "from-orange-950 to-amber-950", border: "border-orange-500/50", title: "text-orange-200", text: "text-orange-100", icon: "text-orange-400" },
-                  { bg: "from-pink-950 to-rose-950", border: "border-pink-500/50", title: "text-pink-200", text: "text-pink-100", icon: "text-pink-400" },
-                  { bg: "from-teal-950 to-emerald-950", border: "border-teal-500/50", title: "text-teal-200", text: "text-teal-100", icon: "text-teal-400" },
-                  { bg: "from-indigo-950 to-blue-950", border: "border-indigo-500/50", title: "text-indigo-200", text: "text-indigo-100", icon: "text-indigo-400" },
-                  { bg: "from-lime-950 to-green-950", border: "border-lime-500/50", title: "text-lime-200", text: "text-lime-100", icon: "text-lime-400" },
-                  { bg: "from-red-950 to-orange-950", border: "border-red-500/50", title: "text-red-200", text: "text-red-100", icon: "text-red-400" },
+                  { bg: "from-blue-100 to-cyan-100", border: "border-blue-300", title: "text-blue-800", text: "text-blue-700", icon: "text-blue-600" },
+                  { bg: "from-purple-100 to-violet-100", border: "border-purple-300", title: "text-purple-800", text: "text-purple-700", icon: "text-purple-600" },
+                  { bg: "from-orange-100 to-amber-100", border: "border-orange-300", title: "text-orange-800", text: "text-orange-700", icon: "text-orange-600" },
+                  { bg: "from-pink-100 to-rose-100", border: "border-pink-300", title: "text-pink-800", text: "text-pink-700", icon: "text-pink-600" },
+                  { bg: "from-teal-100 to-emerald-100", border: "border-teal-300", title: "text-teal-800", text: "text-teal-700", icon: "text-teal-600" },
+                  { bg: "from-indigo-100 to-blue-100", border: "border-indigo-300", title: "text-indigo-800", text: "text-indigo-700", icon: "text-indigo-600" },
+                  { bg: "from-lime-100 to-green-100", border: "border-lime-300", title: "text-lime-800", text: "text-lime-700", icon: "text-lime-600" },
+                  { bg: "from-red-100 to-orange-100", border: "border-red-300", title: "text-red-800", text: "text-red-700", icon: "text-red-600" },
                 ];
                 const color = colors[idx];
 
                 return (
-                  <div key={idx} className="relative group">
-                    <div className={`absolute -inset-0.5 bg-gradient-to-r opacity-75 group-hover:opacity-100 transition blur-lg rounded-lg`}
-                      style={{
-                        backgroundImage: idx % 2 === 0
-                          ? `linear-gradient(135deg, rgb(59, 130, 246), rgb(34, 197, 94))`
-                          : `linear-gradient(135deg, rgb(168, 85, 247), rgb(236, 72, 153))`
-                      }}
-                    ></div>
-                    <Card className={`relative bg-gradient-to-br ${color.bg} border-2 ${color.border} shadow-lg`}>
-                      <CardHeader>
-                        <CardTitle className={`text-lg flex items-center gap-2 ${color.title}`}>
-                          <CheckCircle className={`h-5 w-5 ${color.icon} flex-shrink-0`} />
-                          {tip.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className={`text-sm ${color.text}`}>{tip.description}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
+                  <Card key={idx} className={`bg-gradient-to-br ${color.bg} border-2 ${color.border} shadow-md hover:shadow-lg transition`}>
+                    <CardHeader>
+                      <CardTitle className={`text-lg flex items-center gap-2 ${color.title}`}>
+                        <CheckCircle className={`h-5 w-5 ${color.icon} flex-shrink-0`} />
+                        {tip.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className={`text-sm ${color.text}`}>{tip.description}</p>
+                    </CardContent>
+                  </Card>
                 );
               })}
             </div>
