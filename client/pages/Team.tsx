@@ -1,32 +1,72 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Trophy } from "lucide-react";
+import { Shield, Trophy, ChevronLeft, ChevronRight, Users, Code, Briefcase } from "lucide-react";
+import { useState, useRef } from "react";
 
 export default function Team() {
-  const leaders = [
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const allTeamMembers = [
     {
       name: "Divyansh Verma",
       role: "Team Leader",
       badge: "Leader",
+      description: "Leading the CyberSquad with vision and expertise",
+      icon: Trophy,
+      color: "from-yellow-400 to-orange-500",
     },
     {
       name: "Aagrim Goyal",
       role: "Co-Leader & Creator",
       badge: "Co-Leader",
+      description: "Website creator and core architect of the platform",
+      icon: Code,
+      color: "from-blue-400 to-cyan-500",
     },
     {
       name: "Yug Tyagi",
       role: "Co-Leader",
       badge: "Co-Leader",
+      description: "Co-leading team initiatives and strategy",
+      icon: Briefcase,
+      color: "from-purple-400 to-pink-500",
+    },
+    {
+      name: "Rakshit Jain",
+      role: "Team Member",
+      description: "Contributing to core platform development",
+      icon: Users,
+      color: "from-green-400 to-emerald-500",
+    },
+    {
+      name: "Parth Bansal",
+      role: "Team Member",
+      description: "Building secure features and infrastructure",
+      icon: Users,
+      color: "from-indigo-400 to-blue-500",
+    },
+    {
+      name: "Shreyansh",
+      role: "Team Member",
+      description: "Enhancing user experience and interface design",
+      icon: Users,
+      color: "from-red-400 to-pink-500",
     },
   ];
 
-  const members = [
-    { name: "Rakshit Jain" },
-    { name: "Parth Bansal" },
-    { name: "Shreyansh" },
-  ];
+  const handleScroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 320;
+      const newPosition = direction === "left"
+        ? Math.max(0, scrollPosition - scrollAmount)
+        : scrollPosition + scrollAmount;
+
+      scrollContainerRef.current.scrollLeft = newPosition;
+      setScrollPosition(newPosition);
+    }
+  };
 
   return (
     <Layout>
