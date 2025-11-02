@@ -81,10 +81,24 @@ export default function Index() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
-            <div className="flex items-center justify-center mb-8">
+            <div className="flex items-center justify-center mb-12">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-xl opacity-75 animate-pulse"></div>
-                <Shield className="h-20 w-20 text-white drop-shadow-lg relative z-10" />
+                {/* Outer glowing ring with animation */}
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400 rounded-3xl blur-2xl opacity-75 animate-pulse scale-100"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400 rounded-3xl blur-xl opacity-50 animate-spin-slow scale-75"></div>
+
+                {/* Main shield container */}
+                <div className="relative w-32 h-32 bg-gradient-to-br from-cyan-500 via-blue-600 to-emerald-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-cyan-500/50 drop-shadow-lg">
+                  {/* Shield icon */}
+                  <div className="relative">
+                    <svg className="w-20 h-20 text-white drop-shadow-lg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 1C6.48 1 2 5.48 2 11v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-8c0-5.52-4.48-10-10-10zm0 18h-8v-8c0-4.42 3.58-8 8-8s8 3.58 8 8v8h-8z" />
+                      <circle cx="12" cy="11" r="2" fill="currentColor" opacity="0.3" />
+                      <path d="M12 7c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z" opacity="0.6" />
+                    </svg>
+                    <div className="absolute -top-2 -right-2 h-4 w-4 bg-gradient-to-r from-emerald-300 to-cyan-300 rounded-full animate-pulse shadow-lg"></div>
+                  </div>
+                </div>
               </div>
             </div>
             <h1 className="text-6xl md:text-8xl font-black text-white mb-6 drop-shadow-lg leading-tight">
