@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Shield, Users, Menu, X, DollarSign, Lock, MessageSquare, Gamepad2, AlertTriangle, Info, Mail, HelpCircle } from "lucide-react";
+import { Shield, Users, Menu, X, DollarSign, Lock, MessageSquare, Gamepad2, AlertTriangle, Info, Mail, HelpCircle, MessageSquarePlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface LayoutProps {
