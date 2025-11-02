@@ -107,25 +107,6 @@ export default function Feedback() {
               </CardContent>
             </Card>
 
-            <Card className="mb-8">
-              <CardHeader>
-                <CardTitle className="text-lg">Manage Feedback (Admins)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid gap-3 sm:grid-cols-[1fr_auto] items-end">
-                  <div>
-                    <label className="block text-sm font-medium mb-1">Your email</label>
-                    <Input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter admin email" />
-                    <div className="text-xs text-muted-foreground mt-1">
-                      Status: {isAdmin ? "Admin" : "Viewer"}
-                    </div>
-                  </div>
-                  <Button type="button" className="bg-cyber-blue text-white" onClick={() => { /* email is auto-saved */ }}>
-                    Save
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
 
             <div className="space-y-4">
               {ordered.length === 0 ? (
