@@ -11,14 +11,13 @@ import NotFound from "./pages/NotFound";
 import Team from "./pages/Team";
 import FinancialLiteracy from "./pages/FinancialLiteracy";
 import CyberSecurity from "./pages/CyberSecurity";
-import Resources from "./pages/Resources";
-import Security from "./pages/Security";
-import Education from "./pages/Education";
-import GlobalTrust from "./pages/GlobalTrust";
 import Feedback from "./pages/Feedback";
 import Game from "./pages/Game";
 import Scams from "./pages/Scams";
 import SecurityAuditReport from "./pages/SecurityAuditReport";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
@@ -30,13 +29,12 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/team" element={<Team />} />
           <Route path="/financial-literacy" element={<FinancialLiteracy />} />
           <Route path="/cyber-security" element={<CyberSecurity />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/security" element={<Security />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/global-trust" element={<GlobalTrust />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/game" element={<Game />} />
           <Route path="/scams" element={<Scams />} />
