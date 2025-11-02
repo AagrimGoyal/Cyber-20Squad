@@ -168,37 +168,7 @@ export default function Team() {
                   <ChevronRight className="h-6 w-6" />
                 </button>
               </div>
-
-              {/* Team Stats */}
-              <div className="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto">
-                <div className="text-center p-6 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-lg border border-cyan-500/30">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">6</div>
-                  <div className="text-gray-300 font-semibold">Team Members</div>
-                </div>
-                <div className="text-center p-6 bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 rounded-lg border border-emerald-500/30">
-                  <div className="text-3xl font-bold text-emerald-400 mb-2">3</div>
-                  <div className="text-gray-300 font-semibold">Leaders</div>
-                </div>
-                <div className="text-center p-6 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg border border-purple-500/30">
-                  <div className="text-3xl font-bold text-purple-400 mb-2">1</div>
-                  <div className="text-gray-300 font-semibold">Mission</div>
-                </div>
-              </div>
             </div>
-          </div>
-
-          {/* Join Us Section */}
-          <div className="mt-16 text-center">
-            <Card className="max-w-2xl mx-auto border-accent/20">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  CyberSquad Team
-                </h3>
-                <p className="text-muted-foreground">
-                  Dedicated to building the world's most secure financial literacy platform.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
