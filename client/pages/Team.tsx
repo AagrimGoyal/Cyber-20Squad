@@ -4,14 +4,25 @@ import { Badge } from "@/components/ui/badge";
 import { Shield, Trophy } from "lucide-react";
 
 export default function Team() {
-  const leader = {
-    name: "Divyansh Verma",
-    role: "Team Leader",
-  };
+  const leaders = [
+    {
+      name: "Divyansh Verma",
+      role: "Team Leader",
+      badge: "Leader",
+    },
+    {
+      name: "Aagrim Goyal",
+      role: "Co-Leader & Creator",
+      badge: "Co-Leader",
+    },
+    {
+      name: "Yug Tyagi",
+      role: "Co-Leader",
+      badge: "Co-Leader",
+    },
+  ];
 
   const members = [
-    { name: "Aagrim Goyal" },
-    { name: "Yug Tyagi" },
     { name: "Rakshit Jain" },
     { name: "Parth Bansal" },
     { name: "Shreyansh" },
