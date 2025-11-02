@@ -314,19 +314,42 @@ export default function Scams() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {generalProtection.map((tip, idx) => (
-                <Card key={idx} className="bg-cyber-blue/10 border-cyber-blue/30 hover:shadow-lg transition">
-                  <CardHeader>
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-cyber-green flex-shrink-0" />
-                      {tip.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{tip.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+              {generalProtection.map((tip, idx) => {
+                const colors = [
+                  { bg: "from-blue-950 to-cyan-950", border: "border-blue-500/50", title: "text-blue-200", text: "text-blue-100", icon: "text-blue-400" },
+                  { bg: "from-purple-950 to-violet-950", border: "border-purple-500/50", title: "text-purple-200", text: "text-purple-100", icon: "text-purple-400" },
+                  { bg: "from-orange-950 to-amber-950", border: "border-orange-500/50", title: "text-orange-200", text: "text-orange-100", icon: "text-orange-400" },
+                  { bg: "from-pink-950 to-rose-950", border: "border-pink-500/50", title: "text-pink-200", text: "text-pink-100", icon: "text-pink-400" },
+                  { bg: "from-teal-950 to-emerald-950", border: "border-teal-500/50", title: "text-teal-200", text: "text-teal-100", icon: "text-teal-400" },
+                  { bg: "from-indigo-950 to-blue-950", border: "border-indigo-500/50", title: "text-indigo-200", text: "text-indigo-100", icon: "text-indigo-400" },
+                  { bg: "from-lime-950 to-green-950", border: "border-lime-500/50", title: "text-lime-200", text: "text-lime-100", icon: "text-lime-400" },
+                  { bg: "from-red-950 to-orange-950", border: "border-red-500/50", title: "text-red-200", text: "text-red-100", icon: "text-red-400" },
+                ];
+                const color = colors[idx];
+
+                return (
+                  <div key={idx} className="relative group">
+                    <div className={`absolute -inset-0.5 bg-gradient-to-r opacity-75 group-hover:opacity-100 transition blur-lg rounded-lg`}
+                      style={{
+                        backgroundImage: idx % 2 === 0
+                          ? `linear-gradient(135deg, rgb(59, 130, 246), rgb(34, 197, 94))`
+                          : `linear-gradient(135deg, rgb(168, 85, 247), rgb(236, 72, 153))`
+                      }}
+                    ></div>
+                    <Card className={`relative bg-gradient-to-br ${color.bg} border-2 ${color.border} shadow-lg`}>
+                      <CardHeader>
+                        <CardTitle className={`text-lg flex items-center gap-2 ${color.title}`}>
+                          <CheckCircle className={`h-5 w-5 ${color.icon} flex-shrink-0`} />
+                          {tip.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className={`text-sm ${color.text}`}>{tip.description}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
