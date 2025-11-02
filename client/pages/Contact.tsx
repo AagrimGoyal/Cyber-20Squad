@@ -48,8 +48,8 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Location",
-      description: "Visit us in person",
-      contact: "Global Operations",
+      description: "Visit us online",
+      contact: "Online",
     },
   ];
 
