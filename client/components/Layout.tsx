@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Shield, BookOpen, Users, Menu, X, DollarSign, Lock, MessageSquare, Gamepad2, AlertTriangle } from "lucide-react";
+import { Shield, Users, Menu, X, DollarSign, Lock, MessageSquare, Gamepad2, AlertTriangle, Info, Mail, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface LayoutProps {
@@ -13,13 +13,14 @@ export default function Layout({ children }: LayoutProps) {
 
   const navigation = [
     { name: "Home", href: "/", icon: Shield },
+    { name: "About", href: "/about", icon: Info },
     { name: "Financial Literacy", href: "/financial-literacy", icon: DollarSign },
     { name: "Cyber Security", href: "/cyber-security", icon: Lock },
-    { name: "Our Team", href: "/team", icon: Users },
-    { name: "Resources", href: "/resources", icon: BookOpen },
-    { name: "Feedback", href: "/feedback", icon: MessageSquare },
     { name: "Game", href: "/game", icon: Gamepad2 },
     { name: "Scams", href: "/scams", icon: AlertTriangle },
+    { name: "Our Team", href: "/team", icon: Users },
+    { name: "FAQ", href: "/faq", icon: HelpCircle },
+    { name: "Contact", href: "/contact", icon: Mail },
   ];
 
   const isActive = (path: string) => location.pathname === path;
