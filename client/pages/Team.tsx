@@ -59,47 +59,40 @@ export default function Team() {
             </p>
           </div>
 
-          {/* Team Leaders */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
-              Team Leaders
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {leaders.map((leader, index) => (
-                <Card key={index} className="border-accent/20 shadow-lg hover:shadow-xl transition-shadow">
-                  <CardContent className="p-6 text-center">
-                    <div className="mb-4">
-                      <Badge className="bg-cyber-blue text-white">
-                        <Trophy className="h-3 w-3 mr-1" />
-                        {leader.badge}
-                      </Badge>
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">{leader.name}</h3>
-                    <p className="text-cyber-blue font-semibold text-sm">{leader.role}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Team Members */}
+          {/* Team Members - Horizontal Layout */}
           <div>
             <h2 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg">
-              Team Members
+              Meet the CyberSquad Team
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {members.map((member, index) => (
-                <Card key={index} className="border-accent/20 shadow-lg hover:shadow-xl transition-shadow">
-                  <CardContent className="p-6 text-center">
-                    <div className="mb-4">
-                      <Badge className="bg-cyber-green text-white">
-                        Member
-                      </Badge>
-                    </div>
-                    <h3 className="text-lg font-bold text-foreground">{member.name}</h3>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="overflow-x-auto pb-4">
+              <div className="flex gap-6 min-w-max px-4">
+                {leaders.map((leader, index) => (
+                  <Card key={`leader-${index}`} className="border-accent/20 shadow-lg hover:shadow-xl transition-shadow w-64 flex-shrink-0">
+                    <CardContent className="p-6 text-center">
+                      <div className="mb-4">
+                        <Badge className="bg-cyber-blue text-white">
+                          <Trophy className="h-3 w-3 mr-1" />
+                          {leader.badge}
+                        </Badge>
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">{leader.name}</h3>
+                      <p className="text-cyber-blue font-semibold text-sm">{leader.role}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+                {members.map((member, index) => (
+                  <Card key={`member-${index}`} className="border-accent/20 shadow-lg hover:shadow-xl transition-shadow w-64 flex-shrink-0">
+                    <CardContent className="p-6 text-center">
+                      <div className="mb-4">
+                        <Badge className="bg-cyber-green text-white">
+                          Member
+                        </Badge>
+                      </div>
+                      <h3 className="text-lg font-bold text-foreground">{member.name}</h3>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
 
