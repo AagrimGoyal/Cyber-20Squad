@@ -13,7 +13,9 @@ export default function Contact() {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -72,10 +74,14 @@ export default function Contact() {
               </div>
             </div>
             <h1 className="text-6xl md:text-7xl font-black text-white mb-6 leading-tight">
-              Get In <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Touch</span>
+              Get In{" "}
+              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                Touch
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-              Have questions or feedback? We'd love to hear from you. Reach out to us using any of the methods below.
+              Have questions or feedback? We'd love to hear from you. Reach out
+              to us using any of the methods below.
             </p>
           </div>
 
@@ -93,9 +99,15 @@ export default function Contact() {
                           <Icon className="h-8 w-8 text-emerald-400 group-hover:scale-110 transition-transform" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-2">{method.title}</h3>
-                      <p className="text-sm text-gray-400 mb-3">{method.description}</p>
-                      <p className="font-semibold text-emerald-400">{method.contact}</p>
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        {method.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 mb-3">
+                        {method.description}
+                      </p>
+                      <p className="font-semibold text-emerald-400">
+                        {method.contact}
+                      </p>
                     </CardContent>
                   </Card>
                 </div>
@@ -109,14 +121,20 @@ export default function Contact() {
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-3xl opacity-0 group-hover:opacity-50 blur-lg transition-all duration-300"></div>
               <Card className="relative border-2 border-gray-700 bg-gradient-to-br from-gray-900 to-gray-950">
                 <CardHeader className="p-8">
-                  <CardTitle className="text-3xl font-black text-white">Send us a Message</CardTitle>
-                  <p className="text-gray-400 mt-2">We'll respond within 24 hours</p>
+                  <CardTitle className="text-3xl font-black text-white">
+                    Send us a Message
+                  </CardTitle>
+                  <p className="text-gray-400 mt-2">
+                    We'll respond within 24 hours
+                  </p>
                 </CardHeader>
                 <CardContent className="p-8 pt-0">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-white font-semibold mb-3">Full Name</label>
+                        <label className="block text-white font-semibold mb-3">
+                          Full Name
+                        </label>
                         <Input
                           type="text"
                           name="name"
@@ -128,7 +146,9 @@ export default function Contact() {
                         />
                       </div>
                       <div>
-                        <label className="block text-white font-semibold mb-3">Email Address</label>
+                        <label className="block text-white font-semibold mb-3">
+                          Email Address
+                        </label>
                         <Input
                           type="email"
                           name="email"
@@ -142,7 +162,9 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="block text-white font-semibold mb-3">Subject</label>
+                      <label className="block text-white font-semibold mb-3">
+                        Subject
+                      </label>
                       <Input
                         type="text"
                         name="subject"
@@ -155,7 +177,9 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="block text-white font-semibold mb-3">Message</label>
+                      <label className="block text-white font-semibold mb-3">
+                        Message
+                      </label>
                       <textarea
                         name="message"
                         value={formData.message}
@@ -185,9 +209,14 @@ export default function Contact() {
             <Card className="inline-block border-2 border-emerald-500/30 bg-emerald-900/20">
               <CardContent className="p-6">
                 <p className="text-white font-semibold">
-                  ⏱️ <span className="text-emerald-400">Average response time: 2-4 hours</span>
+                  ⏱️{" "}
+                  <span className="text-emerald-400">
+                    Average response time: 2-4 hours
+                  </span>
                 </p>
-                <p className="text-gray-400 text-sm mt-2">We're committed to getting back to you quickly</p>
+                <p className="text-gray-400 text-sm mt-2">
+                  We're committed to getting back to you quickly
+                </p>
               </CardContent>
             </Card>
           </div>

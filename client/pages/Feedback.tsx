@@ -87,39 +87,66 @@ export default function Feedback() {
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <MessageSquarePlus className="h-6 w-6 text-cyber-blue" />
-                  <CardTitle className="text-2xl">Share Your Feedback</CardTitle>
+                  <CardTitle className="text-2xl">
+                    Share Your Feedback
+                  </CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium mb-1">Name</label>
-                    <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" />
+                    <label className="block text-sm font-medium mb-1">
+                      Name
+                    </label>
+                    <Input
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Your name"
+                    />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-1">Feedback</label>
-                    <Textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Write your feedback here..." rows={4} />
+                    <label className="block text-sm font-medium mb-1">
+                      Feedback
+                    </label>
+                    <Textarea
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Write your feedback here..."
+                      rows={4}
+                    />
                   </div>
                   <div className="flex justify-end">
-                    <Button type="submit" className="bg-cyber-blue hover:bg-cyber-blue/90 text-white">Submit</Button>
+                    <Button
+                      type="submit"
+                      className="bg-cyber-blue hover:bg-cyber-blue/90 text-white"
+                    >
+                      Submit
+                    </Button>
                   </div>
                 </form>
               </CardContent>
             </Card>
 
-
             <div className="space-y-4">
               {ordered.length === 0 ? (
-                <p className="text-center text-muted-foreground">No feedback yet. Be the first to share!</p>
+                <p className="text-center text-muted-foreground">
+                  No feedback yet. Be the first to share!
+                </p>
               ) : (
                 ordered.map((f) => (
                   <Card key={f.id}>
                     <CardContent className="pt-6">
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <div className="font-semibold text-foreground">{f.name}</div>
-                          <div className="text-xs text-muted-foreground mb-2">{new Date(f.createdAt).toLocaleString()}</div>
-                          <div className="text-foreground whitespace-pre-wrap">{f.message}</div>
+                          <div className="font-semibold text-foreground">
+                            {f.name}
+                          </div>
+                          <div className="text-xs text-muted-foreground mb-2">
+                            {new Date(f.createdAt).toLocaleString()}
+                          </div>
+                          <div className="text-foreground whitespace-pre-wrap">
+                            {f.message}
+                          </div>
                         </div>
                         <Button
                           variant="outline"
@@ -147,7 +174,9 @@ export default function Feedback() {
                   <CardContent className="p-4">
                     <div className="space-y-3">
                       <div>
-                        <label className="block text-xs font-medium mb-1">Admin Email</label>
+                        <label className="block text-xs font-medium mb-1">
+                          Admin Email
+                        </label>
                         <Input
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}

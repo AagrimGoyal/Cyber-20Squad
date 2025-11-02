@@ -1,7 +1,15 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Trophy, ChevronLeft, ChevronRight, Users, Code, Briefcase } from "lucide-react";
+import {
+  Shield,
+  Trophy,
+  ChevronLeft,
+  ChevronRight,
+  Users,
+  Code,
+  Briefcase,
+} from "lucide-react";
 import { useState, useRef } from "react";
 
 export default function Team() {
@@ -59,9 +67,10 @@ export default function Team() {
   const handleScroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
       const scrollAmount = 320;
-      const newPosition = direction === "left"
-        ? Math.max(0, scrollPosition - scrollAmount)
-        : scrollPosition + scrollAmount;
+      const newPosition =
+        direction === "left"
+          ? Math.max(0, scrollPosition - scrollAmount)
+          : scrollPosition + scrollAmount;
 
       scrollContainerRef.current.scrollLeft = newPosition;
       setScrollPosition(newPosition);
@@ -73,9 +82,12 @@ export default function Team() {
       <div className="relative py-16 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 overflow-hidden">
         {/* Team background pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.3'%3E%3Cpath d='M30 30m-20 0a20 20 0 1 1 40 0a20 20 0 1 1 -40 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.3'%3E%3Cpath d='M30 30m-20 0a20 20 0 1 1 40 0a20 20 0 1 1 -40 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
         </div>
 
         {/* Floating elements for team energy */}
@@ -91,7 +103,8 @@ export default function Team() {
               Meet the <span className="text-cyan-400">CyberSquad</span> Team
             </h2>
             <p className="text-center text-gray-300 mb-12 text-lg">
-              A team of talented individuals dedicated to building the most secure platform
+              A team of talented individuals dedicated to building the most
+              secure platform
             </p>
 
             <div className="relative max-w-7xl mx-auto">
@@ -116,7 +129,9 @@ export default function Team() {
                             <CardContent className="p-8 text-center flex flex-col h-full">
                               {/* Avatar Section */}
                               <div className={`mb-6 flex justify-center`}>
-                                <div className={`bg-gradient-to-br ${member.color} p-6 rounded-full shadow-lg`}>
+                                <div
+                                  className={`bg-gradient-to-br ${member.color} p-6 rounded-full shadow-lg`}
+                                >
                                   <Icon className="h-10 w-10 text-white" />
                                 </div>
                               </div>

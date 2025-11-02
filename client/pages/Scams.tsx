@@ -1,14 +1,24 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { AlertTriangle, Shield, CheckCircle, TrendingDown, Lock, Eye, Lightbulb, Phone } from "lucide-react";
+import {
+  AlertTriangle,
+  Shield,
+  CheckCircle,
+  TrendingDown,
+  Lock,
+  Eye,
+  Lightbulb,
+  Phone,
+} from "lucide-react";
 
 export default function Scams() {
   const scamTypes = [
     {
       icon: Phone,
       title: "Phishing Scams",
-      description: "Fraudsters impersonate banks or services via email/SMS to steal credentials",
+      description:
+        "Fraudsters impersonate banks or services via email/SMS to steal credentials",
       redFlags: [
         "Urgent action required messages",
         "Suspicious sender email addresses",
@@ -29,7 +39,8 @@ export default function Scams() {
     {
       icon: TrendingDown,
       title: "Investment Scams",
-      description: "False promises of high returns on investments with minimal risk",
+      description:
+        "False promises of high returns on investments with minimal risk",
       redFlags: [
         "Guaranteed returns (>20% annually)",
         "Pressure to invest quickly",
@@ -50,7 +61,8 @@ export default function Scams() {
     {
       icon: AlertTriangle,
       title: "Lottery & Prize Scams",
-      description: "Winning a lottery you never entered, requiring payment to claim",
+      description:
+        "Winning a lottery you never entered, requiring payment to claim",
       redFlags: [
         "You didn't participate in any lottery",
         "Unexpected notifications of winnings",
@@ -71,7 +83,8 @@ export default function Scams() {
     {
       icon: Lock,
       title: "Identity Theft",
-      description: "Criminals use personal information to open accounts or make purchases",
+      description:
+        "Criminals use personal information to open accounts or make purchases",
       redFlags: [
         "Unknown credit card charges",
         "Collections notices for unfamiliar accounts",
@@ -92,7 +105,8 @@ export default function Scams() {
     {
       icon: Eye,
       title: "Romance/Dating Scams",
-      description: "Fake profiles to build relationships and manipulate victims into sending money",
+      description:
+        "Fake profiles to build relationships and manipulate victims into sending money",
       redFlags: [
         "Profile picture looks too perfect",
         "Quick declarations of love",
@@ -113,7 +127,8 @@ export default function Scams() {
     {
       icon: Lightbulb,
       title: "Tech Support Scams",
-      description: "Pop-ups claiming viruses, requiring payment for fake tech support",
+      description:
+        "Pop-ups claiming viruses, requiring payment for fake tech support",
       redFlags: [
         "Unexpected pop-up warnings",
         "Requests to call specific numbers",
@@ -134,7 +149,8 @@ export default function Scams() {
     {
       icon: TrendingDown,
       title: "Job/Work-from-Home Scams",
-      description: "Fake job opportunities requiring payment or personal information upfront",
+      description:
+        "Fake job opportunities requiring payment or personal information upfront",
       redFlags: [
         "No phone interview conducted",
         "Requests for payment before hiring",
@@ -155,7 +171,8 @@ export default function Scams() {
     {
       icon: AlertTriangle,
       title: "Cryptocurrency Scams",
-      description: "Fake crypto exchanges or mining schemes promising unrealistic returns",
+      description:
+        "Fake crypto exchanges or mining schemes promising unrealistic returns",
       redFlags: [
         "Guaranteed returns on investments",
         "Pressure to invest quickly",
@@ -178,35 +195,43 @@ export default function Scams() {
   const generalProtection = [
     {
       title: "Use Strong Passwords",
-      description: "Create unique, complex passwords (12+ characters) with uppercase, numbers, and symbols",
+      description:
+        "Create unique, complex passwords (12+ characters) with uppercase, numbers, and symbols",
     },
     {
       title: "Enable 2FA",
-      description: "Add an extra layer of security with two-factor authentication on important accounts",
+      description:
+        "Add an extra layer of security with two-factor authentication on important accounts",
     },
     {
       title: "Update Software",
-      description: "Keep operating system, browser, and apps updated with latest security patches",
+      description:
+        "Keep operating system, browser, and apps updated with latest security patches",
     },
     {
       title: "Verify Before Sharing",
-      description: "Always verify requests for personal information through official channels",
+      description:
+        "Always verify requests for personal information through official channels",
     },
     {
       title: "Monitor Accounts",
-      description: "Regularly check bank statements, credit reports, and account activity",
+      description:
+        "Regularly check bank statements, credit reports, and account activity",
     },
     {
       title: "Use VPN",
-      description: "Use a VPN on public Wi-Fi to encrypt your connection and protect data",
+      description:
+        "Use a VPN on public Wi-Fi to encrypt your connection and protect data",
     },
     {
       title: "Check URLs",
-      description: "Look for HTTPS and verify website addresses before entering sensitive information",
+      description:
+        "Look for HTTPS and verify website addresses before entering sensitive information",
     },
     {
       title: "Report Suspicious Activity",
-      description: "Report scams to authorities and the relevant platform immediately",
+      description:
+        "Report scams to authorities and the relevant platform immediately",
     },
   ];
 
@@ -215,9 +240,12 @@ export default function Scams() {
       <div className="relative py-16 bg-gradient-to-br from-slate-900 via-red-900 to-pink-900 overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff0000' fill-opacity='0.2'%3E%3Cpath d='M30 30m-20 0a20 20 0 1 1 40 0a20 20 0 1 1 -40 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff0000' fill-opacity='0.2'%3E%3Cpath d='M30 30m-20 0a20 20 0 1 1 40 0a20 20 0 1 1 -40 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
         </div>
 
         {/* Floating elements */}
@@ -236,7 +264,8 @@ export default function Scams() {
               </h1>
             </div>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
-              Learn to identify and protect yourself from the most common online scams. Knowledge is your best defense against cybercriminals.
+              Learn to identify and protect yourself from the most common online
+              scams. Knowledge is your best defense against cybercriminals.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Badge className="bg-red-600 text-white px-4 py-2">
@@ -261,14 +290,21 @@ export default function Scams() {
               {scamTypes.map((scam, idx) => {
                 const Icon = scam.icon;
                 return (
-                  <Card key={idx} className={`${scam.color} border-2 hover:shadow-lg transition`}>
+                  <Card
+                    key={idx}
+                    className={`${scam.color} border-2 hover:shadow-lg transition`}
+                  >
                     <CardHeader>
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex items-start gap-3">
                           <Icon className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
                           <div>
-                            <CardTitle className="text-xl text-foreground">{scam.title}</CardTitle>
-                            <p className="text-sm text-muted-foreground mt-1">{scam.description}</p>
+                            <CardTitle className="text-xl text-foreground">
+                              {scam.title}
+                            </CardTitle>
+                            <p className="text-sm text-muted-foreground mt-1">
+                              {scam.description}
+                            </p>
                           </div>
                         </div>
                         <Badge variant="outline" className="flex-shrink-0">
@@ -284,7 +320,9 @@ export default function Scams() {
                         </h4>
                         <ul className="space-y-1 text-sm">
                           {scam.redFlags.map((flag, i) => (
-                            <li key={i} className="text-muted-foreground">• {flag}</li>
+                            <li key={i} className="text-muted-foreground">
+                              • {flag}
+                            </li>
                           ))}
                         </ul>
                       </div>
@@ -296,7 +334,9 @@ export default function Scams() {
                         </h4>
                         <ul className="space-y-1 text-sm">
                           {scam.howToProtect.map((tip, i) => (
-                            <li key={i} className="text-muted-foreground">✓ {tip}</li>
+                            <li key={i} className="text-muted-foreground">
+                              ✓ {tip}
+                            </li>
                           ))}
                         </ul>
                       </div>
@@ -316,27 +356,84 @@ export default function Scams() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {generalProtection.map((tip, idx) => {
                 const colors = [
-                  { bg: "from-blue-100 to-cyan-100", border: "border-blue-300", title: "text-blue-800", text: "text-blue-700", icon: "text-blue-600" },
-                  { bg: "from-purple-100 to-violet-100", border: "border-purple-300", title: "text-purple-800", text: "text-purple-700", icon: "text-purple-600" },
-                  { bg: "from-orange-100 to-amber-100", border: "border-orange-300", title: "text-orange-800", text: "text-orange-700", icon: "text-orange-600" },
-                  { bg: "from-pink-100 to-rose-100", border: "border-pink-300", title: "text-pink-800", text: "text-pink-700", icon: "text-pink-600" },
-                  { bg: "from-teal-100 to-emerald-100", border: "border-teal-300", title: "text-teal-800", text: "text-teal-700", icon: "text-teal-600" },
-                  { bg: "from-indigo-100 to-blue-100", border: "border-indigo-300", title: "text-indigo-800", text: "text-indigo-700", icon: "text-indigo-600" },
-                  { bg: "from-lime-100 to-green-100", border: "border-lime-300", title: "text-lime-800", text: "text-lime-700", icon: "text-lime-600" },
-                  { bg: "from-red-100 to-orange-100", border: "border-red-300", title: "text-red-800", text: "text-red-700", icon: "text-red-600" },
+                  {
+                    bg: "from-blue-100 to-cyan-100",
+                    border: "border-blue-300",
+                    title: "text-blue-800",
+                    text: "text-blue-700",
+                    icon: "text-blue-600",
+                  },
+                  {
+                    bg: "from-purple-100 to-violet-100",
+                    border: "border-purple-300",
+                    title: "text-purple-800",
+                    text: "text-purple-700",
+                    icon: "text-purple-600",
+                  },
+                  {
+                    bg: "from-orange-100 to-amber-100",
+                    border: "border-orange-300",
+                    title: "text-orange-800",
+                    text: "text-orange-700",
+                    icon: "text-orange-600",
+                  },
+                  {
+                    bg: "from-pink-100 to-rose-100",
+                    border: "border-pink-300",
+                    title: "text-pink-800",
+                    text: "text-pink-700",
+                    icon: "text-pink-600",
+                  },
+                  {
+                    bg: "from-teal-100 to-emerald-100",
+                    border: "border-teal-300",
+                    title: "text-teal-800",
+                    text: "text-teal-700",
+                    icon: "text-teal-600",
+                  },
+                  {
+                    bg: "from-indigo-100 to-blue-100",
+                    border: "border-indigo-300",
+                    title: "text-indigo-800",
+                    text: "text-indigo-700",
+                    icon: "text-indigo-600",
+                  },
+                  {
+                    bg: "from-lime-100 to-green-100",
+                    border: "border-lime-300",
+                    title: "text-lime-800",
+                    text: "text-lime-700",
+                    icon: "text-lime-600",
+                  },
+                  {
+                    bg: "from-red-100 to-orange-100",
+                    border: "border-red-300",
+                    title: "text-red-800",
+                    text: "text-red-700",
+                    icon: "text-red-600",
+                  },
                 ];
                 const color = colors[idx];
 
                 return (
-                  <Card key={idx} className={`bg-gradient-to-br ${color.bg} border-2 ${color.border} shadow-md hover:shadow-lg transition`}>
+                  <Card
+                    key={idx}
+                    className={`bg-gradient-to-br ${color.bg} border-2 ${color.border} shadow-md hover:shadow-lg transition`}
+                  >
                     <CardHeader>
-                      <CardTitle className={`text-lg flex items-center gap-2 ${color.title}`}>
-                        <CheckCircle className={`h-5 w-5 ${color.icon} flex-shrink-0`} />
+                      <CardTitle
+                        className={`text-lg flex items-center gap-2 ${color.title}`}
+                      >
+                        <CheckCircle
+                          className={`h-5 w-5 ${color.icon} flex-shrink-0`}
+                        />
                         {tip.title}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className={`text-sm ${color.text}`}>{tip.description}</p>
+                      <p className={`text-sm ${color.text}`}>
+                        {tip.description}
+                      </p>
                     </CardContent>
                   </Card>
                 );

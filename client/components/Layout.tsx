@@ -1,6 +1,20 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Shield, Users, Menu, X, DollarSign, Lock, MessageSquare, Gamepad2, AlertTriangle, Info, Mail, HelpCircle, MessageSquarePlus } from "lucide-react";
+import {
+  Shield,
+  Users,
+  Menu,
+  X,
+  DollarSign,
+  Lock,
+  MessageSquare,
+  Gamepad2,
+  AlertTriangle,
+  Info,
+  Mail,
+  HelpCircle,
+  MessageSquarePlus,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface LayoutProps {
@@ -14,7 +28,11 @@ export default function Layout({ children }: LayoutProps) {
   const navigation = [
     { name: "Home", href: "/", icon: Shield },
     { name: "About", href: "/about", icon: Info },
-    { name: "Financial Literacy", href: "/financial-literacy", icon: DollarSign },
+    {
+      name: "Financial Literacy",
+      href: "/financial-literacy",
+      icon: DollarSign,
+    },
     { name: "Cyber Security", href: "/cyber-security", icon: Lock },
     { name: "Game", href: "/game", icon: Gamepad2 },
     { name: "Scams", href: "/scams", icon: AlertTriangle },
@@ -41,7 +59,11 @@ export default function Layout({ children }: LayoutProps) {
                 {/* Main logo background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-cyan-500/50 transition-all duration-300 group-hover:scale-110">
                   {/* Inner shield design */}
-                  <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
                     <path d="M12 1C6.48 1 2 5.48 2 11v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-8c0-5.52-4.48-10-10-10zm0 18h-8v-8c0-4.42 3.58-8 8-8s8 3.58 8 8v8h-8z" />
                     <circle cx="12" cy="11" r="2.5" fill="currentColor" />
                   </svg>
@@ -53,9 +75,14 @@ export default function Layout({ children }: LayoutProps) {
 
               <div className="flex flex-col leading-tight">
                 <span className="text-lg font-black text-foreground group-hover:text-cyan-500 transition-colors">
-                  Cyber<span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-400 bg-clip-text text-transparent">Squad</span>
+                  Cyber
+                  <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-400 bg-clip-text text-transparent">
+                    Squad
+                  </span>
                 </span>
-                <span className="text-xs font-semibold text-cyan-600 dark:text-cyan-400 tracking-wider">SECURE</span>
+                <span className="text-xs font-semibold text-cyan-600 dark:text-cyan-400 tracking-wider">
+                  SECURE
+                </span>
               </div>
             </Link>
 
@@ -87,7 +114,11 @@ export default function Layout({ children }: LayoutProps) {
               className="md:hidden hover:bg-cyan-500/20"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="h-5 w-5 text-cyan-500" /> : <Menu className="h-5 w-5 text-cyan-500" />}
+              {isMenuOpen ? (
+                <X className="h-5 w-5 text-cyan-500" />
+              ) : (
+                <Menu className="h-5 w-5 text-cyan-500" />
+              )}
             </Button>
           </div>
         </div>
@@ -120,9 +151,7 @@ export default function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1">
-        {children}
-      </main>
+      <main className="flex-1">{children}</main>
 
       {/* Footer */}
       <footer className="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900 border-t-2 border-cyan-500/20">
@@ -140,7 +169,8 @@ export default function Layout({ children }: LayoutProps) {
                 </span>
               </div>
               <p className="text-sm text-gray-400 leading-relaxed">
-                Empowering digital security and financial literacy for a safer tomorrow. Built by innovators, trusted by thousands.
+                Empowering digital security and financial literacy for a safer
+                tomorrow. Built by innovators, trusted by thousands.
               </p>
               <div className="flex items-center space-x-3 text-sm text-gray-400">
                 <div className="h-2 w-2 bg-emerald-400 rounded-full animate-pulse"></div>
@@ -155,10 +185,38 @@ export default function Layout({ children }: LayoutProps) {
                 Quick Links
               </h3>
               <ul className="space-y-3">
-                <li><Link to="/about" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">About Us</Link></li>
-                <li><Link to="/financial-literacy" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Financial Literacy</Link></li>
-                <li><Link to="/cyber-security" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Cyber Security</Link></li>
-                <li><Link to="/team" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Our Team</Link></li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/financial-literacy"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Financial Literacy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/cyber-security"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Cyber Security
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/team"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Our Team
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -169,10 +227,38 @@ export default function Layout({ children }: LayoutProps) {
                 Security
               </h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Security Guidelines</a></li>
-                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Data Protection</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Security Guidelines
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Data Protection
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -183,10 +269,38 @@ export default function Layout({ children }: LayoutProps) {
                 Connect
               </h3>
               <ul className="space-y-3">
-                <li><Link to="/contact" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Contact Us</Link></li>
-                <li><Link to="/faq" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">FAQ</Link></li>
-                <li><Link to="/feedback" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Send Feedback</Link></li>
-                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Newsletter</a></li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/faq"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/feedback"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Send Feedback
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Newsletter
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
