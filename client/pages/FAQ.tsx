@@ -179,7 +179,7 @@ export default function FAQ() {
                   <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
                     Can't find the answer you're looking for? Get in touch with our friendly support team.
                   </p>
-                  <Link to="/feedback">
+                  <Link to="/contact">
                     <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-3 px-8 shadow-lg shadow-purple-500/30 text-lg">
                       Contact Support
                       <Zap className="h-5 w-5 ml-2" />
