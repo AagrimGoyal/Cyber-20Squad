@@ -136,6 +136,33 @@ export default function Feedback() {
                 ))
               )}
             </div>
+
+            {/* Hidden Admin Section - at the very bottom */}
+            <div className="mt-20 pt-8 border-t border-gray-200 dark:border-gray-700">
+              <details className="group">
+                <summary className="text-xs text-muted-foreground cursor-pointer opacity-30 hover:opacity-50 transition-opacity">
+                  Admin Options
+                </summary>
+                <Card className="mt-4 bg-muted/30 border-dashed">
+                  <CardContent className="p-4">
+                    <div className="space-y-3">
+                      <div>
+                        <label className="block text-xs font-medium mb-1">Admin Email</label>
+                        <Input
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="Enter admin email"
+                          className="text-sm"
+                        />
+                        <div className="text-xs text-muted-foreground mt-1">
+                          {isAdmin ? "✓ Admin Mode Active" : "Viewer Mode"}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </details>
+            </div>
           </div>
         </div>
       </section>
