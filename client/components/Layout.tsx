@@ -167,9 +167,9 @@ export default function Layout({ children }: LayoutProps) {
                 Connect
               </h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Contact Us</a></li>
-                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Support</a></li>
-                <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Community</a></li>
+                <li><Link to="/contact" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Contact Us</Link></li>
+                <li><Link to="/faq" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">FAQ</Link></li>
+                <li><Link to="/feedback" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Send Feedback</Link></li>
                 <li><a href="#" className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Newsletter</a></li>
               </ul>
             </div>
