@@ -14,7 +14,6 @@ import {
   Globe,
   BookOpen,
   Star,
-  Gamepad2,
 } from "lucide-react";
 
 export default function Index() {
@@ -170,15 +169,6 @@ export default function Index() {
                 >
                   <Shield className="h-5 w-5 mr-2" />
                   Start Learning Securely
-                </Button>
-              </Link>
-              <Link to="/game" className="inline-block">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-600 hover:to-cyan-700 text-white px-8 py-3 font-bold text-lg shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all transform hover:scale-105"
-                >
-                  <Gamepad2 className="h-5 w-5 mr-2" />
-                  Play the Game
                 </Button>
               </Link>
             </div>
@@ -597,15 +587,6 @@ export default function Index() {
               >
                 <DollarSign className="h-5 w-5 mr-2" />
                 Start Financial Learning
-              </Button>
-            </Link>
-            <Link to="/game">
-              <Button
-                size="lg"
-                className="bg-white/20 backdrop-blur border-2 border-white text-white hover:bg-white hover:text-cyan-700 px-8 py-3 font-bold text-lg shadow-lg transition-all transform hover:scale-105"
-              >
-                <Gamepad2 className="h-5 w-5 mr-2" />
-                Play Cyber Budgeting Game
               </Button>
             </Link>
           </div>
