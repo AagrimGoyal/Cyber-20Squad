@@ -12,7 +12,6 @@ import Team from "./pages/Team";
 import FinancialLiteracy from "./pages/FinancialLiteracy";
 import CyberSecurity from "./pages/CyberSecurity";
 import Feedback from "./pages/Feedback";
-import Game from "./pages/Game";
 import Scams from "./pages/Scams";
 import SecurityAuditReport from "./pages/SecurityAuditReport";
 import About from "./pages/About";
@@ -36,7 +35,6 @@ const App = () => (
           <Route path="/financial-literacy" element={<FinancialLiteracy />} />
           <Route path="/cyber-security" element={<CyberSecurity />} />
           <Route path="/feedback" element={<Feedback />} />
-          <Route path="/game" element={<Game />} />
           <Route path="/scams" element={<Scams />} />
           <Route
             path="/security-audit-report"
