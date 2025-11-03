@@ -125,42 +125,55 @@ export default function Team() {
                           className="flex-shrink-0 w-80 group opacity-0 animate-fade-in"
                           style={{ animationDelay: `${index * 100}ms` }}
                         >
-                          <Card className="border-accent/20 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 h-full bg-gradient-to-br from-gray-900 to-gray-950">
-                            <CardContent className="p-8 text-center flex flex-col h-full">
-                              {/* Avatar Section */}
-                              <div className={`mb-6 flex justify-center`}>
-                                <div
-                                  className={`bg-gradient-to-br ${member.color} p-6 rounded-full shadow-lg`}
-                                >
-                                  <Icon className="h-10 w-10 text-white" />
+                          <div className="relative h-full">
+                            <div className={`absolute -inset-0.5 bg-gradient-to-r ${member.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-lg`}></div>
+                            <Card className="relative border-2 border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105 h-full bg-gradient-to-br from-gray-900 to-gray-950 overflow-hidden">
+                              {/* Animated background accent */}
+                              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${member.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300 rounded-bl-full blur-2xl`}></div>
+
+                              <CardContent className="p-8 text-center flex flex-col h-full relative z-10">
+                                {/* Avatar Section */}
+                                <div className={`mb-6 flex justify-center`}>
+                                  <div
+                                    className={`bg-gradient-to-br ${member.color} p-6 rounded-full shadow-2xl shadow-current/50 group-hover:scale-110 transition-transform duration-300`}
+                                  >
+                                    <Icon className="h-10 w-10 text-white" />
+                                  </div>
                                 </div>
-                              </div>
 
-                              {/* Badge */}
-                              {member.badge && (
-                                <div className="mb-4">
-                                  <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white">
-                                    {member.badge}
-                                  </Badge>
+                                {/* Badge */}
+                                {member.badge && (
+                                  <div className="mb-4">
+                                    <Badge className={`bg-gradient-to-r ${member.color} text-white shadow-lg`}>
+                                      {member.badge}
+                                    </Badge>
+                                  </div>
+                                )}
+
+                                {/* Name */}
+                                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                                  {member.name}
+                                </h3>
+
+                                {/* Role */}
+                                <p className="text-cyan-400 font-semibold mb-3 text-sm group-hover:text-emerald-400 transition-colors">
+                                  {member.role}
+                                </p>
+
+                                {/* Description */}
+                                <p className="text-gray-400 text-sm leading-relaxed flex-grow group-hover:text-gray-300 transition-colors">
+                                  {member.description}
+                                </p>
+
+                                {/* Decorative elements */}
+                                <div className="mt-6 pt-4 border-t border-gray-700 flex justify-center gap-2">
+                                  <div className="h-2 w-2 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity animation-delay-1000"></div>
+                                  <div className="h-2 w-2 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity animation-delay-2000"></div>
+                                  <div className="h-2 w-2 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity animation-delay-3000"></div>
                                 </div>
-                              )}
-
-                              {/* Name */}
-                              <h3 className="text-2xl font-bold text-white mb-2">
-                                {member.name}
-                              </h3>
-
-                              {/* Role */}
-                              <p className="text-cyan-400 font-semibold mb-3 text-sm">
-                                {member.role}
-                              </p>
-
-                              {/* Description */}
-                              <p className="text-gray-400 text-sm leading-relaxed flex-grow">
-                                {member.description}
-                              </p>
-                            </CardContent>
-                          </Card>
+                              </CardContent>
+                            </Card>
+                          </div>
                         </div>
                       );
                     })}
