@@ -13,6 +13,11 @@ import {
   Mail,
   HelpCircle,
   MessageSquarePlus,
+  BookOpen,
+  Newspaper,
+  Target,
+  Lightbulb,
+  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
