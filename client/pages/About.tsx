@@ -10,22 +10,26 @@ export default function About() {
     {
       icon: Heart,
       title: "Integrity First",
-      description: "We believe in transparent, honest communication and ethical practices in everything we do.",
+      description:
+        "We believe in transparent, honest communication and ethical practices in everything we do.",
     },
     {
       icon: Zap,
       title: "Innovation",
-      description: "We constantly evolve and improve our platform to meet the needs of modern users.",
+      description:
+        "We constantly evolve and improve our platform to meet the needs of modern users.",
     },
     {
       icon: Globe,
       title: "Accessibility",
-      description: "Financial security education should be available to everyone, everywhere.",
+      description:
+        "Financial security education should be available to everyone, everywhere.",
     },
     {
       icon: Users,
       title: "Community",
-      description: "We build a supportive community where users learn from each other and grow together.",
+      description:
+        "We build a supportive community where users learn from each other and grow together.",
     },
   ];
 
@@ -33,17 +37,20 @@ export default function About() {
     {
       year: "2024",
       title: "Founded by Young Innovators",
-      description: "CyberSquad was created by a passionate team of 14-year-old developers who believe financial security starts with digital protection.",
+      description:
+        "CyberSquad was created by a passionate team of 14-year-old developers who believe financial security starts with digital protection.",
     },
     {
       year: "2024",
       title: "Rapid Growth",
-      description: "Reached 10,000+ users within months, proving that our security-first approach resonates globally.",
+      description:
+        "Reached 10,000+ users within months, proving that our security-first approach resonates globally.",
     },
     {
       year: "2025",
       title: "Expanding Impact",
-      description: "Building partnerships with educational institutions and launching advanced security features.",
+      description:
+        "Building partnerships with educational institutions and launching advanced security features.",
     },
   ];
 
@@ -66,10 +73,15 @@ export default function About() {
               </div>
             </div>
             <h1 className="text-6xl md:text-7xl font-black text-white mb-6 leading-tight">
-              Our <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Mission</span>
+              Our{" "}
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Mission
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-              Empowering the next generation with financial literacy and cybersecurity knowledge to build a safer, more secure digital future.
+              Empowering the next generation with financial literacy and
+              cybersecurity knowledge to build a safer, more secure digital
+              future.
             </p>
           </div>
 
@@ -78,16 +90,31 @@ export default function About() {
             <div className="max-w-4xl mx-auto">
               <Card className="relative border-2 border-cyan-500/20 bg-gradient-to-br from-gray-900 to-gray-950">
                 <CardContent className="p-12">
-                  <h2 className="text-4xl font-black text-white mb-8">Our Story</h2>
+                  <h2 className="text-4xl font-black text-white mb-8">
+                    Our Story
+                  </h2>
                   <div className="space-y-6 text-gray-300 leading-relaxed font-light">
                     <p>
-                      CyberSquad was born from a simple idea: financial literacy and cybersecurity shouldn't be separate topics. Our young team of developers realized that in today's digital world, protecting your money and protecting your data are inseparable challenges.
+                      CyberSquad was born from a simple idea: financial literacy
+                      and cybersecurity shouldn't be separate topics. Our young
+                      team of developers realized that in today's digital world,
+                      protecting your money and protecting your data are
+                      inseparable challenges.
                     </p>
                     <p>
-                      At just 14 years old, we asked ourselves: "Why isn't there a platform that teaches both?" We set out to create something different—a comprehensive platform that combines practical financial education with real-world cybersecurity practices.
+                      At just 14 years old, we asked ourselves: "Why isn't there
+                      a platform that teaches both?" We set out to create
+                      something different—a comprehensive platform that combines
+                      practical financial education with real-world
+                      cybersecurity practices.
                     </p>
                     <p>
-                      What started as a school project quickly evolved into a mission. We built a secure, user-friendly platform that tens of thousands of people now use to protect their financial futures. Every line of code, every lesson, and every feature is designed with security and education at its core.
+                      What started as a school project quickly evolved into a
+                      mission. We built a secure, user-friendly platform that
+                      tens of thousands of people now use to protect their
+                      financial futures. Every line of code, every lesson, and
+                      every feature is designed with security and education at
+                      its core.
                     </p>
                   </div>
                 </CardContent>
@@ -98,7 +125,9 @@ export default function About() {
           {/* Values */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-2 bg-cyan-900/30 text-cyan-300 rounded-full text-sm font-semibold mb-4 border border-cyan-500/30">💎 OUR VALUES</span>
+              <span className="inline-block px-4 py-2 bg-cyan-900/30 text-cyan-300 rounded-full text-sm font-semibold mb-4 border border-cyan-500/30">
+                💎 OUR VALUES
+              </span>
               <h2 className="text-5xl font-black text-white">What Drives Us</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -113,9 +142,13 @@ export default function About() {
                           <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl p-3">
                             <Icon className="h-8 w-8 text-cyan-400 group-hover:scale-110 transition-transform" />
                           </div>
-                          <h3 className="text-2xl font-bold text-white flex-1">{value.title}</h3>
+                          <h3 className="text-2xl font-bold text-white flex-1">
+                            {value.title}
+                          </h3>
                         </div>
-                        <p className="text-gray-400 leading-relaxed">{value.description}</p>
+                        <p className="text-gray-400 leading-relaxed">
+                          {value.description}
+                        </p>
                       </CardContent>
                     </Card>
                   </div>
@@ -127,7 +160,9 @@ export default function About() {
           {/* Timeline */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">🚀 OUR JOURNEY</span>
+              <span className="inline-block px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">
+                🚀 OUR JOURNEY
+              </span>
               <h2 className="text-5xl font-black text-white">Milestones</h2>
             </div>
             <div className="space-y-8">
@@ -143,8 +178,12 @@ export default function About() {
                       )}
                     </div>
                     <div className="pt-4 pb-8">
-                      <h3 className="text-2xl font-bold text-white mb-2">{milestone.title}</h3>
-                      <p className="text-gray-400 leading-relaxed max-w-2xl">{milestone.description}</p>
+                      <h3 className="text-2xl font-bold text-white mb-2">
+                        {milestone.title}
+                      </h3>
+                      <p className="text-gray-400 leading-relaxed max-w-2xl">
+                        {milestone.description}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -154,8 +193,13 @@ export default function About() {
 
           {/* CTA */}
           <div className="text-center">
-            <h2 className="text-4xl font-black text-white mb-6">Ready to Join Us?</h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Be part of the movement that's changing financial education and digital security.</p>
+            <h2 className="text-4xl font-black text-white mb-6">
+              Ready to Join Us?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Be part of the movement that's changing financial education and
+              digital security.
+            </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/financial-literacy">
                 <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 shadow-lg shadow-cyan-500/30 text-lg">

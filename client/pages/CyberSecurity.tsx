@@ -2,35 +2,53 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Lock, Shield, Eye, Wifi, Smartphone, Globe, AlertTriangle, CheckCircle, Play, Zap, Bug, Users, TrendingUp } from "lucide-react";
+import {
+  Lock,
+  Shield,
+  Eye,
+  Wifi,
+  Smartphone,
+  Globe,
+  AlertTriangle,
+  CheckCircle,
+  Play,
+  Zap,
+  Bug,
+  Users,
+  TrendingUp,
+} from "lucide-react";
 
 export default function CyberSecurity() {
   const threats = [
     {
       icon: AlertTriangle,
       title: "Phishing Attacks",
-      description: "Learn to identify and avoid fraudulent emails, messages, and websites designed to steal your information.",
+      description:
+        "Learn to identify and avoid fraudulent emails, messages, and websites designed to steal your information.",
       severity: "High Risk",
       color: "bg-security-red",
     },
     {
       icon: Lock,
       title: "Weak Passwords",
-      description: "Discover why strong, unique passwords are your first line of defense against cybercriminals.",
+      description:
+        "Discover why strong, unique passwords are your first line of defense against cybercriminals.",
       severity: "Critical",
       color: "bg-security-red",
     },
     {
       icon: Wifi,
       title: "Unsecured Networks",
-      description: "Understand the risks of public Wi-Fi and how to protect your data on unsecured networks.",
+      description:
+        "Understand the risks of public Wi-Fi and how to protect your data on unsecured networks.",
       severity: "Medium Risk",
       color: "bg-warning",
     },
     {
       icon: Smartphone,
       title: "Mobile Vulnerabilities",
-      description: "Secure your mobile devices against malware, data theft, and unauthorized access.",
+      description:
+        "Secure your mobile devices against malware, data theft, and unauthorized access.",
       severity: "High Risk",
       color: "bg-security-red",
     },
@@ -40,19 +58,22 @@ export default function CyberSecurity() {
     {
       icon: Shield,
       title: "Multi-Factor Authentication",
-      description: "Add extra layers of security to your accounts with 2FA and MFA.",
+      description:
+        "Add extra layers of security to your accounts with 2FA and MFA.",
       implementation: "Easy",
     },
     {
       icon: Eye,
       title: "Privacy Settings Review",
-      description: "Regularly audit and update privacy settings across all platforms.",
+      description:
+        "Regularly audit and update privacy settings across all platforms.",
       implementation: "Medium",
     },
     {
       icon: Lock,
       title: "Encryption Tools",
-      description: "Use encryption for sensitive data storage and communication.",
+      description:
+        "Use encryption for sensitive data storage and communication.",
       implementation: "Advanced",
     },
     {
@@ -104,21 +125,24 @@ export default function CyberSecurity() {
   const videos = [
     {
       title: "Cybersecurity Basics",
-      description: "Introduction to fundamental cybersecurity concepts and threats",
+      description:
+        "Introduction to fundamental cybersecurity concepts and threats",
       youtubeId: "0QFi2pz2Zao",
       duration: "14:22",
       channel: "Security in a Minute",
     },
     {
       title: "How to Create Strong Passwords",
-      description: "Learn the essential elements of a strong password and best practices",
+      description:
+        "Learn the essential elements of a strong password and best practices",
       youtubeId: "OpWeeGGqseY",
       duration: "6:30",
       channel: "The Cyber Guy",
     },
     {
       title: "Phishing Attacks: How to Stay Safe",
-      description: "Recognize and avoid phishing scams that target your personal information",
+      description:
+        "Recognize and avoid phishing scams that target your personal information",
       youtubeId: "F_rVvj6mUvU",
       duration: "9:15",
       channel: "Digital Espresso",
@@ -136,42 +160,48 @@ export default function CyberSecurity() {
     {
       title: "Internet Safety Checklist",
       type: "PDF Download",
-      description: "Essential steps to stay safe online from the Department of Homeland Security.",
+      description:
+        "Essential steps to stay safe online from the Department of Homeland Security.",
       link: "https://www.dhs.gov/sites/default/files/publications/internet-safety-checklist.pdf",
       provider: "US Department of Homeland Security",
     },
     {
       title: "Personal Cyber Security Guide",
       type: "PDF Download",
-      description: "Comprehensive guide covering cybersecurity basics and protection strategies.",
+      description:
+        "Comprehensive guide covering cybersecurity basics and protection strategies.",
       link: "https://www.cyber.gov.au/sites/default/files/2023-03/personal-cyber-security-first-steps.pdf",
       provider: "Australian Cyber Security Centre",
     },
     {
       title: "Small Business Cybersecurity Checklist",
       type: "PDF Download",
-      description: "Protect your business with this comprehensive cybersecurity checklist.",
+      description:
+        "Protect your business with this comprehensive cybersecurity checklist.",
       link: "https://connecteam.com/wp-content/uploads/small-business-cybersecurity-checklist.pdf",
       provider: "Connecteam",
     },
     {
       title: "Remote Work Security Checklist",
       type: "PDF Download",
-      description: "Secure your remote work setup with GDPR compliance and privacy protection.",
+      description:
+        "Secure your remote work setup with GDPR compliance and privacy protection.",
       link: "https://www.cm-alliance.com/files/remote-working-checklist.pdf",
       provider: "CM Alliance",
     },
     {
       title: "Password Security Worksheet",
       type: "PDF Download",
-      description: "Create strong passwords and implement multi-factor authentication.",
+      description:
+        "Create strong passwords and implement multi-factor authentication.",
       link: "https://www.securecommunitynetwork.org/wp-content/uploads/password-security-worksheet.pdf",
       provider: "Secure Community Network",
     },
     {
       title: "Incident Response Planning Template",
       type: "PDF Download",
-      description: "Prepare for cybersecurity incidents with this comprehensive response plan.",
+      description:
+        "Prepare for cybersecurity incidents with this comprehensive response plan.",
       link: "https://safetyculture.com/downloads/cyber-security-incident-response-template.pdf",
       provider: "SafetyCulture",
     },
@@ -182,9 +212,12 @@ export default function CyberSecurity() {
       <div className="relative py-32 bg-gradient-to-br from-red-950 via-purple-950 to-pink-950 overflow-hidden">
         {/* Cyber security background pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ef4444' fill-opacity='0.5'%3E%3Cpath d='M50 50L25 25l25-25 25 25-25 25zm0 0l25 25-25 25-25-25 25-25z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ef4444' fill-opacity='0.5'%3E%3Cpath d='M50 50L25 25l25-25 25 25-25 25zm0 0l25 25-25 25-25-25 25-25z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
         </div>
 
         {/* Security-themed glowing elements */}
@@ -194,8 +227,12 @@ export default function CyberSecurity() {
           <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
           {/* Digital lock symbols */}
-          <div className="absolute top-40 left-1/4 text-red-300/10 text-8xl animate-float">🔒</div>
-          <div className="absolute bottom-40 right-1/4 text-purple-300/10 text-8xl animate-float animation-delay-3000">🛡️</div>
+          <div className="absolute top-40 left-1/4 text-red-300/10 text-8xl animate-float">
+            🔒
+          </div>
+          <div className="absolute bottom-40 right-1/4 text-purple-300/10 text-8xl animate-float animation-delay-3000">
+            🛡️
+          </div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -208,10 +245,15 @@ export default function CyberSecurity() {
               </div>
             </div>
             <h1 className="text-6xl md:text-7xl font-black text-white mb-6 drop-shadow-lg leading-tight">
-              Cyber <span className="bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">Security</span>
+              Cyber{" "}
+              <span className="bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                Security
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
-              Protect yourself and your finances from cyber threats. Learn essential security practices to safeguard your digital life in an increasingly connected world.
+              Protect yourself and your finances from cyber threats. Learn
+              essential security practices to safeguard your digital life in an
+              increasingly connected world.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Badge className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-red-500/50 transition-all">
@@ -229,7 +271,9 @@ export default function CyberSecurity() {
           {/* Common Threats */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-2 bg-red-900/30 text-red-300 rounded-full text-sm font-semibold mb-4 border border-red-500/30">🚨 THREATS</span>
+              <span className="inline-block px-4 py-2 bg-red-900/30 text-red-300 rounded-full text-sm font-semibold mb-4 border border-red-500/30">
+                🚨 THREATS
+              </span>
               <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
                 Common Cyber Threats
               </h2>
@@ -243,16 +287,27 @@ export default function CyberSecurity() {
                     <Card className="relative border-2 border-gray-700 bg-gray-900 shadow-lg hover:shadow-2xl transition-all h-full">
                       <CardHeader>
                         <div className="flex items-center justify-between mb-6">
-                          <div className={`p-4 rounded-xl ${threat.color} text-white group-hover:scale-110 transition-transform`}>
+                          <div
+                            className={`p-4 rounded-xl ${threat.color} text-white group-hover:scale-110 transition-transform`}
+                          >
                             <Icon className="h-6 w-6" />
                           </div>
-                          <Badge className="bg-gradient-to-r from-red-600 to-pink-600 text-white border-none">{threat.severity}</Badge>
+                          <Badge className="bg-gradient-to-r from-red-600 to-pink-600 text-white border-none">
+                            {threat.severity}
+                          </Badge>
                         </div>
-                        <CardTitle className="text-2xl font-bold text-white">{threat.title}</CardTitle>
+                        <CardTitle className="text-2xl font-bold text-white">
+                          {threat.title}
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-300 mb-6 leading-relaxed">{threat.description}</p>
-                        <Button size="sm" className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white font-bold shadow-lg shadow-red-500/30">
+                        <p className="text-gray-300 mb-6 leading-relaxed">
+                          {threat.description}
+                        </p>
+                        <Button
+                          size="sm"
+                          className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white font-bold shadow-lg shadow-red-500/30"
+                        >
                           Learn Protection
                         </Button>
                       </CardContent>
@@ -266,7 +321,9 @@ export default function CyberSecurity() {
           {/* Protection Strategies */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">🛡️ PROTECTION</span>
+              <span className="inline-block px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">
+                🛡️ PROTECTION
+              </span>
               <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
                 Protection Strategies
               </h2>
@@ -284,9 +341,15 @@ export default function CyberSecurity() {
                             <Icon className="h-8 w-8 text-blue-400 group-hover:scale-110 transition-transform" />
                           </div>
                         </div>
-                        <Badge className="mb-4 bg-blue-600/30 text-blue-300 border border-blue-500/50">{protection.implementation}</Badge>
-                        <h3 className="font-bold text-white mb-3 text-lg">{protection.title}</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">{protection.description}</p>
+                        <Badge className="mb-4 bg-blue-600/30 text-blue-300 border border-blue-500/50">
+                          {protection.implementation}
+                        </Badge>
+                        <h3 className="font-bold text-white mb-3 text-lg">
+                          {protection.title}
+                        </h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
+                          {protection.description}
+                        </p>
                       </CardContent>
                     </Card>
                   </div>
@@ -306,11 +369,16 @@ export default function CyberSecurity() {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {bestPractices.map((practice, index) => (
-                      <div key={index} className="flex items-start space-x-4 group/item">
+                      <div
+                        key={index}
+                        className="flex items-start space-x-4 group/item"
+                      >
                         <div className="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 mt-1">
                           <CheckCircle className="h-5 w-5 text-white" />
                         </div>
-                        <span className="text-white font-medium group-hover/item:translate-x-2 transition-transform">{practice}</span>
+                        <span className="text-white font-medium group-hover/item:translate-x-2 transition-transform">
+                          {practice}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -322,7 +390,9 @@ export default function CyberSecurity() {
           {/* Security Tools */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-2 bg-cyan-900/30 text-cyan-300 rounded-full text-sm font-semibold mb-4 border border-cyan-500/30">🔧 TOOLS</span>
+              <span className="inline-block px-4 py-2 bg-cyan-900/30 text-cyan-300 rounded-full text-sm font-semibold mb-4 border border-cyan-500/30">
+                🔧 TOOLS
+              </span>
               <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
                 Recommended Security Tools
               </h2>
@@ -334,17 +404,27 @@ export default function CyberSecurity() {
                   <Card className="relative border-2 border-gray-700 bg-gray-900 hover:shadow-2xl transition-all h-full">
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between gap-4 mb-6">
-                        <h3 className="font-bold text-white text-lg">{tool.name}</h3>
-                        <Badge className={
-                          tool.recommendation === "Essential" ? "bg-gradient-to-r from-red-600 to-pink-600 text-white border-none" :
-                          tool.recommendation === "Highly Recommended" ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white border-none" :
-                          "bg-gradient-to-r from-emerald-600 to-cyan-600 text-white border-none"
-                        }>
+                        <h3 className="font-bold text-white text-lg">
+                          {tool.name}
+                        </h3>
+                        <Badge
+                          className={
+                            tool.recommendation === "Essential"
+                              ? "bg-gradient-to-r from-red-600 to-pink-600 text-white border-none"
+                              : tool.recommendation === "Highly Recommended"
+                                ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white border-none"
+                                : "bg-gradient-to-r from-emerald-600 to-cyan-600 text-white border-none"
+                          }
+                        >
                           {tool.recommendation}
                         </Badge>
                       </div>
-                      <p className="text-gray-300 mb-4 leading-relaxed">{tool.description}</p>
-                      <Badge className="bg-gray-700/50 text-gray-300 border-0">{tool.category}</Badge>
+                      <p className="text-gray-300 mb-4 leading-relaxed">
+                        {tool.description}
+                      </p>
+                      <Badge className="bg-gray-700/50 text-gray-300 border-0">
+                        {tool.category}
+                      </Badge>
                     </CardContent>
                   </Card>
                 </div>
@@ -355,7 +435,9 @@ export default function CyberSecurity() {
           {/* Video Learning */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-2 bg-purple-900/30 text-purple-300 rounded-full text-sm font-semibold mb-4 border border-purple-500/30">📺 VIDEO LEARNING</span>
+              <span className="inline-block px-4 py-2 bg-purple-900/30 text-purple-300 rounded-full text-sm font-semibold mb-4 border border-purple-500/30">
+                📺 VIDEO LEARNING
+              </span>
               <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
                 Learn from Expert Videos
               </h2>
@@ -386,16 +468,25 @@ export default function CyberSecurity() {
                       </span>
                     </div>
                     <CardContent className="p-6">
-                      <h3 className="font-bold text-white mb-3 text-lg">{video.title}</h3>
-                      <p className="text-sm text-gray-400 mb-4 leading-relaxed">{video.description}</p>
+                      <h3 className="font-bold text-white mb-3 text-lg">
+                        {video.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 mb-4 leading-relaxed">
+                        {video.description}
+                      </p>
                       <div className="flex items-center justify-between pt-4 border-t border-gray-700">
-                        <span className="text-xs text-purple-400 font-semibold">{video.channel}</span>
+                        <span className="text-xs text-purple-400 font-semibold">
+                          {video.channel}
+                        </span>
                         <a
                           href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Button size="sm" className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold">
+                          <Button
+                            size="sm"
+                            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold"
+                          >
                             Watch on YouTube
                           </Button>
                         </a>
@@ -410,7 +501,9 @@ export default function CyberSecurity() {
           {/* Security Resources */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-2 bg-pink-900/30 text-pink-300 rounded-full text-sm font-semibold mb-4 border border-pink-500/30">📄 FREE RESOURCES</span>
+              <span className="inline-block px-4 py-2 bg-pink-900/30 text-pink-300 rounded-full text-sm font-semibold mb-4 border border-pink-500/30">
+                📄 FREE RESOURCES
+              </span>
               <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
                 Download Essential Resources
               </h2>
@@ -421,12 +514,29 @@ export default function CyberSecurity() {
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-red-500 rounded-2xl opacity-0 group-hover:opacity-75 transition-all duration-300 blur-lg"></div>
                   <Card className="relative border-2 border-gray-700 bg-gray-900 hover:shadow-2xl transition-all h-full">
                     <CardContent className="p-6">
-                      <Badge className="mb-4 bg-gradient-to-r from-pink-500 to-red-600 text-white border-none">{resource.type}</Badge>
-                      <h3 className="font-bold text-white mb-3 text-lg">{resource.title}</h3>
-                      <p className="text-sm text-gray-400 mb-4 leading-relaxed">{resource.description}</p>
-                      <p className="text-xs text-pink-400 mb-6 font-medium">📌 Source: {resource.provider}</p>
-                      <a href={resource.link} target="_blank" rel="noopener noreferrer" className="block">
-                        <Button variant="outline" size="sm" className="w-full border-2 border-pink-500/50 text-pink-300 hover:bg-pink-500 hover:text-white hover:border-pink-500 font-bold transition-all">
+                      <Badge className="mb-4 bg-gradient-to-r from-pink-500 to-red-600 text-white border-none">
+                        {resource.type}
+                      </Badge>
+                      <h3 className="font-bold text-white mb-3 text-lg">
+                        {resource.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 mb-4 leading-relaxed">
+                        {resource.description}
+                      </p>
+                      <p className="text-xs text-pink-400 mb-6 font-medium">
+                        📌 Source: {resource.provider}
+                      </p>
+                      <a
+                        href={resource.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="w-full border-2 border-pink-500/50 text-pink-300 hover:bg-pink-500 hover:text-white hover:border-pink-500 font-bold transition-all"
+                        >
                           📥 Download PDF
                         </Button>
                       </a>
@@ -454,13 +564,18 @@ export default function CyberSecurity() {
                       Security Incident Response
                     </h3>
                     <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
-                      If you suspect a security breach or have been compromised, act quickly. Follow our emergency response guide to minimize damage and secure your accounts.
+                      If you suspect a security breach or have been compromised,
+                      act quickly. Follow our emergency response guide to
+                      minimize damage and secure your accounts.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                       <Button className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white font-bold py-3 px-8 shadow-lg shadow-red-500/30">
                         Emergency Guide
                       </Button>
-                      <Button variant="outline" className="border-2 border-red-600/50 text-red-300 hover:bg-red-600 hover:text-white font-bold py-3 px-8 transition-all">
+                      <Button
+                        variant="outline"
+                        className="border-2 border-red-600/50 text-red-300 hover:bg-red-600 hover:text-white font-bold py-3 px-8 transition-all"
+                      >
                         Report Incident
                       </Button>
                     </div>

@@ -126,10 +126,14 @@ export default function Team() {
                           style={{ animationDelay: `${index * 100}ms` }}
                         >
                           <div className="relative h-full">
-                            <div className={`absolute -inset-0.5 bg-gradient-to-r ${member.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-lg`}></div>
+                            <div
+                              className={`absolute -inset-0.5 bg-gradient-to-r ${member.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-lg`}
+                            ></div>
                             <Card className="relative border-2 border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105 h-full bg-gradient-to-br from-gray-900 to-gray-950 overflow-hidden">
                               {/* Animated background accent */}
-                              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${member.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300 rounded-bl-full blur-2xl`}></div>
+                              <div
+                                className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${member.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300 rounded-bl-full blur-2xl`}
+                              ></div>
 
                               <CardContent className="p-8 text-center flex flex-col h-full relative z-10">
                                 {/* Avatar Section */}
@@ -144,7 +148,9 @@ export default function Team() {
                                 {/* Badge */}
                                 {member.badge && (
                                   <div className="mb-4">
-                                    <Badge className={`bg-gradient-to-r ${member.color} text-white shadow-lg`}>
+                                    <Badge
+                                      className={`bg-gradient-to-r ${member.color} text-white shadow-lg`}
+                                    >
                                       {member.badge}
                                     </Badge>
                                   </div>

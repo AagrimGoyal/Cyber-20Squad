@@ -254,7 +254,8 @@
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow: 0 0 20px rgba(0, 188, 212, 0.8);
   }
   50% {
@@ -286,7 +287,8 @@
 }
 
 @keyframes bounceSlow {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
