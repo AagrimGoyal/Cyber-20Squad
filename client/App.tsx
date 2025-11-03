@@ -41,10 +41,12 @@ const App = () => (
           <Route path="/cyber-security" element={<CyberSecurity />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/scams" element={<Scams />} />
-          <Route
-            path="/security-audit-report"
-            element={<SecurityAuditReport />}
-          />
+          <Route path="/security-audit-report" element={<SecurityAuditReport />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/risk-assessment" element={<RiskAssessment />} />
+          <Route path="/glossary" element={<Glossary />} />
+          <Route path="/tools" element={<Tools />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
