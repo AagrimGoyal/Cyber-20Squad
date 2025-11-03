@@ -163,11 +163,6 @@ export default function About() {
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </Link>
-              <Link to="/game">
-                <Button variant="outline" className="border-2 border-cyan-500/50 text-cyan-300 hover:bg-cyan-500 hover:text-white font-bold py-3 px-8 transition-all text-lg">
-                  Play the Game
-                </Button>
-              </Link>
             </div>
           </div>
         </div>
