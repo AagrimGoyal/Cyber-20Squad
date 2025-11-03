@@ -83,11 +83,12 @@ export default function Index() {
     <Layout>
       {/* Hero Section */}
       <section className="relative py-32 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 overflow-hidden">
-        {/* Animated Background Elements - Enhanced */}
+        {/* Advanced Animated Background Elements */}
         <div className="absolute inset-0 opacity-40">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl animate-blob"></div>
           <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-2000"></div>
           <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-emerald-500 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-4000"></div>
+          <div className="absolute top-1/4 right-0 w-80 h-80 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-3000"></div>
         </div>
 
         {/* Cybersecurity Grid Pattern */}
