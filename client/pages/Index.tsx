@@ -105,16 +105,17 @@ export default function Index() {
           <div className="text-center max-w-5xl mx-auto">
             <div className="flex items-center justify-center mb-12">
               <div className="relative">
-                {/* Outer glowing ring with animation */}
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400 rounded-3xl blur-2xl opacity-75 animate-pulse scale-100"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400 rounded-3xl blur-xl opacity-50 animate-spin-slow scale-75"></div>
+                {/* Multiple glowing rings for enhanced effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400 rounded-3xl blur-3xl opacity-75 animate-pulse scale-125"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400 rounded-3xl blur-2xl opacity-60 animate-spin-slow scale-100"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-3xl blur-xl opacity-40 animate-bounce-slow scale-75"></div>
 
-                {/* Main shield container */}
-                <div className="relative w-32 h-32 bg-gradient-to-br from-cyan-500 via-blue-600 to-emerald-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-cyan-500/50 drop-shadow-lg">
-                  {/* Shield icon */}
+                {/* Main shield container with enhanced styling */}
+                <div className="relative w-40 h-40 bg-gradient-to-br from-cyan-500 via-blue-600 to-emerald-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-cyan-500/50 drop-shadow-lg transform hover:scale-110 transition-transform duration-300">
+                  {/* Shield icon with animation */}
                   <div className="relative">
                     <svg
-                      className="w-20 h-20 text-white drop-shadow-lg"
+                      className="w-24 h-24 text-white drop-shadow-lg animate-float"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
@@ -122,16 +123,19 @@ export default function Index() {
                       <circle
                         cx="12"
                         cy="11"
-                        r="2"
+                        r="2.5"
                         fill="currentColor"
-                        opacity="0.3"
+                        opacity="0.4"
                       />
                       <path
                         d="M12 7c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
-                        opacity="0.6"
+                        opacity="0.7"
                       />
                     </svg>
-                    <div className="absolute -top-2 -right-2 h-4 w-4 bg-gradient-to-r from-emerald-300 to-cyan-300 rounded-full animate-pulse shadow-lg"></div>
+                    {/* Pulsing security indicators */}
+                    <div className="absolute -top-3 -right-3 h-5 w-5 bg-gradient-to-r from-emerald-300 to-cyan-300 rounded-full animate-pulse shadow-lg shadow-emerald-400/75"></div>
+                    <div className="absolute top-1/2 -right-4 h-3 w-3 bg-emerald-300 rounded-full animate-pulse animation-delay-1000 shadow-lg"></div>
+                    <div className="absolute bottom-2 right-1/4 h-2 w-2 bg-cyan-300 rounded-full animate-pulse animation-delay-2000 shadow-lg"></div>
                   </div>
                 </div>
               </div>
