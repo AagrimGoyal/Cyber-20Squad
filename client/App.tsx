@@ -17,6 +17,11 @@ import SecurityAuditReport from "./pages/SecurityAuditReport";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
+import Resources from "./pages/Resources";
+import Blog from "./pages/Blog";
+import RiskAssessment from "./pages/RiskAssessment";
+import Glossary from "./pages/Glossary";
+import Tools from "./pages/Tools";
 
 const queryClient = new QueryClient();
 
