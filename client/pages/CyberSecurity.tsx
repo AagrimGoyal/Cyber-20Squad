@@ -570,15 +570,19 @@ export default function CyberSecurity() {
                       minimize damage and secure your accounts.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                      <Button className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white font-bold py-3 px-8 shadow-lg shadow-red-500/30">
-                        Emergency Guide
-                      </Button>
-                      <Button
-                        variant="outline"
-                        className="border-2 border-red-600/50 text-red-300 hover:bg-red-600 hover:text-white font-bold py-3 px-8 transition-all"
-                      >
-                        Report Incident
-                      </Button>
+                      <Link to="/emergency-guide">
+                        <Button className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white font-bold py-3 px-8 shadow-lg shadow-red-500/30">
+                          Emergency Guide
+                        </Button>
+                      </Link>
+                      <Link to="/report-incident">
+                        <Button
+                          variant="outline"
+                          className="border-2 border-red-600/50 text-red-300 hover:bg-red-600 hover:text-white font-bold py-3 px-8 transition-all"
+                        >
+                          Report Incident
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>
