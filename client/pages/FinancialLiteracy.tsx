@@ -177,15 +177,21 @@ export default function FinancialLiteracy() {
               Master your money with security-first financial education. Learn to build wealth while protecting yourself from digital threats and financial fraud.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Badge className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 text-base hover:shadow-lg hover:shadow-emerald-500/50 transition-all">
-                🔒 Security-First Approach
-              </Badge>
-              <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 text-base hover:shadow-lg hover:shadow-cyan-500/50 transition-all">
-                💡 Practical Strategies
-              </Badge>
-              <Badge className="bg-gradient-to-r from-yellow-500 to-amber-600 text-white px-6 py-3 text-base hover:shadow-lg hover:shadow-yellow-500/50 transition-all">
-                📊 Real-World Examples
-              </Badge>
+              <Link to="/security-audit-report">
+                <Badge className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-emerald-500/50 transition-all transform hover:scale-105">
+                  🔒 Security-First Approach
+                </Badge>
+              </Link>
+              <Link to="/resources">
+                <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-cyan-500/50 transition-all transform hover:scale-105">
+                  💡 Practical Strategies
+                </Badge>
+              </Link>
+              <Link to="/blog">
+                <Badge className="bg-gradient-to-r from-yellow-500 to-amber-600 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-yellow-500/50 transition-all transform hover:scale-105">
+                  📊 Real-World Examples
+                </Badge>
+              </Link>
             </div>
           </div>
 
