@@ -179,7 +179,7 @@ export default function Layout({ children }: LayoutProps) {
         {isMenuOpen && (
           <div className="md:hidden border-t-2 border-cyan-500/20 bg-background/50 backdrop-blur">
             <div className="px-2 pt-2 pb-4 space-y-1">
-              {navigation.map((item) => {
+              {mainNavigation.map((item) => {
                 const Icon = item.icon;
                 return (
                   <Link
@@ -197,6 +197,32 @@ export default function Layout({ children }: LayoutProps) {
                   </Link>
                 );
               })}
+
+              {moreNavigation.length > 0 && (
+                <>
+                  <div className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    More
+                  </div>
+                  {moreNavigation.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className={`flex items-center space-x-2 px-4 py-3 rounded-lg text-base font-medium transition-all ${
+                          isActive(item.href)
+                            ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <Icon className="h-4 w-4" />
+                        <span>{item.name}</span>
+                      </Link>
+                    );
+                  })}
+                </>
+              )}
             </div>
           </div>
         )}
