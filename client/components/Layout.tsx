@@ -7,7 +7,6 @@ import {
   X,
   DollarSign,
   Lock,
-  MessageSquare,
   AlertTriangle,
   Info,
   Mail,
@@ -18,8 +17,16 @@ import {
   Target,
   Lightbulb,
   Zap,
+  MoreHorizontal,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
 
 interface LayoutProps {
   children: React.ReactNode;
