@@ -257,15 +257,21 @@ export default function CyberSecurity() {
               increasingly connected world.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Badge className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 text-base hover:shadow-lg hover:shadow-red-500/50 transition-all">
-                🚨 Threat Prevention
-              </Badge>
-              <Badge className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 text-base hover:shadow-lg hover:shadow-purple-500/50 transition-all">
-                🔐 Secure Practices
-              </Badge>
-              <Badge className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-6 py-3 text-base hover:shadow-lg hover:shadow-blue-500/50 transition-all">
-                ����️ Data Protection
-              </Badge>
+              <Link to="/scams">
+                <Badge className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-red-500/50 transition-all transform hover:scale-105">
+                  🚨 Threat Prevention
+                </Badge>
+              </Link>
+              <Link to="/resources">
+                <Badge className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105">
+                  🔐 Secure Practices
+                </Badge>
+              </Link>
+              <Link to="/security-audit-report">
+                <Badge className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-blue-500/50 transition-all transform hover:scale-105">
+                  🛡️ Data Protection
+                </Badge>
+              </Link>
             </div>
           </div>
 
