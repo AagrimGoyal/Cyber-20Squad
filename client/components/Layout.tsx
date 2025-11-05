@@ -105,8 +105,8 @@ export default function Layout({ children }: LayoutProps) {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-1">
-              {navigation.map((item) => {
+            <nav className="hidden md:flex items-center space-x-1">
+              {mainNavigation.map((item) => {
                 const Icon = item.icon;
                 return (
                   <Link
@@ -123,6 +123,40 @@ export default function Layout({ children }: LayoutProps) {
                   </Link>
                 );
               })}
+
+              {/* More Dropdown Menu */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="flex items-center space-x-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-muted hover:border hover:border-cyan-500/20 transition-all"
+                  >
+                    <MoreHorizontal className="h-4 w-4" />
+                    <span>More</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  {moreNavigation.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <div key={item.name}>
+                        <Link
+                          to={item.href}
+                          className="w-full"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          <DropdownMenuItem className="flex items-center space-x-2 cursor-pointer">
+                            <Icon className="h-4 w-4" />
+                            <span>{item.name}</span>
+                          </DropdownMenuItem>
+                        </Link>
+                        {index === 4 && <DropdownMenuSeparator />}
+                      </div>
+                    );
+                  })}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </nav>
 
             {/* Mobile menu button */}
