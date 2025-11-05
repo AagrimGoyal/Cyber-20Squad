@@ -35,13 +35,13 @@ export default function About() {
 
   const milestones = [
     {
-      year: "2024",
+      year: "2025",
       title: "Founded by Young Innovators",
       description:
         "CyberSquad was created by a passionate team of 14-year-old developers who believe financial security starts with digital protection.",
     },
     {
-      year: "2024",
+      year: "2025",
       title: "Rapid Growth",
       description:
         "Reached 10,000+ users within months, proving that our security-first approach resonates globally.",
