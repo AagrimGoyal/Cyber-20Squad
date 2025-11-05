@@ -36,7 +36,7 @@ export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const navigation = [
+  const mainNavigation = [
     { name: "Home", href: "/", icon: Shield },
     { name: "About", href: "/about", icon: Info },
     {
@@ -45,15 +45,18 @@ export default function Layout({ children }: LayoutProps) {
       icon: DollarSign,
     },
     { name: "Cyber Security", href: "/cyber-security", icon: Lock },
+    { name: "Scams", href: "/scams", icon: AlertTriangle },
+    { name: "FAQ", href: "/faq", icon: HelpCircle },
+    { name: "Contact", href: "/contact", icon: Mail },
+  ];
+
+  const moreNavigation = [
     { name: "Blog", href: "/blog", icon: Newspaper },
     { name: "Tools", href: "/tools", icon: Zap },
     { name: "Risk Assessment", href: "/risk-assessment", icon: Target },
     { name: "Glossary", href: "/glossary", icon: BookOpen },
     { name: "Resources", href: "/resources", icon: Lightbulb },
-    { name: "Scams", href: "/scams", icon: AlertTriangle },
     { name: "Our Team", href: "/team", icon: Users },
-    { name: "FAQ", href: "/faq", icon: HelpCircle },
-    { name: "Contact", href: "/contact", icon: Mail },
     { name: "Feedback", href: "/feedback", icon: MessageSquarePlus },
   ];
 
