@@ -180,11 +180,11 @@ export default function SecurityAuditReport() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
                   <div className="bg-white/10 p-4 rounded-lg">
                     <div className="text-sm text-gray-300">Audit Date</div>
-                    <div className="text-xl font-bold text-white">2024</div>
+                    <div className="text-xl font-bold text-white">2025</div>
                   </div>
                   <div className="bg-white/10 p-4 rounded-lg">
                     <div className="text-sm text-gray-300">Next Audit</div>
-                    <div className="text-xl font-bold text-white">Q4 2024</div>
+                    <div className="text-xl font-bold text-white">Q4 2025</div>
                   </div>
                   <div className="bg-white/10 p-4 rounded-lg">
                     <div className="text-sm text-gray-300">Certified By</div>
