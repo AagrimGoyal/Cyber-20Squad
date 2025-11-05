@@ -22,6 +22,8 @@ import Blog from "./pages/Blog";
 import RiskAssessment from "./pages/RiskAssessment";
 import Glossary from "./pages/Glossary";
 import Tools from "./pages/Tools";
+import EmergencyGuide from "./pages/EmergencyGuide";
+import ReportIncident from "./pages/ReportIncident";
 
 const queryClient = new QueryClient();
 
