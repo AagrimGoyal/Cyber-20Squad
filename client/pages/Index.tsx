@@ -151,7 +151,7 @@ export default function Index() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 mb-12">
-              <Link to="/security">
+              <Link to="/security-audit-report">
                 <Badge className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-6 py-3 text-base cursor-pointer hover:shadow-lg hover:shadow-emerald-500/50 transition-all transform hover:scale-105">
                   🛡️ Bank-Level Security
                 </Badge>
