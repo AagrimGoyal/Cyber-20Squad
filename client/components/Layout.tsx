@@ -386,7 +386,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="mt-12 pt-12 border-t border-gray-800">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
               <p className="text-sm text-gray-500">
-                © 2024 CyberSquad. All rights reserved. Secure by design.
+                © 2025 CyberSquad. All rights reserved. Secure by design.
               </p>
               <div className="flex items-center space-x-2">
                 <span className="inline-block px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-xs font-semibold text-cyan-400">
