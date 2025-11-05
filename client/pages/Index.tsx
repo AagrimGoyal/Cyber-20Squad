@@ -436,7 +436,7 @@ export default function Index() {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Link to="/security" className="inline-block">
+                <Link to="/security-audit-report" className="inline-block">
                   <Button className="bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-600 hover:to-cyan-700 text-white font-bold py-2 px-6 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all">
                     View Security Details
                   </Button>
