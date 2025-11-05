@@ -156,9 +156,11 @@ export default function Index() {
                   🛡️ Bank-Level Security
                 </Badge>
               </Link>
-              <Badge className="bg-white/10 backdrop-blur text-white px-6 py-3 text-base border border-white/20">
-                ✨ AI-Powered Learning
-              </Badge>
+              <Link to="/blog">
+                <Badge className="bg-white/10 backdrop-blur text-white px-6 py-3 text-base cursor-pointer border border-white/20 hover:border-white/40 hover:bg-white/20 transition-all transform hover:scale-105">
+                  ✨ AI-Powered Learning
+                </Badge>
+              </Link>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
