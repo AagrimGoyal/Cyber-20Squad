@@ -38,7 +38,8 @@ export default function Blog() {
     {
       id: 3,
       title: "Password Security Best Practices in 2025",
-      excerpt: "Master the art of creating and managing strong passwords that keep hackers out.",
+      excerpt:
+        "Master the art of creating and managing strong passwords that keep hackers out.",
       category: "Security",
       author: "Alex Kumar",
       date: "Mar 10, 2025",
