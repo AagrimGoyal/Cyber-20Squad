@@ -2,240 +2,283 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, User, ArrowRight, Search } from "lucide-react";
+import { Calendar, User, ArrowRight, Search, Image as ImageIcon } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const articles = [
     {
       id: 1,
-      title: "How to Spot Phishing Emails: A Comprehensive Guide",
+      title: "CERT-In Alert: New Cyber Threats Targeting Indian Banks",
       excerpt:
-        "Learn the telltale signs of phishing attacks and protect yourself from email-based fraud.",
+        "Latest security advisory from India's Cyber Emergency Response Team on emerging threats in the financial sector.",
       category: "Security",
-      author: "Sarah Chen",
-      date: "Mar 15, 2025",
-      readTime: "8 min read",
-      color: "from-red-500 to-pink-600",
-      image:
-        "https://images.unsplash.com/photo-1563986768609-322da13e493e?w=500&h=300&fit=crop",
+      author: "Rajesh Kumar",
+      date: "Jan 18, 2025",
+      readTime: "7 min read",
+      color: "from-red-600 to-pink-700",
+      image: "🔒",
     },
     {
       id: 2,
-      title: "Building Your First Emergency Fund: 5 Steps",
+      title: "Digital Payment Safety: RBI Guidelines for Indian Users",
       excerpt:
-        "Discover how to create a financial safety net that protects you during unexpected situations.",
+        "Complete guide to safe digital payments following RBI's latest recommendations for UPI and mobile banking.",
       category: "Finance",
-      author: "Michael Rodriguez",
-      date: "Mar 12, 2025",
+      author: "Priya Sharma",
+      date: "Jan 17, 2025",
       readTime: "10 min read",
-      color: "from-emerald-500 to-teal-600",
-      image:
-        "https://images.unsplash.com/photo-1579621970563-430f63602d4b?w=500&h=300&fit=crop",
+      color: "from-emerald-600 to-teal-700",
+      image: "💳",
     },
     {
       id: 3,
-      title: "Password Security Best Practices in 2025",
+      title: "PAN Fraud Protection: How to Secure Your Income Tax Account",
       excerpt:
-        "Master the art of creating and managing strong passwords that keep hackers out.",
+        "Step-by-step guide to protect your PAN and income tax data from cyber criminals in India.",
       category: "Security",
-      author: "Alex Kumar",
-      date: "Mar 10, 2025",
-      readTime: "6 min read",
-      color: "from-cyan-500 to-blue-600",
-      image:
-        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500&h=300&fit=crop",
+      author: "Amit Patel",
+      date: "Jan 16, 2025",
+      readTime: "8 min read",
+      color: "from-cyan-600 to-blue-700",
+      image: "🔐",
     },
     {
       id: 4,
-      title: "Understanding Credit Scores and How to Improve Yours",
+      title: "GST Data Security: Protecting Your Business Information",
       excerpt:
-        "Deep dive into credit scoring systems and actionable strategies to boost your credit health.",
+        "Essential security measures for Indian businesses to protect their GST portal accounts and financial data.",
       category: "Finance",
-      author: "Emma Watson",
-      date: "Mar 8, 2025",
-      readTime: "12 min read",
-      color: "from-yellow-500 to-orange-600",
-      image:
-        "https://images.unsplash.com/photo-1554224311-beee415c15c7?w=500&h=300&fit=crop",
+      author: "Neha Gupta",
+      date: "Jan 15, 2025",
+      readTime: "9 min read",
+      color: "from-yellow-600 to-orange-700",
+      image: "📊",
     },
     {
       id: 5,
-      title: "Public Wi-Fi Safety: How to Browse Securely",
+      title: "Aadhaar Security: Protecting Your Digital Identity",
       excerpt:
-        "Learn the risks of public Wi-Fi and techniques to protect your data while on-the-go.",
+        "Comprehensive guide to securing your Aadhaar linked accounts and preventing identity theft in India.",
       category: "Security",
-      author: "James Wilson",
-      date: "Mar 5, 2025",
-      readTime: "7 min read",
-      color: "from-purple-500 to-pink-600",
-      image:
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&h=300&fit=crop",
+      author: "Vikram Singh",
+      date: "Jan 14, 2025",
+      readTime: "12 min read",
+      color: "from-purple-600 to-pink-700",
+      image: "👤",
     },
     {
       id: 6,
-      title: "Investing for Beginners: Starting Your Journey to Wealth",
+      title: "Investment Scams: How Indians Can Avoid Financial Fraud",
       excerpt:
-        "A beginner-friendly guide to understanding stocks, bonds, and building a diversified portfolio.",
+        "Learn to identify and avoid common investment scams targeting Indian citizens and protect your savings.",
       category: "Finance",
-      author: "Lisa Thompson",
-      date: "Mar 1, 2025",
-      readTime: "15 min read",
-      color: "from-blue-500 to-cyan-600",
-      image:
-        "https://images.unsplash.com/photo-1518644730709-0835105d9dda?w=500&h=300&fit=crop",
+      author: "Deepika Nair",
+      date: "Jan 13, 2025",
+      readTime: "11 min read",
+      color: "from-blue-600 to-cyan-700",
+      image: "💰",
+    },
+    {
+      id: 7,
+      title: "Two-Factor Authentication: Your First Line of Defense",
+      excerpt:
+        "Understanding 2FA methods and why every Indian should enable it on their online accounts.",
+      category: "Security",
+      author: "Rohit Verma",
+      date: "Jan 12, 2025",
+      readTime: "6 min read",
+      color: "from-green-600 to-emerald-700",
+      image: "🔑",
+    },
+    {
+      id: 8,
+      title: "Cryptocurrency Safety for Indian Investors",
+      excerpt:
+        "A detailed guide for Indian investors on securing cryptocurrency wallets and trading safely.",
+      category: "Finance",
+      author: "Sanjay Malhotra",
+      date: "Jan 11, 2025",
+      readTime: "13 min read",
+      color: "from-orange-600 to-red-700",
+      image: "₿",
     },
   ];
 
-  const filteredArticles =
-    selectedCategory === "all"
-      ? articles
-      : articles.filter((a) => a.category === selectedCategory);
+  // Sort by date (latest first)
+  const sortedArticles = [...articles].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  const filteredArticles = sortedArticles
+    .filter((a) => selectedCategory === "all" || a.category === selectedCategory)
+    .filter(
+      (a) =>
+        a.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        a.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
   return (
     <Layout>
       <div className="relative py-32 bg-gradient-to-br from-indigo-950 via-purple-950 to-indigo-950 overflow-hidden">
         {/* Background animation */}
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl animate-blob"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl animate-blob"></div>
           <div className="absolute top-40 right-1/4 w-80 h-80 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-2000"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Hero Section */}
-          <div className="text-center mb-20">
+          {/* Hero */}
+          <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-8">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full blur-xl opacity-75 animate-pulse"></div>
-                <Search className="h-20 w-20 text-white drop-shadow-lg relative z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-xl opacity-75 animate-pulse"></div>
               </div>
             </div>
-            <h1 className="text-6xl md:text-7xl font-black text-white mb-6 drop-shadow-lg">
-              Latest{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                Articles
-              </span>
+            <h1 className="text-6xl md:text-7xl font-black text-white mb-6 leading-tight">
+              Security & Finance <span className="text-cyan-400">Blog</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
-              Expert insights on cybersecurity and financial literacy to help
-              you stay informed and protected.
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-light">
+              Latest insights and guides for Indian users on cybersecurity and
+              financial literacy.
             </p>
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
-            {["all", "Security", "Finance"].map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all ${
-                  selectedCategory === cat
-                    ? "bg-gradient-to-r from-purple-500 to-blue-600 text-white shadow-lg shadow-purple-500/50"
-                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                }`}
-              >
-                {cat === "all" ? "All Articles" : cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Articles Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {filteredArticles.map((article) => (
-              <div key={article.id} className="group relative">
-                <div
-                  className={`absolute -inset-0.5 bg-gradient-to-r ${article.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-lg`}
-                ></div>
-                <Card className="relative border-2 border-gray-700 bg-gray-900 overflow-hidden hover:shadow-2xl transition-all h-full flex flex-col">
-                  {/* Article Image */}
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <Badge
-                      className={`absolute top-4 left-4 bg-gradient-to-r ${article.color} text-white border-none`}
-                    >
-                      {article.category}
-                    </Badge>
-                  </div>
-
-                  <CardContent className="flex-1 flex flex-col p-6">
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm mb-6 flex-1 line-clamp-2">
-                      {article.excerpt}
-                    </p>
-
-                    {/* Meta Info */}
-                    <div className="space-y-3 pt-6 border-t border-gray-700">
-                      <div className="flex items-center gap-2 text-sm text-gray-400">
-                        <User className="h-4 w-4" />
-                        <span>{article.author}</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-sm text-gray-400">
-                          <Calendar className="h-4 w-4" />
-                          <span>{article.date}</span>
-                        </div>
-                        <span className="text-xs text-purple-400 font-semibold">
-                          {article.readTime}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Read More Button */}
-                    <button className="mt-6 w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2">
-                      Read Article
-                      <ArrowRight className="h-4 w-4" />
-                    </button>
-                  </CardContent>
-                </Card>
+          {/* Search and Filter */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="mb-6">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <input
+                  type="text"
+                  placeholder="Search articles..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-12 pr-4 py-3 bg-white/10 border-2 border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 transition-colors"
+                />
               </div>
-            ))}
-          </div>
+            </div>
 
-          {/* Featured Article Banner */}
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 rounded-3xl opacity-0 group-hover:opacity-50 blur-lg transition-all duration-300"></div>
-            <Card className="relative border-2 border-gray-700 bg-gradient-to-br from-gray-900 to-gray-950 overflow-hidden">
-              <CardContent className="p-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div>
-                    <Badge className="mb-4 bg-purple-600/30 text-purple-300 border border-purple-500/50">
-                      Featured
-                    </Badge>
-                    <h3 className="text-4xl font-black text-white mb-6">
-                      Deep Dive: Cybersecurity in Your Pocket
-                    </h3>
-                    <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                      Learn how to secure your mobile devices against threats,
-                      protect your personal data, and maintain digital hygiene
-                      on the go.
-                    </p>
-                    <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-3 px-8">
-                      Read Full Article
-                      <ArrowRight className="h-5 w-5 ml-2" />
-                    </Button>
-                  </div>
-                  <div className="relative">
-                    <div className="absolute -inset-2 bg-gradient-to-r from-purple-400 to-blue-500 rounded-2xl opacity-50 blur-lg"></div>
-                    <img
-                      src="https://images.unsplash.com/photo-1512941691920-13a378c3f1db?w=500&h=400&fit=crop"
-                      alt="Featured article"
-                      className="relative rounded-2xl shadow-2xl border-2 border-white/10"
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Categories */}
+            <div className="flex flex-wrap gap-3 justify-center">
+              {["all", "Security", "Finance"].map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() =>
+                    setSelectedCategory(cat === "all" ? "all" : cat)
+                  }
+                  className={`px-6 py-2 rounded-full font-semibold transition-all ${
+                    selectedCategory === cat
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg"
+                      : "bg-white/10 text-gray-300 hover:bg-white/20"
+                  }`}
+                >
+                  {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Articles Grid */}
+      <section className="relative py-20 bg-gradient-to-b from-gray-50 to-white dark:from-slate-900 dark:to-gray-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {filteredArticles.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredArticles.map((article) => (
+                <div key={article.id} className="group relative h-full">
+                  <div
+                    className={`absolute -inset-0.5 bg-gradient-to-r ${article.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-lg`}
+                  ></div>
+                  <Card className="relative border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 h-full flex flex-col overflow-hidden">
+                    {/* Article Image/Icon */}
+                    <div
+                      className={`bg-gradient-to-br ${article.color} p-8 flex items-center justify-center h-48`}
+                    >
+                      <span className="text-7xl">{article.image}</span>
+                    </div>
+
+                    {/* Article Content */}
+                    <CardHeader className="pb-3">
+                      <Badge
+                        className={`bg-gradient-to-r ${article.color} text-white border-none w-fit mb-2`}
+                      >
+                        {article.category}
+                      </Badge>
+                      <CardTitle className="text-xl font-bold text-foreground leading-tight line-clamp-2">
+                        {article.title}
+                      </CardTitle>
+                    </CardHeader>
+
+                    <CardContent className="flex-1 flex flex-col pb-4">
+                      <p className="text-muted-foreground text-sm mb-6 flex-1 line-clamp-3">
+                        {article.excerpt}
+                      </p>
+
+                      {/* Meta Information */}
+                      <div className="space-y-2 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <User className="h-4 w-4" />
+                          <span>{article.author}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <Calendar className="h-4 w-4" />
+                          <span>{article.date}</span>
+                        </div>
+                        <div className="text-xs font-semibold text-cyan-600 dark:text-cyan-400">
+                          ⏱️ {article.readTime}
+                        </div>
+                      </div>
+
+                      {/* Read More Button */}
+                      <Link to="/blog" className="w-full">
+                        <Button
+                          className={`w-full bg-gradient-to-r ${article.color} hover:opacity-90 text-white font-bold transition-all`}
+                        >
+                          Read Article
+                          <ArrowRight className="h-4 w-4 ml-2" />
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-20">
+              <Search className="h-16 w-16 text-gray-400 mx-auto mb-4 opacity-50" />
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                No articles found
+              </h3>
+              <p className="text-muted-foreground">
+                Try adjusting your search or filter criteria.
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-20 bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-black mb-6">
+            Stay Updated with Latest Security News
+          </h2>
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Subscribe to get the latest security alerts and financial tips
+            delivered to your inbox.
+          </p>
+          <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 text-lg">
+            Subscribe Now
+            <ArrowRight className="h-5 w-5 ml-2" />
+          </Button>
+        </div>
+      </section>
     </Layout>
   );
 }
