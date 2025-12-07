@@ -96,27 +96,27 @@ export default function EmergencyGuide() {
 
   const emergencyContacts = [
     {
-      title: "National Cybercrime Hotline",
-      contact: "IC3 (Internet Crime Complaint Center)",
-      url: "https://www.ic3.gov",
-      description: "File a complaint about internet fraud",
+      title: "CERT-In (India)",
+      contact: "Cybersecurity Authority",
+      url: "https://www.cert-in.org.in/",
+      description: "Report cyber incidents and get expert guidance",
     },
     {
-      title: "Federal Trade Commission",
-      contact: "Identity Theft Hotline",
-      url: "https://www.identitytheft.gov",
-      description: "Report identity theft and get recovery plan",
+      title: "Cyber Crime Portal - India",
+      contact: "Official Reporting Platform",
+      url: "https://cybercrime.gov.in/",
+      description: "Report online fraud and cybercrime to Indian authorities",
     },
     {
-      title: "Credit Bureaus",
-      contact: "Equifax, Experian, TransUnion",
-      url: "https://www.annualcreditreport.com",
-      description: "Place fraud alert and freeze credit",
+      title: "Ministry of Electronics & IT",
+      contact: "Government Cybersecurity Support",
+      url: "https://www.meity.gov.in/",
+      description: "Official government cybersecurity resources and advisories",
     },
     {
-      title: "Your Bank",
-      contact: "Call your bank directly",
-      description: "Report fraudulent transactions immediately",
+      title: "National Helpline",
+      contact: "Emergency Support",
+      description: "Contact your local police cyber wing for immediate assistance",
     },
   ];
 
