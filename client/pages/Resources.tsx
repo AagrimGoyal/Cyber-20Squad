@@ -95,37 +95,38 @@ export default function Resources() {
     {
       category: "Government Resources",
       icon: FileText,
-      color: "from-purple-500 to-pink-600",
+      color: "from-orange-500 to-red-600",
       resources: [
         {
-          title: "CISA",
-          type: "Cybersecurity Agency",
+          title: "CERT-In",
+          type: "Cybersecurity Authority",
           description:
-            "US Cybersecurity & Infrastructure Security Agency - official guidance",
-          link: "https://cisa.gov",
+            "Computer Emergency Response Team of India - Official cybersecurity alerts and advisories",
+          link: "https://www.cert-in.org.in/",
           rating: "⭐⭐⭐⭐⭐",
         },
         {
-          title: "FTC Scams",
-          type: "Consumer Protection",
+          title: "Ministry of Electronics & IT",
+          type: "Government Portal",
           description:
-            "Federal Trade Commission's resource on identity theft and fraud",
-          link: "https://reportfraud.ftc.gov",
+            "MeitY - India's official ministry for digital infrastructure and cyber policy",
+          link: "https://www.meity.gov.in/",
           rating: "⭐⭐⭐⭐⭐",
         },
         {
-          title: "SEC - Investor.gov",
-          type: "Investment Protection",
+          title: "DSCI",
+          type: "Data Security Council",
           description:
-            "Securities & Exchange Commission's official investment education",
-          link: "https://investor.gov",
+            "Data Security Council of India - Cybersecurity standards and best practices for India",
+          link: "https://www.dsci.in/",
           rating: "⭐⭐⭐⭐⭐",
         },
         {
-          title: "FBI - IC3",
-          type: "Fraud Reporting",
-          description: "Internet Crime Complaint Center - report cyber crimes",
-          link: "https://ic3.gov",
+          title: "RBI Cyber Portal",
+          type: "Banking Security",
+          description:
+            "Reserve Bank of India - Financial security advisories and regulations",
+          link: "https://www.rbi.org.in/",
           rating: "⭐⭐⭐⭐⭐",
         },
       ],
