@@ -300,43 +300,51 @@ export default function Layout({ children }: LayoutProps) {
               </ul>
             </div>
 
-            {/* Security */}
+            {/* Security Resources */}
             <div>
               <h3 className="text-sm font-bold text-white mb-6 flex items-center gap-2">
                 <div className="w-1 h-4 bg-gradient-to-b from-emerald-400 to-cyan-600 rounded"></div>
-                Security
+                Help & Support
               </h3>
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="https://www.cert-in.org.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
                   >
-                    Privacy Policy
+                    CERT-In (Cyber Security)
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://cybercrime.gov.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
                   >
-                    Security Guidelines
+                    Report Cybercrime
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://www.meity.gov.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
                   >
-                    Terms of Service
+                    Ministry of Electronics & IT
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://www.rbi.org.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
                   >
-                    Data Protection
+                    RBI Financial Security
                   </a>
                 </li>
               </ul>
