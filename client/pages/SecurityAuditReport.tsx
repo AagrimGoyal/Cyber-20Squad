@@ -1,7 +1,14 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, AlertTriangle, TrendingUp, Lock, Shield, Eye } from "lucide-react";
+import {
+  CheckCircle,
+  AlertTriangle,
+  TrendingUp,
+  Lock,
+  Shield,
+  Eye,
+} from "lucide-react";
 
 export default function SecurityAuditReport() {
   const auditSections = [
@@ -73,10 +80,18 @@ export default function SecurityAuditReport() {
   ];
 
   const scorecard = [
-    { metric: "Overall Security Score", value: "98/100", color: "text-green-600" },
+    {
+      metric: "Overall Security Score",
+      value: "98/100",
+      color: "text-green-600",
+    },
     { metric: "Data Protection", value: "99/100", color: "text-green-600" },
     { metric: "Access Control", value: "97/100", color: "text-green-600" },
-    { metric: "Vulnerability Management", value: "96/100", color: "text-green-600" },
+    {
+      metric: "Vulnerability Management",
+      value: "96/100",
+      color: "text-green-600",
+    },
     { metric: "Compliance Status", value: "100/100", color: "text-green-600" },
   ];
 
@@ -85,9 +100,12 @@ export default function SecurityAuditReport() {
       <div className="relative py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900 overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.2'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.2'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -100,7 +118,9 @@ export default function SecurityAuditReport() {
               </h1>
             </div>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
-              Comprehensive security assessment report for CyberSquad platform. This report confirms our commitment to the highest security standards.
+              Comprehensive security assessment report for CyberSquad platform.
+              This report confirms our commitment to the highest security
+              standards.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Badge className="bg-green-600 text-white px-4 py-2">
@@ -118,10 +138,15 @@ export default function SecurityAuditReport() {
           {/* Scorecard */}
           <div className="mb-16 grid grid-cols-1 md:grid-cols-5 gap-4">
             {scorecard.map((item, idx) => (
-              <Card key={idx} className="bg-white/10 backdrop-blur border-cyan-400/30">
+              <Card
+                key={idx}
+                className="bg-white/10 backdrop-blur border-cyan-400/30"
+              >
                 <CardContent className="p-6 text-center">
                   <p className="text-sm text-gray-300 mb-2">{item.metric}</p>
-                  <div className={`text-3xl font-bold ${item.color}`}>{item.value}</div>
+                  <div className={`text-3xl font-bold ${item.color}`}>
+                    {item.value}
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -173,27 +198,37 @@ export default function SecurityAuditReport() {
                   Audit Summary
                 </h3>
                 <p className="text-gray-200 text-lg">
-                  CyberSquad maintains the highest security standards through continuous monitoring,
-                  regular security updates, and industry best practices.
+                  CyberSquad maintains the highest security standards through
+                  continuous monitoring, regular security updates, and industry
+                  best practices.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
                   <div className="bg-emerald-900/60 border-2 border-emerald-500/60 p-4 rounded-lg">
-                    <div className="text-sm text-emerald-200 font-semibold">Last Updated</div>
-                    <div className="text-2xl font-bold text-emerald-300">2025</div>
+                    <div className="text-sm text-emerald-200 font-semibold">
+                      Last Updated
+                    </div>
+                    <div className="text-2xl font-bold text-emerald-300">
+                      2025
+                    </div>
                   </div>
                   <div className="bg-cyan-900/60 border-2 border-cyan-500/60 p-4 rounded-lg">
-                    <div className="text-sm text-cyan-200 font-semibold">Status</div>
-                    <div className="text-2xl font-bold text-cyan-300">Active</div>
+                    <div className="text-sm text-cyan-200 font-semibold">
+                      Status
+                    </div>
+                    <div className="text-2xl font-bold text-cyan-300">
+                      Active
+                    </div>
                   </div>
                   <div className="bg-blue-900/60 border-2 border-blue-500/60 p-4 rounded-lg">
-                    <div className="text-sm text-blue-200 font-semibold">Monitoring</div>
+                    <div className="text-sm text-blue-200 font-semibold">
+                      Monitoring
+                    </div>
                     <div className="text-2xl font-bold text-blue-300">24/7</div>
                   </div>
                 </div>
               </div>
             </CardContent>
           </Card>
-
         </div>
       </div>
     </Layout>

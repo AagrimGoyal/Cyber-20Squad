@@ -116,7 +116,8 @@ export default function EmergencyGuide() {
     {
       title: "National Helpline",
       contact: "Emergency Support",
-      description: "Contact your local police cyber wing for immediate assistance",
+      description:
+        "Contact your local police cyber wing for immediate assistance",
     },
   ];
 
@@ -141,9 +142,9 @@ export default function EmergencyGuide() {
               Emergency <span className="text-red-400">Response Guide</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 font-light leading-relaxed">
-              If you suspect you've been hacked or experienced a security breach,
-              follow these critical steps immediately to minimize damage and
-              secure your accounts.
+              If you suspect you've been hacked or experienced a security
+              breach, follow these critical steps immediately to minimize damage
+              and secure your accounts.
             </p>
           </div>
         </div>

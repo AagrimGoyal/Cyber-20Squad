@@ -2,7 +2,13 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, User, ArrowRight, Search, Image as ImageIcon } from "lucide-react";
+import {
+  Calendar,
+  User,
+  ArrowRight,
+  Search,
+  Image as ImageIcon,
+} from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -119,15 +125,17 @@ export default function Blog() {
 
   // Sort by date (latest first)
   const sortedArticles = [...articles].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
   const filteredArticles = sortedArticles
-    .filter((a) => selectedCategory === "all" || a.category === selectedCategory)
+    .filter(
+      (a) => selectedCategory === "all" || a.category === selectedCategory,
+    )
     .filter(
       (a) =>
         a.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        a.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+        a.excerpt.toLowerCase().includes(searchQuery.toLowerCase()),
     );
 
   return (
@@ -286,7 +294,6 @@ export default function Blog() {
           )}
         </div>
       </section>
-
     </Layout>
   );
 }
