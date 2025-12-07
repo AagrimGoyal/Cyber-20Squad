@@ -24,6 +24,7 @@ import Glossary from "./pages/Glossary";
 import Tools from "./pages/Tools";
 import EmergencyGuide from "./pages/EmergencyGuide";
 import ReportIncident from "./pages/ReportIncident";
+import Game from "./pages/Game";
 
 const queryClient = new QueryClient();
 
