@@ -287,22 +287,6 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-6">
-            Stay Updated with Latest Security News
-          </h2>
-          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Subscribe to get the latest security alerts and financial tips
-            delivered to your inbox.
-          </p>
-          <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 text-lg">
-            Subscribe Now
-            <ArrowRight className="h-5 w-5 ml-2" />
-          </Button>
-        </div>
-      </section>
     </Layout>
   );
 }
