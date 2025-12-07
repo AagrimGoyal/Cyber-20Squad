@@ -177,17 +177,17 @@ export default function SecurityAuditReport() {
                   regular security updates, and industry best practices.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
-                  <div className="bg-emerald-500/10 border border-emerald-500/30 p-4 rounded-lg">
-                    <div className="text-sm text-emerald-300">Last Updated</div>
-                    <div className="text-xl font-bold text-emerald-400">2025</div>
+                  <div className="bg-emerald-900/60 border-2 border-emerald-500/60 p-4 rounded-lg">
+                    <div className="text-sm text-emerald-200 font-semibold">Last Updated</div>
+                    <div className="text-2xl font-bold text-emerald-300">2025</div>
                   </div>
-                  <div className="bg-cyan-500/10 border border-cyan-500/30 p-4 rounded-lg">
-                    <div className="text-sm text-cyan-300">Status</div>
-                    <div className="text-xl font-bold text-cyan-400">Active</div>
+                  <div className="bg-cyan-900/60 border-2 border-cyan-500/60 p-4 rounded-lg">
+                    <div className="text-sm text-cyan-200 font-semibold">Status</div>
+                    <div className="text-2xl font-bold text-cyan-300">Active</div>
                   </div>
-                  <div className="bg-blue-500/10 border border-blue-500/30 p-4 rounded-lg">
-                    <div className="text-sm text-blue-300">Monitoring</div>
-                    <div className="text-xl font-bold text-blue-400">24/7</div>
+                  <div className="bg-blue-900/60 border-2 border-blue-500/60 p-4 rounded-lg">
+                    <div className="text-sm text-blue-200 font-semibold">Monitoring</div>
+                    <div className="text-2xl font-bold text-blue-300">24/7</div>
                   </div>
                 </div>
               </div>
