@@ -194,15 +194,6 @@ export default function SecurityAuditReport() {
             </CardContent>
           </Card>
 
-          {/* Contact */}
-          <div className="mt-12 text-center">
-            <p className="text-gray-300 mb-4">
-              For detailed security inquiries or to schedule a security assessment, please contact our security team.
-            </p>
-            <a href="mailto:security@cybersquad.io" className="text-cyan-400 hover:text-cyan-300 font-semibold">
-              📧 security@cybersquad.io
-            </a>
-          </div>
         </div>
       </div>
     </Layout>
