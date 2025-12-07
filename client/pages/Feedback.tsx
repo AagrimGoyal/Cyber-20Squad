@@ -1,200 +1,62 @@
-import { useEffect, useMemo, useState } from "react";
 import Layout from "@/components/Layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Trash2, MessageSquarePlus } from "lucide-react";
-
-interface FeedbackItem {
-  id: string;
-  name: string;
-  message: string;
-  createdAt: string; // ISO
-}
+import { MessageSquarePlus } from "lucide-react";
 
 export default function Feedback() {
-  const { toast } = useToast();
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-  const [feedbacks, setFeedbacks] = useState<FeedbackItem[]>(() => {
-    try {
-      const raw = localStorage.getItem("cs_feedbacks");
-      return raw ? (JSON.parse(raw) as FeedbackItem[]) : [];
-    } catch {
-      return [];
-    }
-  });
-
-  useEffect(() => {
-    localStorage.setItem("cs_feedbacks", JSON.stringify(feedbacks));
-  }, [feedbacks]);
-
-  const ordered = useMemo(
-    () => [...feedbacks].sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1)),
-    [feedbacks],
-  );
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const n = name.trim();
-    const m = message.trim();
-    if (!n || !m) {
-      toast({ title: "Please fill all fields" });
-      return;
-    }
-    const item: FeedbackItem = {
-      id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
-      name: n,
-      message: m,
-      createdAt: new Date().toISOString(),
-    };
-    setFeedbacks((prev) => [item, ...prev]);
-    setName("");
-    setMessage("");
-    toast({ title: "Feedback submitted", description: "Thank you!" });
-  }
-
-  const ADMIN_EMAILS = new Set<string>(["aagrimgoyal16@gmail.com"]);
-  const [email, setEmail] = useState<string>(() => {
-    try {
-      return localStorage.getItem("cs_email") ?? "";
-    } catch {
-      return "";
-    }
-  });
-  useEffect(() => {
-    localStorage.setItem("cs_email", email);
-  }, [email]);
-  const isAdmin = ADMIN_EMAILS.has(email.trim().toLowerCase());
-
-  const handleDelete = (id: string) => {
-    if (!isAdmin) {
-      toast({ title: "Only admins can delete feedback" });
-      return;
-    }
-    setFeedbacks((prev) => prev.filter((f) => f.id !== id));
-    toast({ title: "Feedback removed" });
-  };
-
   return (
     <Layout>
-      <section className="py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-900 dark:to-indigo-900 min-h-[60vh]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <Card className="mb-8">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <MessageSquarePlus className="h-6 w-6 text-cyber-blue" />
-                  <CardTitle className="text-2xl">
-                    Share Your Feedback
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium mb-1">
-                      Name
-                    </label>
-                    <Input
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1">
-                      Feedback
-                    </label>
-                    <Textarea
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Write your feedback here..."
-                      rows={4}
-                    />
-                  </div>
-                  <div className="flex justify-end">
-                    <Button
-                      type="submit"
-                      className="bg-cyber-blue hover:bg-cyber-blue/90 text-white"
-                    >
-                      Submit
-                    </Button>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
+      <div className="relative py-20 bg-gradient-to-br from-blue-950 via-purple-950 to-blue-950 overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl animate-blob"></div>
+          <div className="absolute top-40 right-1/4 w-80 h-80 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-2000"></div>
+        </div>
 
-            <div className="space-y-4">
-              {ordered.length === 0 ? (
-                <p className="text-center text-muted-foreground">
-                  No feedback yet. Be the first to share!
-                </p>
-              ) : (
-                ordered.map((f) => (
-                  <Card key={f.id}>
-                    <CardContent className="pt-6">
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <div className="font-semibold text-foreground">
-                            {f.name}
-                          </div>
-                          <div className="text-xs text-muted-foreground mb-2">
-                            {new Date(f.createdAt).toLocaleString()}
-                          </div>
-                          <div className="text-foreground whitespace-pre-wrap">
-                            {f.message}
-                          </div>
-                        </div>
-                        <Button
-                          variant="outline"
-                          className="border-destructive/40 text-destructive hover:bg-destructive/10"
-                          onClick={() => handleDelete(f.id)}
-                          disabled={!isAdmin}
-                          title={isAdmin ? "Delete" : "Admin only"}
-                        >
-                          <Trash2 className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))
-              )}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="flex items-center justify-center mb-6">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-xl opacity-75 animate-pulse"></div>
+                <MessageSquarePlus className="h-16 w-16 text-white relative z-10" />
+              </div>
             </div>
-
-            {/* Hidden Admin Section - at the very bottom */}
-            <div className="mt-20 pt-8 border-t border-gray-200 dark:border-gray-700">
-              <details className="group">
-                <summary className="text-xs text-muted-foreground cursor-pointer opacity-30 hover:opacity-50 transition-opacity">
-                  Admin Options
-                </summary>
-                <Card className="mt-4 bg-muted/30 border-dashed">
-                  <CardContent className="p-4">
-                    <div className="space-y-3">
-                      <div>
-                        <label className="block text-xs font-medium mb-1">
-                          Admin Email
-                        </label>
-                        <Input
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="Enter admin email"
-                          className="text-sm"
-                        />
-                        <div className="text-xs text-muted-foreground mt-1">
-                          {isAdmin ? "✓ Admin Mode Active" : "Viewer Mode"}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </details>
-            </div>
+            <h1 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+              Your Feedback <span className="text-cyan-400">Matters</span>
+            </h1>
+            <p className="text-lg text-gray-300 font-light leading-relaxed">
+              Help us improve CyberSquad by sharing your thoughts, suggestions,
+              and experiences. Your feedback is valuable and will help us serve
+              you better.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Google Form Embed */}
+      <div className="relative py-20 bg-gradient-to-b from-gray-50 to-white dark:from-slate-900 dark:to-gray-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-4xl mx-auto">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdKjKOXQzEK9CRhh3nWWsLapuNkoQr_9TfjEgUppmbSCBWHUA/viewform?fbclid=IwY2xjawOiFnhleHRuA2FlbQIxMQBicmlkETFwb3FydkZBa1Z4MGtFZFFuc3J0YwZhcHBfaWQBMAABHn5qJER8wHegY2ItQ7AvKmb57KiR0jFLX2eugAnW877-Gx9mfh4MkkqqktOr_aem_HiZp5ukHmGDdsw5Shq02eA"
+              width="100%"
+              height="1000"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
+              title="CyberSquad Feedback Form"
+              className="rounded-lg shadow-2xl border-2 border-gray-200 dark:border-gray-700"
+            >
+              Loading form...
+            </iframe>
+          </div>
+
+          <div className="mt-16 text-center max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+              If you're having trouble with the form above, you can also email
+              us directly with your feedback. Thank you for helping us make
+              CyberSquad better!
+            </p>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }
