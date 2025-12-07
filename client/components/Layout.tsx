@@ -52,6 +52,7 @@ export default function Layout({ children }: LayoutProps) {
   ];
 
   const moreNavigation = [
+    { name: "Game", href: "/game", icon: Gamepad2 },
     { name: "Blog", href: "/blog", icon: Newspaper },
     { name: "Tools", href: "/tools", icon: Zap },
     { name: "Risk Assessment", href: "/risk-assessment", icon: Target },
