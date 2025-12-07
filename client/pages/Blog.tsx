@@ -22,6 +22,7 @@ export default function Blog() {
       readTime: "7 min read",
       color: "from-red-600 to-pink-700",
       image: "🔒",
+      link: "https://www.cert-in.org.in/",
     },
     {
       id: 2,
@@ -34,6 +35,7 @@ export default function Blog() {
       readTime: "10 min read",
       color: "from-emerald-600 to-teal-700",
       image: "💳",
+      link: "https://www.rbi.org.in/",
     },
     {
       id: 3,
@@ -46,6 +48,7 @@ export default function Blog() {
       readTime: "8 min read",
       color: "from-cyan-600 to-blue-700",
       image: "🔐",
+      link: "https://www.incometax.gov.in/",
     },
     {
       id: 4,
@@ -58,6 +61,7 @@ export default function Blog() {
       readTime: "9 min read",
       color: "from-yellow-600 to-orange-700",
       image: "📊",
+      link: "https://www.gst.gov.in/",
     },
     {
       id: 5,
@@ -70,6 +74,7 @@ export default function Blog() {
       readTime: "12 min read",
       color: "from-purple-600 to-pink-700",
       image: "👤",
+      link: "https://uidai.gov.in/",
     },
     {
       id: 6,
@@ -82,6 +87,7 @@ export default function Blog() {
       readTime: "11 min read",
       color: "from-blue-600 to-cyan-700",
       image: "💰",
+      link: "/scams",
     },
     {
       id: 7,
@@ -94,6 +100,7 @@ export default function Blog() {
       readTime: "6 min read",
       color: "from-green-600 to-emerald-700",
       image: "🔑",
+      link: "/cyber-security",
     },
     {
       id: 8,
@@ -106,6 +113,7 @@ export default function Blog() {
       readTime: "13 min read",
       color: "from-orange-600 to-red-700",
       image: "₿",
+      link: "/financial-literacy",
     },
   ];
 
