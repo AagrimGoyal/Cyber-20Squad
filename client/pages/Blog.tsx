@@ -244,14 +244,30 @@ export default function Blog() {
                       </div>
 
                       {/* Read More Button */}
-                      <Link to="/blog" className="w-full">
-                        <Button
-                          className={`w-full bg-gradient-to-r ${article.color} hover:opacity-90 text-white font-bold transition-all`}
+                      {article.link.startsWith("/") ? (
+                        <Link to={article.link} className="w-full">
+                          <Button
+                            className={`w-full bg-gradient-to-r ${article.color} hover:opacity-90 text-white font-bold transition-all`}
+                          >
+                            Read Article
+                            <ArrowRight className="h-4 w-4 ml-2" />
+                          </Button>
+                        </Link>
+                      ) : (
+                        <a
+                          href={article.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full"
                         >
-                          Read Article
-                          <ArrowRight className="h-4 w-4 ml-2" />
-                        </Button>
-                      </Link>
+                          <Button
+                            className={`w-full bg-gradient-to-r ${article.color} hover:opacity-90 text-white font-bold transition-all`}
+                          >
+                            Read Article
+                            <ArrowRight className="h-4 w-4 ml-2" />
+                          </Button>
+                        </a>
+                      )}
                     </CardContent>
                   </Card>
                 </div>
