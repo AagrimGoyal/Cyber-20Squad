@@ -227,9 +227,11 @@ export default function FinancialLiteracy() {
                         <p className="text-gray-300 mb-6 leading-relaxed">{topic.description}</p>
                         <div className="flex items-center justify-between pt-4 border-t border-gray-700">
                           <span className="text-sm text-gray-400 font-medium">⏱️ {topic.duration}</span>
-                          <Button size="sm" className="bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-600 hover:to-cyan-700 text-white font-bold shadow-lg shadow-emerald-500/30">
-                            Start Learning
-                          </Button>
+                          <a href={topic.url} target="_blank" rel="noopener noreferrer">
+                            <Button size="sm" className="bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-600 hover:to-cyan-700 text-white font-bold shadow-lg shadow-emerald-500/30">
+                              Start Learning
+                            </Button>
+                          </a>
                         </div>
                       </CardContent>
                     </Card>
