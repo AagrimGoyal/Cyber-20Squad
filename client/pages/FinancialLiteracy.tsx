@@ -103,50 +103,6 @@ export default function FinancialLiteracy() {
     },
   ];
 
-  const resources = [
-    {
-      title: "Personal Budget Planning Worksheet",
-      type: "PDF Download",
-      description: "Complete budgeting worksheet with income tracking, expense categories, and savings goals.",
-      link: "https://www.practicalmoneyskills.com/downloads/pms_workbook.pdf",
-      provider: "Practical Money Skills",
-    },
-    {
-      title: "Debt Management & Payment Tracker",
-      type: "PDF Download",
-      description: "Track your debts, create payment plans, and monitor progress toward debt freedom.",
-      link: "https://credit.org/wp-content/uploads/debt-journal.pdf",
-      provider: "Credit.org",
-    },
-    {
-      title: "Emergency Fund Calculator Worksheet",
-      type: "PDF Download",
-      description: "Calculate how much you need in emergency savings and create a plan to reach your goal.",
-      link: "https://www.moneyprodigy.com/wp-content/uploads/emergency-fund-worksheet.pdf",
-      provider: "Money Prodigy",
-    },
-    {
-      title: "Investment Risk Assessment Guide",
-      type: "PDF Download",
-      description: "Evaluate your risk tolerance and create a balanced investment strategy.",
-      link: "https://wallethacks.com/wp-content/uploads/investment-worksheet.pdf",
-      provider: "Wallet Hacks",
-    },
-    {
-      title: "Monthly Expense Tracker",
-      type: "PDF Download",
-      description: "Track daily expenses by category to identify spending patterns and save money.",
-      link: "https://www.typecalendar.com/downloads/expense-tracker.pdf",
-      provider: "Type Calendar",
-    },
-    {
-      title: "Financial Goal Setting Planner",
-      type: "PDF Download",
-      description: "Set SMART financial goals and create actionable plans to achieve them.",
-      link: "https://www.homeschoolof1.com/wp-content/uploads/financial-goals-worksheet.pdf",
-      provider: "Homeschool of 1",
-    },
-  ];
 
   return (
     <Layout>
