@@ -14,6 +14,7 @@ export default function FinancialLiteracy() {
       level: "Beginner",
       duration: "15 min read",
       color: "bg-cyber-green",
+      url: "https://www.investopedia.com/articles/personal-finance/100516/basics-personal-finance.asp",
     },
     {
       icon: CreditCard,
@@ -22,6 +23,7 @@ export default function FinancialLiteracy() {
       level: "Intermediate",
       duration: "20 min read",
       color: "bg-cyber-blue",
+      url: "https://www.creditkarma.com/",
     },
     {
       icon: TrendingUp,
@@ -30,6 +32,7 @@ export default function FinancialLiteracy() {
       level: "Intermediate",
       duration: "25 min read",
       color: "bg-finance-gold",
+      url: "https://www.investopedia.com/investing/",
     },
     {
       icon: Building,
@@ -38,6 +41,7 @@ export default function FinancialLiteracy() {
       level: "Essential",
       duration: "18 min read",
       color: "bg-security-red",
+      url: "https://www.consumer.ftc.gov/articles/0176-how-recognize-and-report-spam-text-messages",
     },
   ];
 
