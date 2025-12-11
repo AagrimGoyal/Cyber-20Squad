@@ -55,33 +55,35 @@ export default function Contact() {
           </div>
 
           {/* Contact Methods */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {contactMethods.map((method, index) => {
-              const Icon = method.icon;
-              return (
-                <div key={index} className="group relative">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-75 transition-all duration-300 blur-lg"></div>
-                  <Card className="relative border-2 border-gray-700 bg-gray-900 h-full">
-                    <CardContent className="p-6 text-center">
-                      <div className="mb-4">
-                        <div className="bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-xl p-4 w-fit mx-auto">
-                          <Icon className="h-8 w-8 text-emerald-400 group-hover:scale-110 transition-transform" />
+          <div className="flex justify-center mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
+              {contactMethods.map((method, index) => {
+                const Icon = method.icon;
+                return (
+                  <div key={index} className="group relative">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-75 transition-all duration-300 blur-lg"></div>
+                    <Card className="relative border-2 border-gray-700 bg-gray-900 h-full">
+                      <CardContent className="p-6 text-center">
+                        <div className="mb-4">
+                          <div className="bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-xl p-4 w-fit mx-auto">
+                            <Icon className="h-8 w-8 text-emerald-400 group-hover:scale-110 transition-transform" />
+                          </div>
                         </div>
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-2">
-                        {method.title}
-                      </h3>
-                      <p className="text-sm text-gray-400 mb-3">
-                        {method.description}
-                      </p>
-                      <p className="font-semibold text-emerald-400">
-                        {method.contact}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-              );
-            })}
+                        <h3 className="text-xl font-bold text-white mb-2">
+                          {method.title}
+                        </h3>
+                        <p className="text-sm text-gray-400 mb-3">
+                          {method.description}
+                        </p>
+                        <p className="font-semibold text-emerald-400">
+                          {method.contact}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
         </div>
