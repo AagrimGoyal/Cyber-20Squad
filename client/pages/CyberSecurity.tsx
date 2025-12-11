@@ -157,56 +157,6 @@ export default function CyberSecurity() {
     },
   ];
 
-  const securityResources = [
-    {
-      title: "Internet Safety Checklist",
-      type: "PDF Download",
-      description:
-        "Essential steps to stay safe online from the Department of Homeland Security.",
-      link: "https://www.dhs.gov/sites/default/files/publications/internet-safety-checklist.pdf",
-      provider: "US Department of Homeland Security",
-    },
-    {
-      title: "Personal Cyber Security Guide",
-      type: "PDF Download",
-      description:
-        "Comprehensive guide covering cybersecurity basics and protection strategies.",
-      link: "https://www.cyber.gov.au/sites/default/files/2023-03/personal-cyber-security-first-steps.pdf",
-      provider: "Australian Cyber Security Centre",
-    },
-    {
-      title: "Small Business Cybersecurity Checklist",
-      type: "PDF Download",
-      description:
-        "Protect your business with this comprehensive cybersecurity checklist.",
-      link: "https://connecteam.com/wp-content/uploads/small-business-cybersecurity-checklist.pdf",
-      provider: "Connecteam",
-    },
-    {
-      title: "Remote Work Security Checklist",
-      type: "PDF Download",
-      description:
-        "Secure your remote work setup with GDPR compliance and privacy protection.",
-      link: "https://www.cm-alliance.com/files/remote-working-checklist.pdf",
-      provider: "CM Alliance",
-    },
-    {
-      title: "Password Security Worksheet",
-      type: "PDF Download",
-      description:
-        "Create strong passwords and implement multi-factor authentication.",
-      link: "https://www.securecommunitynetwork.org/wp-content/uploads/password-security-worksheet.pdf",
-      provider: "Secure Community Network",
-    },
-    {
-      title: "Incident Response Planning Template",
-      type: "PDF Download",
-      description:
-        "Prepare for cybersecurity incidents with this comprehensive response plan.",
-      link: "https://safetyculture.com/downloads/cyber-security-incident-response-template.pdf",
-      provider: "SafetyCulture",
-    },
-  ];
 
   return (
     <Layout>
