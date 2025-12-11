@@ -41,7 +41,7 @@ export default function FinancialLiteracy() {
       level: "Essential",
       duration: "18 min read",
       color: "bg-security-red",
-      url: "https://www.federalreserve.gov/aboutthefed/structure-federal-reserve-system.htm",
+      url: "https://www.us-cert.gov/",
     },
   ];
 
