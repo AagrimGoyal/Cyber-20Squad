@@ -128,32 +128,32 @@ export default function CyberSecurity() {
       title: "Cybersecurity Basics",
       description:
         "Introduction to fundamental cybersecurity concepts and threats",
-      youtubeId: "0QFi2pz2Zao",
-      duration: "14:22",
-      channel: "Security in a Minute",
+      youtubeId: "T_jtKc-ITWQ",
+      duration: "12:30",
+      channel: "Khan Academy",
     },
     {
       title: "How to Create Strong Passwords",
       description:
         "Learn the essential elements of a strong password and best practices",
-      youtubeId: "OpWeeGGqseY",
-      duration: "6:30",
-      channel: "The Cyber Guy",
+      youtubeId: "Xl7gxUhKkQQ",
+      duration: "7:45",
+      channel: "Practical Money Skills",
     },
     {
       title: "Phishing Attacks: How to Stay Safe",
       description:
         "Recognize and avoid phishing scams that target your personal information",
-      youtubeId: "F_rVvj6mUvU",
-      duration: "9:15",
-      channel: "Digital Espresso",
+      youtubeId: "j_oDmKfMOYg",
+      duration: "8:22",
+      channel: "FTC Consumer Education",
     },
     {
       title: "Two-Factor Authentication Explained",
       description: "Understand 2FA and why it's crucial for account security",
-      youtubeId: "0diJw5jvS4M",
-      duration: "7:45",
-      channel: "Tech Insider",
+      youtubeId: "UeJayWRWsKE",
+      duration: "6:15",
+      channel: "TechTerms",
     },
   ];
 
