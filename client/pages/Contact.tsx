@@ -36,12 +36,6 @@ export default function Contact() {
       contact: "s.22.226@slps.one",
     },
     {
-      icon: Phone,
-      title: "Phone",
-      description: "Call us during business hours",
-      contact: "+1 (555) 123-4567",
-    },
-    {
       icon: MessageCircle,
       title: "Live Chat",
       description: "Chat with our support team",
