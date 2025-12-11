@@ -265,12 +265,14 @@ export default function CyberSecurity() {
                         <p className="text-gray-300 mb-6 leading-relaxed">
                           {threat.description}
                         </p>
-                        <Button
-                          size="sm"
-                          className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white font-bold shadow-lg shadow-red-500/30"
-                        >
-                          Learn Protection
-                        </Button>
+                        <a href={threat.url} target="_blank" rel="noopener noreferrer">
+                          <Button
+                            size="sm"
+                            className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white font-bold shadow-lg shadow-red-500/30"
+                          >
+                            Learn Protection
+                          </Button>
+                        </a>
                       </CardContent>
                     </Card>
                   </div>
