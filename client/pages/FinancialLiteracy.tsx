@@ -329,35 +329,6 @@ export default function FinancialLiteracy() {
             </div>
           </div>
 
-          {/* Resources */}
-          <div>
-            <div className="text-center mb-12">
-              <span className="inline-block px-4 py-2 bg-emerald-900/30 text-emerald-300 rounded-full text-sm font-semibold mb-4 border border-emerald-500/30">📄 FREE RESOURCES</span>
-              <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">
-                Download Essential Resources
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {resources.map((resource, index) => (
-                <div key={index} className="group relative">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-75 transition-all duration-300 blur-lg"></div>
-                  <Card className="relative border-2 border-gray-700 bg-gray-900 hover:shadow-2xl transition-all h-full">
-                    <CardContent className="p-6">
-                      <Badge className="mb-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white border-none">{resource.type}</Badge>
-                      <h3 className="font-bold text-white mb-3 text-lg">{resource.title}</h3>
-                      <p className="text-sm text-gray-400 mb-4 leading-relaxed">{resource.description}</p>
-                      <p className="text-xs text-emerald-400 mb-6 font-medium">📌 Source: {resource.provider}</p>
-                      <a href={resource.link} target="_blank" rel="noopener noreferrer" className="block">
-                        <Button variant="outline" size="sm" className="w-full border-2 border-emerald-500/50 text-emerald-300 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 font-bold transition-all">
-                          📥 Download PDF
-                        </Button>
-                      </a>
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </Layout>
