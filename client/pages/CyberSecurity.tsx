@@ -157,7 +157,6 @@ export default function CyberSecurity() {
     },
   ];
 
-
   return (
     <Layout>
       <div className="relative py-32 bg-gradient-to-br from-red-950 via-purple-950 to-pink-950 overflow-hidden">
@@ -448,7 +447,6 @@ export default function CyberSecurity() {
               ))}
             </div>
           </div>
-
 
           {/* Emergency Response */}
           <div>
