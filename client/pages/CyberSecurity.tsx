@@ -28,7 +28,6 @@ export default function CyberSecurity() {
         "Learn to identify and avoid fraudulent emails, messages, and websites designed to steal your information.",
       severity: "High Risk",
       color: "bg-security-red",
-      url: "https://www.cisa.gov/phishing",
     },
     {
       icon: Lock,
@@ -37,7 +36,6 @@ export default function CyberSecurity() {
         "Discover why strong, unique passwords are your first line of defense against cybercriminals.",
       severity: "Critical",
       color: "bg-security-red",
-      url: "https://www.cisa.gov/secure-passwords",
     },
     {
       icon: Wifi,
@@ -46,7 +44,6 @@ export default function CyberSecurity() {
         "Understand the risks of public Wi-Fi and how to protect your data on unsecured networks.",
       severity: "Medium Risk",
       color: "bg-warning",
-      url: "https://www.consumer.ftc.gov/articles/0014-wireless-network-security",
     },
     {
       icon: Smartphone,
@@ -55,7 +52,6 @@ export default function CyberSecurity() {
         "Secure your mobile devices against malware, data theft, and unauthorized access.",
       severity: "High Risk",
       color: "bg-security-red",
-      url: "https://www.cisa.gov/mobiledevicesecurity",
     },
   ];
 
